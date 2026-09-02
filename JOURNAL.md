@@ -12,5 +12,5 @@
 
 - **Date :** 2026-09-02
 - **Prompt :** "Génere 3-5 directions visuelles en utilisant mon moodboard et les 5 questions de mon persona. Utilise un style retro-vhs pour le design pour que ca ressemble à un vieux interface d'un ordinateurs des années 2000s."
-- **Outil :** Stitch
+- **Outil :** Stitch / Figma Make
 - **Résultat :** ...
