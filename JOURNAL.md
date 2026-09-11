@@ -14,16 +14,3 @@
 - **Outil :** Stitch / Figma Make
 - **Résultat :** ...
 
-## 5 questions - Bloc 2
-1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? J'ai avancé mon moodboard et commencé la maquette desktop et mobile.
-2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver un style qui me représente bien.
-3. Qu’est-ce que j’ai appris que je ne savais pas avant ? ...
-4. Quelle est ma prochaine étape concrète ? Finaliser le plus possible mes maquettes.
-5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? Je n'ai pas utilisé l'IA.
-
-## Utilisation de L'IA
-
-- **Date :** ...
-- **Prompt :** "..."
-- **Outil :** ...
-- **Résultat :** ...
