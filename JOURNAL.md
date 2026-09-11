@@ -14,6 +14,7 @@
 - **Outil :** Stitch / Figma Make
 - **Résultat :** ...
 
+
 - - **Date :** 2026-09-11
 - **Prompt :** "Fais moi trois designs différents d'un portfolio pour une étudiante qui a étudié en multimédia et qui cherche une stage de fin d'étude. J'aimerais mettre en plan mes projets de montage vidéo, mon jeux vidéo, mon site web et mon court métrage d'animation 3d, mes compétences et mes sociaux. Utilise ces questions et réponses pour t'aider: 
 1. Quel type de poste ou de stage je vise en sortant du programme?
