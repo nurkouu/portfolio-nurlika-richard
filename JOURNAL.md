@@ -28,7 +28,10 @@ J’aime beaucoup le minimalisme mais j’aime aussi mélanger les choses en con
 Je veux que la personne retienne à quel point je m’engage dans mes projets."
 - **Outil :** Stitch / Figma Make
 - **Résultat :** ...
-<img width="1440" height="1024" alt="Portfolio designs for multimedia student-7" src="https://github.com/user-attachments/assets/86470202-6f3a-4b9e-b4fa-10171bf0e02f" />
-<img width="1440" height="1024" alt="Portfolio designs for multimedia student-6" src="https://github.com/user-attachments/assets/651dcad0-469b-45cd-954f-82304b4c48b7" />
+<img width="650 " height="462 " alt="Portfolio designs for multimedia student-7" src="https://github.com/user-attachments/assets/86470202-6f3a-4b9e-b4fa-10171bf0e02f" />
+<img width="650 " height="462 " alt="Portfolio designs for multimedia student-6" src="https://github.com/user-attachments/assets/651dcad0-469b-45cd-954f-82304b4c48b7" />
+<img width="650 " height="462 " alt="Portfolio designs for multimedia student-8 (1)" src="https://github.com/user-attachments/assets/161ee726-32ef-4b18-a723-dbacc495ea7c" />
+<img width="650 " height="462 " alt="Portfolio designs for multimedia student-8 (2)" src="https://github.com/user-attachments/assets/7a922f7d-db42-4448-9bf9-eb56ae9b7b5e" />
+
 
 
