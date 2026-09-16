@@ -22,8 +22,8 @@
 
 
 
-
-- - **Date :** 2026-09-11
+##
+- **Date :** 2026-09-11
 - **Prompt :** "Fais moi trois designs différents d'un portfolio pour une étudiante qui a étudié en multimédia et qui cherche une stage de fin d'étude. J'aimerais mettre en plan mes projets de montage vidéo, mon jeux vidéo, mon site web et mon court métrage d'animation 3d, mes compétences et mes sociaux. Utilise ces questions et réponses pour t'aider: 
 1. Quel type de poste ou de stage je vise en sortant du programme?
 Je veux faire mon stage de préférence en design graphique, en montage vidéo ou en conception sonore et possiblement en design web ou en illustration. Pour le type de poste, j’aimerais allez dans le design graphique, le montage, la conception sonore ou même l’animation 3d. Cependant, pour aller en animation 3d, je sais que je dois me pratiquer de plus en plus pour devenir encore meilleure et pour développer mes compétences. Je ne suis pas sûre si je veux aller à l’université encore, mais le design graphique et l’animation 3d sont les deux postes qui m’intéressent le plus.
