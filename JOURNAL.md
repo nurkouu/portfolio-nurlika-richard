@@ -12,7 +12,7 @@
 - **Date :** 2026-09-02
 - **Prompt :** "Génere 3-5 directions visuelles en utilisant mon moodboard et les 5 questions de mon persona. Utilise un style retro-vhs pour le design pour que ca ressemble à un vieux interface d'un ordinateurs des années 2000s."
 - **Outil :** Stitch
-- **Résultat :** ...
+- **Résultat :**
 <img width="400" height="320" alt="screen" src="https://github.com/user-attachments/assets/72b0afa7-6634-4285-9730-4c40cb5fab76" />
 <img width="400" height="320" alt="screen" src="https://github.com/user-attachments/assets/c4aadbeb-246e-4311-9546-a08d2d797c48" />
 <img width="400" height="320" alt="screen" src="https://github.com/user-attachments/assets/7849b4fe-e57a-4dba-a6e9-ca85fa5c1679" />
@@ -35,12 +35,12 @@ Je dirais ma volonté derrière mes projets pour bien comprendre d’où je vien
 J’aime beaucoup le minimalisme mais j’aime aussi mélanger les choses en contrastant les couleurs utilisés, les tailles et styles de typographie. 
 5.	Quelle impression je veux que cette personne retienne après avoir visité mon site?
 Je veux que la personne retienne à quel point je m’engage dans mes projets."
-- **Outil :** Stitch / Figma Make
-- **Résultat :** ...
-<img width="650 " height="462 " alt="Portfolio designs for multimedia student-7" src="https://github.com/user-attachments/assets/86470202-6f3a-4b9e-b4fa-10171bf0e02f" />
-<img width="650 " height="462 " alt="Portfolio designs for multimedia student-6" src="https://github.com/user-attachments/assets/651dcad0-469b-45cd-954f-82304b4c48b7" />
-<img width="650 " height="462 " alt="Portfolio designs for multimedia student-8 (1)" src="https://github.com/user-attachments/assets/161ee726-32ef-4b18-a723-dbacc495ea7c" />
-<img width="650 " height="462 " alt="Portfolio designs for multimedia student-8 (2)" src="https://github.com/user-attachments/assets/7a922f7d-db42-4448-9bf9-eb56ae9b7b5e" />
+- **Outil :** Figma Make
+- **Résultat :**
+<img width="500" height="355 " alt="Portfolio designs for multimedia student-7" src="https://github.com/user-attachments/assets/86470202-6f3a-4b9e-b4fa-10171bf0e02f" />
+<img width="500 " height="355 " alt="Portfolio designs for multimedia student-6" src="https://github.com/user-attachments/assets/651dcad0-469b-45cd-954f-82304b4c48b7" />
+<img width="500 " height="355 " alt="Portfolio designs for multimedia student-8 (1)" src="https://github.com/user-attachments/assets/161ee726-32ef-4b18-a723-dbacc495ea7c" />
+<img width="500 " height="355 " alt="Portfolio designs for multimedia student-8 (2)" src="https://github.com/user-attachments/assets/7a922f7d-db42-4448-9bf9-eb56ae9b7b5e" />
 
 
 
