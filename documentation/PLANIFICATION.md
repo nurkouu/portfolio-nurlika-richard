@@ -18,3 +18,17 @@
  **Déclencheur :** 
  - Survol : Boîte d'un des projets agrandit au survol
  - Clic : effet de clic sur les boutons 
+
+## Où vivent mes projets
+- JSON local : C'est le plus facile et moins complexe.
+
+## Quoi animer, comment, sur quoi?
+- Css pur et Anime.js : Ce sont les langages les plus familiers pour moi.
+
+## Une page, ou plusieurs?
+
+- One-pager + pop-up : Je vais avoir une navigation qui menera au section de mon portfolio.
+- Multipages + URL : Les projets vont avoir leur propre page et je vais mettre les URLs de ceux qui sont en ligne.
+
+## Où ça vit en ligne?
+- Github Pages : Plus facile, rapide et pratique.
