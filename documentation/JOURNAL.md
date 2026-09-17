@@ -1,8 +1,8 @@
 # Journal de bord de Nurlika Richard
 
 ## 5 questions - Bloc 1
-1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? J'ai commencé mon moodboard.
-2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver le style que je veux aborder.
+1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? J'ai commencé et terminer la conception de mon portfolio.
+2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver le bon style que je veux aborder.
 3. Qu’est-ce que j’ai appris que je ne savais pas avant ? Comment utiliser l'IA pour générer des directions visuelles.
 4. Quelle est ma prochaine étape concrète ? Commencer ma maquette pour mon projet.
 5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? J'ai utilisé l'IA pour me générer des directions visuelles. Ça m'a bien aidé à visualiser ce que je veux faire.
