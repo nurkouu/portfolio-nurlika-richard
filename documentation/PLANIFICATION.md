@@ -1,4 +1,4 @@
-## Planification
+# Planification
 
 **Élément à animer :** 
 - Page introduction
