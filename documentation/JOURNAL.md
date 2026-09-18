@@ -44,3 +44,28 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 
 
 
+
+## 5 questions - Bloc 2
+1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? 
+2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? 
+3. Qu’est-ce que j’ai appris que je ne savais pas avant ? 
+4. Quelle est ma prochaine étape concrète ? 
+5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? 
+
+## 2026-09-18 - Pomodoro
+1. Sprint 1 (15 mins): Je veux travailler sur ma page d'index.html en reliant tous mes pages et ensuite commencer un peu à coder.
+2. Pause courte (5 min)
+3. Sprint 2 (25 min):
+4. Pause longue (15 min)
+5. Sprint 3 (25 min):
+6. Pause courte (5 min)
+7. Sprint 4 (25 min):
+
+
+## Utilisation de L'IA
+
+- **Date :** 
+- **Prompt :** ""
+- **Outil :** 
+- **Résultat :**
+
