@@ -1,0 +1,60 @@
+/* Navigation principale */
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "VT323";
+    font-size: 2rem;
+}
+
+.navigation li {
+    list-style: none;
+
+}
+
+.navigation ul img {
+    width: 426px;
+    height: 71px;
+}
+
+.navigation a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 426px;
+    height: 71px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: 600;
+    background-image: url("../../assets/images/nav-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    transition: background-image 0.2s ease, filter 0.2s ease;
+}
+
+.navigation a::before {
+    content: "";
+    width: 34px;
+    height: 28px;
+    flex-shrink: 0;
+    background-image: url("../../assets/images/dossier.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+    background-image: url("../../assets/images/nav-bg-fonce.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,45 @@
+:root {
+    --primary-bg-color: #ffffff;
+    --primary-nav-color: #CACACA;
+    --secondary-nav-color: #ACACAC;
+    --text-color: #0A122A;
+    --cyan-highlight-color: #46DBFF;
+    --rose-highlight-color: #FFBFEA;
+}
+
+@font-face {
+    font-family: "Gruppo";
+    src: url("../assets/polices/Gruppo-Regular.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Soopafresh";
+    src: url("../assets/polices/Soopafresh.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vectroid";
+    src: url("../assets/polices/Vectroid.otf") format("OpenType");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "VT323";
+    src: url("../assets/polices/VT323-Regular.ttf") format("TrueType");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+}
