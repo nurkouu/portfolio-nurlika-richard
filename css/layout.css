@@ -35,6 +35,7 @@ body {
     font-size: 1.5rem;
 }
 
+
 .accueil {
     display: grid;
     flex: 1;
@@ -43,23 +44,24 @@ body {
 
 .accueil-introduction {
     display: flex;
-    justify-content: center;
-    padding: clamp(3rem, 12vh, 8rem) clamp(2rem, 8vw, 8rem);
     flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0 4rem 10rem;
+    /*top, right, bottom, left*/
     background: var(--primary-bg-color);
 }
 
 .accueil-sur-titre {
-    margin: 1rem 0 0 8rem;
-    color: var(--rose-highlight-color);
-    font-family: "VT323", monospace;
+    margin: 1rem 0 0 15vw;
+    color: var(--rose-fonce-highlight-color);
+    font-family: "VT323";
     font-size: 85px;
 }
 
 .accueil-introduction h1 {
     margin: 0;
     color: var(--text-color);
-    font-family: "Vectroid", sans-serif;
+    font-family: "Vectroid";
     font-size: 200px;
     font-weight: 400;
     line-height: 0.9;
@@ -68,9 +70,14 @@ body {
 .accueil-description {
     max-width: 34rem;
     margin: 4rem 0 0;
-    font-family: "Gruppo", sans-serif;
+    font-family: "Gruppo";
     font-size: clamp(1.2rem, 2vw, 1.65rem);
+    /* clamp: min, idéal, max */
     line-height: 1.25;
+}
+
+.accueil-description span {
+    font-family: "Soopafresh";
 }
 
 .accueil-visuel {
@@ -91,6 +98,7 @@ body {
     content: "";
 }
 
+/*
 .forme {
     position: absolute;
     display: block;
@@ -147,6 +155,7 @@ body {
     width: 5rem;
     height: 6rem;
 }
+    */
 
 .accueil-visuel p {
     position: absolute;
@@ -155,7 +164,7 @@ body {
     left: 10%;
     margin: 0;
     color: #000000;
-    font-family: "Gruppo", sans-serif;
+    font-family: "Gruppo";
     font-size: clamp(1.1rem, 2vw, 1.6rem);
     text-align: center;
 }
@@ -169,15 +178,26 @@ body {
 }
 
 .pied-de-page {
-    padding: 0.5rem 1rem;
+    padding: 3rem 3rem;
     background: var(--primary-nav-color);
-    font-family: "VT323", monospace;
+    font-family: "Gruppo";
     text-align: center;
+    font-size: 2rem;
 }
 
-.pied-de-page p {
-    margin: 0;
+/*Sélection des éléments span dans .accueil-description*/
+.accueil-description span:nth-of-type(1),
+.accueil-description span:nth-of-type(4) {
+    color: var(--cyan-highlight-color);
 }
+
+.accueil-description span:nth-of-type(2),
+.accueil-description span:nth-of-type(3) {
+    color: var(--rose-fonce-highlight-color);
+}
+
+
+
 
 @media (max-width: 700px) {
     .page-accueil .navigation ul {
