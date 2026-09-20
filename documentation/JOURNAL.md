@@ -64,8 +64,8 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 
 ## Utilisation de L'IA
 
-- **Date :** 
-- **Prompt :** ""
-- **Outil :** 
-- **Résultat :**
+- **Date :** 2026-09-20
+- **Prompt :** "Donne moi le code pour refaire cette page d'accueil (insertion de l'image de la page d'accueil)"
+- **Outil :** Copilot
+- **Résultat :** 
 
