@@ -10,6 +10,10 @@ body {
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--text-color);
 }
@@ -19,6 +23,21 @@ body {
     min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
+    /*background-color: #ffffff;
+    background-image: url("../assets/images/style");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;*/
+}
+
+.page-accueil .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.page-accueil .navigation ul {
+    background: rgb(255 255 255 / 92%);
 }
 
 .page-accueil .navigation ul {
@@ -35,20 +54,41 @@ body {
     font-size: 1.5rem;
 }
 
+.navigation li:nth-child(n + 6) a {
+    gap: 0.7rem;
+}
+
+.navigation li:nth-child(n + 6) a::before {
+    content: "";
+    width: 34px;
+    height: 28px;
+    flex-shrink: 0;
+    background-image: url("../assets/images/dossier.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.navigation li:nth-child(n + 6) a:hover,
+.navigation li:nth-child(n + 6) a:focus-visible {
+    background-image: url("../assets/images/nav-bg-fonce.png");
+}
+
 
 .accueil {
     display: grid;
     flex: 1;
-    grid-template-columns: 64% 36%;
+    grid-template-columns: 1fr;
 }
 
 .accueil-introduction {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: calc(100vh - 3rem);
     padding: 5rem 0 4rem 10rem;
-    /*top, right, bottom, left*/
-    background: var(--primary-bg-color);
+    scroll-margin-top: 3.5rem;
+    background: transparent;
 }
 
 .accueil-sur-titre {
@@ -80,109 +120,323 @@ body {
     font-family: "Soopafresh";
 }
 
-.accueil-visuel {
+.accueil-projets {
     position: relative;
-    min-height: 34rem;
-    overflow: hidden;
-    isolation: isolate;
-    background-color: #fbfbfb;
-    background-image: radial-gradient(#c8cad4 1.3px, transparent 1.3px);
-    background-size: 9px 9px;
+    min-height: 42rem;
+    padding: 2rem 4rem 6rem;
+    scroll-margin-top: 3.5rem;
 }
 
-.accueil-visuel::after {
+.accueil-projets__decor {
     position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: rgb(255 255 255 / 70%);
-    content: "";
-}
-
-/*
-.forme {
-    position: absolute;
-    display: block;
-    border-radius: 0.5rem;
-    opacity: 0.7;
-}
-
-.forme--cyan {
-    background: var(--cyan-highlight-color);
-}
-
-.forme--rose {
-    background: var(--rose-highlight-color);
-}
-
-.forme--un {
-    top: 12%;
-    left: 20%;
-    width: 7rem;
-    height: 5rem;
-}
-
-.forme--deux {
-    top: 5%;
-    right: 20%;
-    width: 6.5rem;
-    height: 5rem;
-}
-
-.forme--trois {
-    top: 23%;
-    right: 8%;
-    width: 5rem;
-    height: 8rem;
-}
-
-.forme--quatre {
-    top: 42%;
-    left: 28%;
-    width: 4rem;
-    height: 3rem;
-}
-
-.forme--cinq {
-    right: 19%;
-    bottom: 14%;
-    width: 7rem;
-    height: 6rem;
-}
-
-.forme--six {
-    bottom: 8%;
-    left: 20%;
-    width: 5rem;
-    height: 6rem;
-}
-    */
-
-.accueil-visuel p {
-    position: absolute;
-    top: 47%;
-    right: 10%;
-    left: 10%;
-    margin: 0;
-    color: #000000;
-    font-family: "Gruppo";
-    font-size: clamp(1.1rem, 2vw, 1.6rem);
-    text-align: center;
-}
-
-.accueil-curseur {
-    position: absolute;
-    right: 12%;
-    bottom: 9%;
-    width: 3rem;
+    top: 1.5rem;
+    left: 7rem;
+    width: clamp(16rem, 28vw, 26rem);
     height: auto;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.accueil-projets__ombre {
+    position: absolute;
+    inset: auto auto 8% 0;
+    width: 100%;
+    height: 70%;
+    pointer-events: none;
+    background: radial-gradient(circle at 12% 40%, rgb(140 140 150 / 12%) 0, transparent 18%),
+        radial-gradient(circle at 25% 55%, rgb(140 140 150 / 7%) 0, transparent 11%),
+        radial-gradient(circle at 80% 30%, rgb(140 140 150 / 4%) 0, transparent 8%);
+}
+
+.cartes-projets {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.project-card {
+    width: 100%;
+    min-height: 24rem;
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease, opacity 180ms ease;
+}
+
+.project-card__body {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.project-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 18rem;
+    object-fit: contain;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) {
+    border-color: #555c6c;
+    background: #b9bfd0;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__header {
+    min-height: 1.95rem;
+    background: linear-gradient(180deg, #596274 0%, #3e4656 100%);
+    color: #f4f5f9;
+    text-shadow: 0 1px 0 rgba(10, 18, 42, 0.7);
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__icon {
+    border-color: rgba(255, 255, 255, 0.12);
+    background:
+        linear-gradient(135deg, var(--cyan-highlight-color) 0 40%, #0a122a 40% 60%, var(--rose-highlight-color) 60% 100%),
+        linear-gradient(180deg, #c8c37c 0%, #8f8640 100%);
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__control {
+    border-color: #505867;
+    background: linear-gradient(180deg, #d6dbe5 0%, #9098a8 100%);
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__body {
+    background:
+        radial-gradient(rgba(70, 219, 255, 0.28) 0.65px, transparent 0.65px),
+        radial-gradient(rgba(255, 191, 234, 0.24) 0.65px, transparent 0.65px),
+        linear-gradient(180deg, #aab3c4 0%, #7f8798 100%);
+    background-position: 0 0, 3px 3px, 0 0;
+    background-size: 4px 4px, 4px 4px, 100% 100%;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(70, 219, 255, 0.14) 0%, rgba(70, 219, 255, 0) 18%),
+        linear-gradient(180deg, rgba(255, 191, 234, 0.14) 0%, rgba(255, 191, 234, 0) 26%),
+        linear-gradient(180deg, rgba(10, 18, 42, 0.12) 0%, rgba(10, 18, 42, 0) 34%);
+    pointer-events: none;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__footer {
+    border-top-color: #667086;
+    background: linear-gradient(180deg, #8893a8 0%, #667086 100%);
+    color: #f2f4f8;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__status {
+    font-weight: 400;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__meta {
+    opacity: 0.95;
+}
+
+.accueil-projets:has(.project-card:hover) .project-card:not(:hover):hover {
+    transform: translateY(-1px);
+}
+
+.project-card--pixel-blur-card {
+    border-color: #555c6c;
+    background: #b9bfd0;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.project-card--pixel-blur-card .project-card__header {
+    min-height: 1.95rem;
+    background: linear-gradient(180deg, #596274 0%, #3e4656 100%);
+    color: #f4f5f9;
+    text-shadow: 0 1px 0 rgba(10, 18, 42, 0.7);
+}
+
+.project-card--pixel-blur-card .project-card__icon {
+    border-color: rgba(255, 255, 255, 0.12);
+    background:
+        linear-gradient(135deg, var(--cyan-highlight-color) 0 40%, #0a122a 40% 60%, var(--rose-highlight-color) 60% 100%),
+        linear-gradient(180deg, #c8c37c 0%, #8f8640 100%);
+}
+
+.project-card--pixel-blur-card .project-card__control {
+    border-color: #505867;
+    background: linear-gradient(180deg, #d6dbe5 0%, #9098a8 100%);
+}
+
+.project-card--pixel-blur-card .project-card__body {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(rgba(70, 219, 255, 0.28) 0.65px, transparent 0.65px),
+        radial-gradient(rgba(255, 191, 234, 0.24) 0.65px, transparent 0.65px),
+        linear-gradient(180deg, #aab3c4 0%, #7f8798 100%);
+    background-position: 0 0, 3px 3px, 0 0;
+    background-size: 4px 4px, 4px 4px, 100% 100%;
+    color: #454c5c;
+}
+
+.project-card--pixel-blur-card .project-card__body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(70, 219, 255, 0.14) 0%, rgba(70, 219, 255, 0) 18%),
+        linear-gradient(180deg, rgba(255, 191, 234, 0.14) 0%, rgba(255, 191, 234, 0) 26%),
+        linear-gradient(180deg, rgba(10, 18, 42, 0.12) 0%, rgba(10, 18, 42, 0) 34%);
+    pointer-events: none;
+}
+
+.project-card--pixel-blur-card .project-card__footer {
+    border-top-color: #667086;
+    background: linear-gradient(180deg, #8893a8 0%, #667086 100%);
+    color: #f2f4f8;
+}
+
+.project-card--pixel-blur-card .project-card__status {
+    font-weight: 400;
+}
+
+.project-card--pixel-blur-card .project-card__meta {
+    opacity: 0.95;
+}
+
+.project-card--pixel-blur-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.project-card--pixel-blur-card .project-card__image {
+    filter: saturate(0.6) contrast(0.82) brightness(0.86);
+}
+
+.project-card--pixel-blur-card:hover .project-card__body {
+    background:
+        radial-gradient(rgba(70, 219, 255, 0.3) 0.65px, transparent 0.65px),
+        radial-gradient(rgba(255, 191, 234, 0.28) 0.65px, transparent 0.65px),
+        linear-gradient(180deg, #949fb3 0%, #5f6677 100%);
+    background-position: 0 0, 2px 2px, 0 0;
+    background-size: 4px 4px, 4px 4px, 100% 100%;
+}
+
+.accueil-a-propos {
+    position: relative;
+    min-height: 32rem;
+    padding: 2rem 4rem 6rem;
+    scroll-margin-top: 3.5rem;
+}
+
+.accueil-a-propos__decor {
+    position: absolute;
+    top: 1.5rem;
+    right: 200px;
+    width: clamp(16rem, 28vw, 26rem);
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.accueil-a-propos__contenu {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 2rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.accueil-a-propos__titre {
+    display: grid;
+    gap: 0.2rem;
+    margin: 0;
+    line-height: 0.9;
+}
+
+.accueil-a-propos__nom {
+    color: #0a122a;
+    font-family: "Vectroid";
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+}
+
+.accueil-a-propos__nom--cyan {
+    color: var(--cyan-highlight-color);
+    margin-left: 4rem;
+}
+
+.accueil-a-propos__texte {
+    max-width: 28rem;
+    margin: 2rem 0 0;
+    color: #8b8f9e;
+    font-family: "Gruppo";
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.15;
+}
+
+.accueil-a-propos__texte span:nth-of-type(1) {
+    color: var(--rose-fonce-highlight-color);
+}
+
+.accueil-a-propos__texte span:nth-of-type(2) {
+    color: var(--cyan-highlight-color);
+}
+
+.accueil-a-propos__grille {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-self: end;
+}
+
+.accueil-a-propos__bloc h3 {
+    margin: 0 0 0.8rem;
+    color: #7b8090;
+    font-family: "Gruppo";
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
 }
 
 .pied-de-page {
     padding: 3rem 3rem;
-    background: var(--primary-nav-color);
+    background: #0a122a;
     font-family: "Gruppo";
     text-align: center;
     font-size: 2rem;
+    color: #b6b8c4;
+}
+
+.pied-de-page p {
+    margin: 0;
+}
+
+.pied-de-page__liens {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pied-de-page__liens span {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #d9d9d9;
+    color: #8f8f8f;
+    font-family: "VT323";
+    font-size: 1.15rem;
 }
 
 /*Sélection des éléments span dans .accueil-description*/
@@ -212,16 +466,28 @@ body {
         font-size: 1.2rem;
     }
 
-    .accueil {
-        grid-template-columns: 1fr;
-    }
-
     .accueil-introduction {
-        min-height: 60vh;
+        min-height: 55vh;
         padding: 4rem 2rem;
     }
 
-    .accueil-visuel {
-        min-height: 25rem;
+    .accueil-projets,
+    .accueil-a-propos {
+        padding-inline: 1.25rem;
+    }
+
+    .cartes-projets,
+    .accueil-a-propos__contenu,
+    .accueil-a-propos__grille {
+        grid-template-columns: 1fr;
+    }
+
+    .accueil-projets__decor,
+    .accueil-a-propos__decor {
+        width: 8rem;
+    }
+
+    .project-card {
+        min-height: 22rem;
     }
 }

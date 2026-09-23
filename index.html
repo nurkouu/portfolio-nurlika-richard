@@ -4,47 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Nurlika Richard</title>
+    <title>Accueil | Portfolio Nurlika Richard</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/composants/carte-projet.css">
     <link rel="stylesheet" href="./css/composants/navigation.css">
-
-    <link rel="stylesheet" href="./projet.html">
-    <link rel="stylesheet" href="./accueil.html">
-    <link rel="stylesheet" href="./a_propos.html">
+    <link rel="stylesheet" href="./css/composants/carte-projet.css">
     <script src="./js/main.js"></script>
 </head>
 
-<body>
-    <!--Barre de naviguation -->
+<body class="page-accueil">
     <nav class="navigation">
         <ul>
-            <img src="./assets/images/nav-bg.png" alt="background-img-navigation">
-            <img src="./assets/images/nav-bg.png" alt="background--img-navigation">
-            <li><a href="./accueil.html">Accueil</a></li>
-            <li><a href="./a_propos.html">À propos</a></li>
-            <li><a href="./projet.html">Projets</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#a-propos">À propos</a></li>
         </ul>
     </nav>
 
-    <!-- Contenu -->
-    <div class="containers">
-        <div class="container-gauche">
-            <h1>portfolio</h1>
-            <h3>nurlika richard</h3>
-            <p>Un peu de 3D, un peu de web, un peu de motion et beaucoup de curiosité.</p>
-        </div>
+    <main class="accueil">
+        <section id="accueil" class="accueil-introduction" aria-labelledby="titre-accueil">
+            <h1 id="titre-accueil">portfolio</h1>
+            <p class="accueil-sur-titre">nurlika richard</p>
+            <p class="accueil-description">
+                Un peu de <span>3D</span>, un peu de <span>web</span>, un peu de <span>motion</span> et beaucoup de
+                <span>curiosité</span> !
+            </p>
+        </section>
 
-        <div class="container-droite">
-            <img src="./assets/images/boite-erreur.png" alt="">
-            <img src="./assets/images/cursor-21.png" alt="">
+        <section id="projets" class="accueil-projets" aria-labelledby="titre-projets">
+            <img src="./assets/images/style-1.svg" alt="" class="accueil-projets__decor" aria-hidden="true">
+            <div class="accueil-projets__ombre" aria-hidden="true"></div>
+
+            <h2 id="titre-projets" class="visually-hidden">Projets</h2>
+
+            <div class="cartes-projets">
+                <article class="project-card project-card--intervalle">
+                    <header class="project-card__header">
+                        <span class="project-card__icon" aria-hidden="true"></span>
+                        <h3 class="project-card__title">Intervalle.exe</h3>
+                        <div class="project-card__controls" aria-hidden="true">
+                            <span class="project-card__control project-card__control--minimize"></span>
+                            <span class="project-card__control project-card__control--maximize"></span>
+                            <span class="project-card__control project-card__control--close"></span>
+                        </div>
+                    </header>
+                    <div class="project-card__body">
+                        <img src="./assets/images/intervalle-boite.png" alt="Capture du projet Intervalle" class="project-card__image">
+                    </div>
+                    <footer class="project-card__footer">
+                        <span class="project-card__status">01</span>
+                        <span class="project-card__meta">portfolio / 4 cartes</span>
+                    </footer>
+                </article>
+
+                <article class="project-card project-card--liquid-loom">
+                    <header class="project-card__header">
+                        <span class="project-card__icon" aria-hidden="true"></span>
+                        <h3 class="project-card__title">Liquid Loom.exe</h3>
+                        <div class="project-card__controls" aria-hidden="true">
+                            <span class="project-card__control project-card__control--minimize"></span>
+                            <span class="project-card__control project-card__control--maximize"></span>
+                            <span class="project-card__control project-card__control--close"></span>
+                        </div>
+                    </header>
+                    <div class="project-card__body">
+                        <img src="./assets/images/liquid-loom-boite.png" alt="Capture du projet Liquid Loom" class="project-card__image">
+                    </div>
+                    <footer class="project-card__footer">
+                        <span class="project-card__status">02</span>
+                        <span class="project-card__meta">portfolio / 4 cartes</span>
+                    </footer>
+                </article>
+
+                <article class="project-card project-card--armorade">
+                    <header class="project-card__header">
+                        <span class="project-card__icon" aria-hidden="true"></span>
+                        <h3 class="project-card__title">Armorade.exe</h3>
+                        <div class="project-card__controls" aria-hidden="true">
+                            <span class="project-card__control project-card__control--minimize"></span>
+                            <span class="project-card__control project-card__control--maximize"></span>
+                            <span class="project-card__control project-card__control--close"></span>
+                        </div>
+                    </header>
+                    <div class="project-card__body">
+                        <img src="./assets/images/armorade-boite.png" alt="Capture du projet Armorade" class="project-card__image">
+                    </div>
+                    <footer class="project-card__footer">
+                        <span class="project-card__status">03</span>
+                        <span class="project-card__meta">portfolio / 4 cartes</span>
+                    </footer>
+                </article>
+
+                <article class="project-card">
+                    <header class="project-card__header">
+                        <span class="project-card__icon" aria-hidden="true"></span>
+                        <h3 class="project-card__title">Imparfaite.exe</h3>
+                        <div class="project-card__controls" aria-hidden="true">
+                            <span class="project-card__control project-card__control--minimize"></span>
+                            <span class="project-card__control project-card__control--maximize"></span>
+                            <span class="project-card__control project-card__control--close"></span>
+                        </div>
+                    </header>
+                    <div class="project-card__body">
+                        <img src="./assets/images/imparfaite-boite.png" alt="Capture du projet Imparfaite" class="project-card__image">
+                    </div>
+                    <footer class="project-card__footer">
+                        <span class="project-card__status">04</span>
+                        <span class="project-card__meta">portfolio / 4 cartes</span>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <section id="a-propos" class="accueil-a-propos" aria-labelledby="titre-a-propos">
+            <img src="./assets/images/style-2.svg" alt="" class="accueil-a-propos__decor" aria-hidden="true">
+            <article class="accueil-a-propos__contenu">
+                <h2 id="titre-a-propos" class="accueil-a-propos__titre">
+                    <span class="accueil-a-propos__nom">nurlika</span>
+                    <span class="accueil-a-propos__nom accueil-a-propos__nom--cyan">richard</span>
+                </h2>
+
+                <p class="accueil-a-propos__texte">
+                    Lorem ipsum dolor sit amet, <span>consectetur</span> adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. <span>Ut enim ad</span> minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+
+                <div class="accueil-a-propos__grille">
+                    <section class="accueil-a-propos__bloc" aria-labelledby="titre-competences">
+                        <h3 id="titre-competences">COMPÉTENCES</h3>
+                        <ul class="accueil-pastilles" aria-label="Compétences">
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="accueil-a-propos__bloc" aria-labelledby="titre-sociaux">
+                        <h3 id="titre-sociaux">SOCIAUX</h3>
+                        <ul class="accueil-pastilles" aria-label="Réseaux sociaux">
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                            <li><span>X</span></li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="pied-de-page">
+        <p>nurlika richard - 2026</p>
+        <div class="pied-de-page__liens" aria-label="Réseaux sociaux">
+            <span>X</span>
+            <span>X</span>
+            <span>X</span>
         </div>
-    </div>
+    </footer>
 </body>
-
-<footer>
-    <p>&copy; nurlika richard - 2026</p>
-</footer>
 
 </html>

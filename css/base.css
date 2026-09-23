@@ -41,9 +41,20 @@
     font-display: swap;
 }
 
-
+/*Change le cursor du site à l'image png*/
 body {
     background-color: var(--primary-bg-color);
+    cursor: url("../assets/images/cursor-2.png") 4 2, auto;
+}
+
+a,
+button,
+summary,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+label[for] {
+    cursor: url("../assets/images/cursor-2.png") 4 2, pointer;
 }
 
 .container-gauche h1 {
