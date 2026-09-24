@@ -181,7 +181,7 @@ body {
     max-height: 18rem;
     object-fit: contain;
 }
-
+/*
 .accueil-projets:has(.project-card:hover) .project-card:not(:hover) {
     border-color: #555c6c;
     background: #b9bfd0;
@@ -242,10 +242,10 @@ body {
     opacity: 0.95;
 }
 
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover):hover {
+/*.accueil-projets:has(.project-card:hover) .project-card:not(:hover):hover {
     transform: translateY(-1px);
-}
-
+}*/
+*/
 .project-card--pixel-blur-card {
     border-color: #555c6c;
     background: #b9bfd0;

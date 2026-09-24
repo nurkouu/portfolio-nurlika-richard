@@ -129,10 +129,10 @@
     opacity: 0.85;
 }
 
-.project-card:hover {
+/*.project-card:hover {
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
-
+*/
 /* Variante pixel-blur plus sombre et plus pixelisée */
 .project-card--pixel-blur-card,
 .project-card--imparfaite {
@@ -205,11 +205,11 @@
     opacity: 0.95;
 }
 
-.project-card--pixel-blur-card:hover,
+/*.project-card--pixel-blur-card:hover,
 .project-card--imparfaite:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-}
+}*/
 
 .project-card--pixel-blur-card .project-card__image,
 .project-card--imparfaite .project-card__image {
@@ -242,5 +242,341 @@
 
     .project-card__footer {
         font-size: 0.7rem;
+    }
+}
+
+
+
+
+/* =========================================================
+   FLOATING PROJECT CARDS
+   ========================================================= */
+
+.cartes-projets {
+    position: relative;
+
+    /* Playground size */
+    width: min(1100px, 100%);
+    height: 760px;
+
+    margin: 0 auto;
+
+    /* Remove grid layout */
+    display: block;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    /* Optional subtle playground */
+    isolation: isolate;
+}
+
+/*
+ * Every card becomes an independently positioned object.
+ * JS controls left/top/transform.
+ */
+.cartes-projets .project-card {
+    position: absolute;
+
+    /*
+     * Important:
+     * Don't use width: 100% here anymore.
+     */
+    width: 390px;
+    min-height: 0;
+    height: 470px;
+
+    margin: 0;
+
+    /*
+     * JS uses transform for tiny collision corrections,
+     * so we don't want the normal hover transform fighting it.
+     */
+    transition:
+        box-shadow 180ms ease,
+        filter 180ms ease,
+        opacity 180ms ease,
+        background-color 180ms ease;
+
+    will-change: left, top;
+
+    /*
+     * Makes the cards feel like physical objects.
+     */
+    user-select: none;
+}
+
+/* Give the cards slightly different sizes for a more organic look */
+
+.cartes-projets .project-card:nth-child(1) {
+    width: 390px;
+    height: 470px;
+}
+
+.cartes-projets .project-card:nth-child(2) {
+    width: 420px;
+    height: 450px;
+}
+
+.cartes-projets .project-card:nth-child(3) {
+    width: 370px;
+    height: 490px;
+}
+
+.cartes-projets .project-card:nth-child(4) {
+    width: 400px;
+    height: 460px;
+}
+
+
+/* =========================================================
+   HOVER / PAUSED STATE
+   ========================================================= */
+
+/*
+ * The JS adds .is-paused to the playground when one card
+ * is being hovered.
+ */
+.cartes-projets.is-paused {
+    cursor: default;
+}
+
+/*
+ * All non-hovered cards become the pixel-blur cards.
+ */
+.cartes-projets.is-paused
+.project-card:not(:hover) {
+    border-color: #555c6c;
+
+    background: #b9bfd0;
+
+    box-shadow:
+        0 2px 0 rgba(0, 0, 0, 0.52),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+
+/* Header */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__header {
+    min-height: 1.95rem;
+
+    background:
+        linear-gradient(
+            180deg,
+            #596274 0%,
+            #3e4656 100%
+        );
+
+    color: #f4f5f9;
+
+    text-shadow:
+        0 1px 0 rgba(10, 18, 42, 0.7);
+}
+
+
+/* Icon */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__icon {
+    border-color: rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan-highlight-color) 0 40%,
+            #0a122a 40% 60%,
+            var(--rose-highlight-color) 60% 100%
+        ),
+        linear-gradient(
+            180deg,
+            #c8c37c 0%,
+            #8f8640 100%
+        );
+}
+
+
+/* Window controls */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__control {
+    border-color: #505867;
+
+    background:
+        linear-gradient(
+            180deg,
+            #d6dbe5 0%,
+            #9098a8 100%
+        );
+}
+
+
+/* Body */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__body {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            rgba(70, 219, 255, 0.28) 0.65px,
+            transparent 0.65px
+        ),
+        radial-gradient(
+            rgba(255, 191, 234, 0.24) 0.65px,
+            transparent 0.65px
+        ),
+        linear-gradient(
+            180deg,
+            #aab3c4 0%,
+            #7f8798 100%
+        );
+
+    background-position:
+        0 0,
+        3px 3px,
+        0 0;
+
+    background-size:
+        4px 4px,
+        4px 4px,
+        100% 100%;
+}
+
+
+/* Pixel scanline / blur effect */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__body::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(70, 219, 255, 0.14) 0%,
+            rgba(70, 219, 255, 0) 18%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 191, 234, 0.14) 0%,
+            rgba(255, 191, 234, 0) 26%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(10, 18, 42, 0.12) 0%,
+            rgba(10, 18, 42, 0) 34%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Image becomes slightly desaturated */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__image {
+    filter:
+        saturate(0.6)
+        contrast(0.82)
+        brightness(0.86);
+}
+
+
+/* Footer */
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__footer {
+    border-top-color: #667086;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8893a8 0%,
+            #667086 100%
+        );
+
+    color: #f2f4f8;
+}
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__status {
+    font-weight: 400;
+}
+
+.cartes-projets.is-paused
+.project-card:not(:hover)
+.project-card__meta {
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   THE CARD BEING HOVERED
+   ========================================================= */
+
+/*
+ * Keep the hovered card visually "active" above the others.
+ */
+.cartes-projets.is-paused
+.project-card:hover {
+    z-index: 20;
+
+    box-shadow:
+        0 5px 0 rgba(0, 0, 0, 0.45),
+        0 12px 30px rgba(10, 18, 42, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+/*
+ * Physics is disabled on small screens.
+ * The cards become a normal vertical list.
+ */
+@media (max-width: 700px) {
+
+    .cartes-projets {
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 1.5rem;
+
+        overflow: visible;
+    }
+
+    .cartes-projets .project-card,
+    .cartes-projets .project-card:nth-child(1),
+    .cartes-projets .project-card:nth-child(2),
+    .cartes-projets .project-card:nth-child(3),
+    .cartes-projets .project-card:nth-child(4) {
+        position: relative;
+
+        left: auto !important;
+        top: auto !important;
+
+        width: 100%;
+        height: auto;
+
+        min-height: 420px;
     }
 }
