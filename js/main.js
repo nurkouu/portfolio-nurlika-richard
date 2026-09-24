@@ -52,99 +52,157 @@ document.addEventListener("DOMContentLoaded", () => {
     /*
      * Small gap between cards when they collide.
      */
-    const COLLISION_PADDING = 4;
+    //const COLLISION_PADDING = 4;
+    const COLLISION_PADDING = 24;
 
 
     /*
      * Randomly position cards without putting them
      * directly on top of each other.
      */
-    function placeCards() {
 
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
+    
+function placeCards() {
 
-        objects.forEach((object, index) => {
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
 
-            let placed = false;
-            let attempts = 0;
 
-            while (!placed && attempts < 100) {
+    objects.forEach((object, index) => {
 
-                const x =
-                    Math.random() *
-                    Math.max(
-                        1,
-                        containerWidth - object.width
-                    );
+        let placed = false;
+        let attempts = 0;
 
-                const y =
-                    Math.random() *
-                    Math.max(
-                        1,
-                        containerHeight - object.height
-                    );
 
-                const candidate = {
-                    x,
-                    y,
-                    width: object.width,
-                    height: object.height
-                };
+        /*
+         * On essaye plusieurs positions aléatoires.
+         */
+        while (!placed && attempts < 200) {
 
-                const overlaps = objects.some(other => {
+            const maxX =
+                Math.max(
+                    0,
+                    containerWidth - object.width
+                );
 
-                    if (other === object) {
-                        return false;
-                    }
+            const maxY =
+                Math.max(
+                    0,
+                    containerHeight - object.height
+                );
 
-                    /*
-                     * Ignore objects that haven't been placed yet.
-                     */
-                    if (
-                        other.x === 0 &&
-                        other.y === 0
-                    ) {
-                        return false;
-                    }
 
-                    return rectanglesOverlap(
-                        candidate,
-                        other
-                    );
-                });
+            const x =
+                Math.random() * maxX;
 
-                if (!overlaps) {
-                    object.x = x;
-                    object.y = y;
-                    placed = true;
-                }
+            const y =
+                Math.random() * maxY;
 
-                attempts++;
-            }
+
+            const candidate = {
+                x: x,
+                y: y,
+                width: object.width,
+                height: object.height
+            };
+
 
             /*
-             * Fallback if a free spot wasn't found.
+             * Vérifie si cette position touche
+             * une autre carte.
              */
-            if (!placed) {
-                object.x =
-                    (index * 100) %
-                    Math.max(
-                        1,
-                        containerWidth - object.width
-                    );
+            const overlaps = objects.some(other => {
 
-                object.y =
-                    (index * 80) %
-                    Math.max(
-                        1,
-                        containerHeight - object.height
-                    );
+                /*
+                 * Une carte ne peut évidemment pas
+                 * entrer en collision avec elle-même.
+                 */
+                if (other === object) {
+                    return false;
+                }
+
+
+                /*
+                 * Ignore les cartes qui n'ont pas
+                 * encore reçu de position.
+                 */
+                if (
+                    other.x === 0 &&
+                    other.y === 0
+                ) {
+                    return false;
+                }
+
+
+                return rectanglesOverlap(
+                    candidate,
+                    other
+                );
+            });
+
+
+            /*
+             * La position est libre.
+             */
+            if (!overlaps) {
+
+                object.x = x;
+                object.y = y;
+
+                placed = true;
             }
 
-            render(object);
-        });
-    }
+
+            attempts++;
+        }
+
+
+        /*
+         * =================================================
+         * FALLBACK
+         * =================================================
+         *
+         * Si aucune position libre n'a été trouvée
+         * après plusieurs essais, on donne quand même
+         * une position à la carte.
+         */
+        if (!placed) {
+
+            const maxX =
+                Math.max(
+                    0,
+                    containerWidth - object.width
+                );
+
+            const maxY =
+                Math.max(
+                    0,
+                    containerHeight - object.height
+                );
+
+
+            object.x =
+                Math.min(
+                    (index * 150) % Math.max(1, maxX),
+                    maxX
+                );
+
+            object.y =
+                Math.min(
+                    (index * 110) % Math.max(1, maxY),
+                    maxY
+                );
+        }
+
+
+        /*
+         * Affiche immédiatement la carte.
+         */
+        render(object);
+    });
+}
+
+
 
 
     /*
