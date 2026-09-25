@@ -3,14 +3,57 @@
     flex-direction: column;
     width: min(100%, 920px);
     min-height: 560px;
-    overflow: hidden;
     border: 1px solid #1f1f1f;
-    border-radius: 0;
     background: #f6f6f6;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.45);
     color: #111;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "VT323";
 }
+
+.project-card--nrlka1 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    border: 1px solid #1f1f1f;
+    background: #f6f6f6;
+    color: #111;
+    font-family: "VT323";
+}
+
+.project-card--nrlka2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 5rem;
+    top: 10rem;
+    z-index: 1;
+    width: 400px;
+    height: 300px;
+    border: 1px solid #1f1f1f;
+    background: #f6f6f6;
+    color: #111;
+    font-family: "VT323";
+}
+
+/*Image dans la boite de moi*/
+.image-moi-2 {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding-top: 2.5rem;
+}
+
+.image-moi-1 {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding-top: 2.5rem;
+}
+
 
 .project-card__header {
     display: flex;
@@ -25,6 +68,7 @@
     letter-spacing: 0.08em;
 }
 
+
 /*ICON DOSSIER DANS LA CARTE DES PROJETS*/
 .project-card__icon {
     flex: 0 0 auto;
@@ -35,7 +79,7 @@
 
 .project-card__title {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1;
 }
@@ -115,7 +159,7 @@
     border-top: 1px solid #9c9c9c;
     background: linear-gradient(180deg, #d7d7d7 0%, #c8c8c8 100%);
     color: #222;
-    font-size: 0.75rem;
+    font-size: 1.3rem;
 }
 
 .project-card__status {
@@ -190,6 +234,8 @@
     scale: 1.7;
     object-fit: contain;
 }
+
+
 
 /*
  * Every card becomes an independently positioned object.

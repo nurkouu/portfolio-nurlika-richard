@@ -186,41 +186,46 @@ body {
 
 .accueil-a-propos__contenu {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    grid-template-columns: 20fr 30fr 50fr;
     gap: 2rem;
     align-items: start;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
     background-color: red;
 }
 
+
 .accueil-a-propos__titre {
     display: grid;
-    gap: 0.2rem;
     margin: 0;
     line-height: 0.9;
 }
 
-.accueil-a-propos__nom {
-    color: #0a122a;
+/*nurlika*/
+.accueil-a-propos__prenom {
+    color: var(--texte-color);
     font-family: "Vectroid";
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 400;
 }
 
-.accueil-a-propos__nom--cyan {
+/*richard*/
+.accueil-a-propos__nom {
     color: var(--cyan-highlight-color);
-    margin-left: 4rem;
+    margin-left: 5vw;
+    font-family: "VT323";
+    font-size: 85px;
+    font-weight: 400;
 }
 
 .accueil-a-propos__texte {
     max-width: 28rem;
     margin: 2rem 0 0;
-    color: #8b8f9e;
+    color: var(--texte-color);
     font-family: "Gruppo";
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-size: 26.4px;
     line-height: 1.15;
 }
 
