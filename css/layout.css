@@ -1,5 +1,4 @@
-/* Mise en page de la page d'accueil */
-
+/* GÉNÉRAL*/
 * {
     box-sizing: border-box;
 }
@@ -18,16 +17,12 @@ body {
     color: var(--text-color);
 }
 
+/* SECTION ACCUEIL */
 .page-accueil {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
-    /*background-color: #ffffff;
-    background-image: url("../assets/images/style");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;*/
 }
 
 .page-accueil .navigation {
@@ -98,7 +93,7 @@ body {
     font-size: 85px;
 }
 
-.accueil-introduction h1 {
+#titre-accueil {
     margin: 0;
     color: var(--text-color);
     font-family: "Vectroid";
@@ -120,13 +115,33 @@ body {
     font-family: "Soopafresh";
 }
 
+/*Sélection des éléments span dans .accueil-description*/
+.accueil-description span:nth-of-type(1),
+.accueil-description span:nth-of-type(4) {
+    color: var(--cyan-highlight-color);
+}
+
+.accueil-description span:nth-of-type(2),
+.accueil-description span:nth-of-type(3) {
+    color: var(--rose-fonce-highlight-color);
+}
 
 
+
+/* SECTION PROJETS */
 .accueil-projets {
     position: relative;
     min-height: 42rem;
     padding: 2rem 4rem 6rem;
     scroll-margin-top: 3.5rem;
+}
+
+#titre-projets {
+    font-size: 85px;
+    position: absolute;
+    right: 8vw;
+    top: 1rem;
+    font-family: "Vectroid";
 }
 
 .accueil-projets__decor {
@@ -140,252 +155,33 @@ body {
     user-select: none;
 }
 
-.accueil-projets__ombre {
-    position: absolute;
-    inset: auto auto 8% 0;
-    width: 100%;
-    height: 70%;
-    pointer-events: none;
-    background: radial-gradient(circle at 12% 40%, rgb(140 140 150 / 12%) 0, transparent 18%),
-        radial-gradient(circle at 25% 55%, rgb(140 140 150 / 7%) 0, transparent 11%),
-        radial-gradient(circle at 80% 30%, rgb(140 140 150 / 4%) 0, transparent 8%);
-}
-/*
- * =====================================================
- * ZONE DES PROJETS
- * =====================================================
- *
- * La grille est remplacée par une zone libre.
- * Les cartes sont positionnées individuellement
- * grâce aux propriétés left / top du JavaScript.
- */
-
-
-
-.cartes-projets {
-    position: relative;
-
-    /*
-     * Hauteur de la zone dans laquelle les cartes
-     * peuvent se déplacer.
-     */
-    width: min(1100px, 100%);
-    height: 42rem;
-
-    margin: 0 auto;
-
-    /*
-     * Important :
-     * on ne veut plus que le navigateur organise
-     * les cartes avec Grid.
-     */
-    display: block;
-
-    z-index: 1;
-
-    /*
-     * Les cartes restent à l'intérieur de cette zone.
-     */
-    overflow: hidden;
-}
-
-
-
-.cartes-projets {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 5fr));
-    gap: 5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    z-index: 1;
-}
-
-.project-card {
-    width: 100%;
-    min-height: 24rem;
-    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease, opacity 180ms ease;
-}
 
 .project-card__body {
     position: relative;
-    display: grid;
     place-items: center;
     padding: 1rem;
     overflow: hidden;
-    background: #ffffff;
-}
-
-.project-card__image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-height: 18rem;
-    object-fit: contain;
 }
 
 
 
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) {
-    border-color: #555c6c;
-    background: #b9bfd0;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-    transform: translateY(-1px);
-}
 
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__header {
-    min-height: 1.95rem;
-    background: linear-gradient(180deg, #596274 0%, #3e4656 100%);
-    color: #f4f5f9;
-    text-shadow: 0 1px 0 rgba(10, 18, 42, 0.7);
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__icon {
-    border-color: rgba(255, 255, 255, 0.12);
-    background:
-        linear-gradient(135deg, var(--cyan-highlight-color) 0 40%, #0a122a 40% 60%, var(--rose-highlight-color) 60% 100%),
-        linear-gradient(180deg, #c8c37c 0%, #8f8640 100%);
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__control {
-    border-color: #505867;
-    background: linear-gradient(180deg, #d6dbe5 0%, #9098a8 100%);
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__body {
-    background:
-        radial-gradient(rgba(70, 219, 255, 0.28) 0.65px, transparent 0.65px),
-        radial-gradient(rgba(255, 191, 234, 0.24) 0.65px, transparent 0.65px),
-        linear-gradient(180deg, #aab3c4 0%, #7f8798 100%);
-    background-position: 0 0, 3px 3px, 0 0;
-    background-size: 4px 4px, 4px 4px, 100% 100%;
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(70, 219, 255, 0.14) 0%, rgba(70, 219, 255, 0) 18%),
-        linear-gradient(180deg, rgba(255, 191, 234, 0.14) 0%, rgba(255, 191, 234, 0) 26%),
-        linear-gradient(180deg, rgba(10, 18, 42, 0.12) 0%, rgba(10, 18, 42, 0) 34%);
-    pointer-events: none;
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__footer {
-    border-top-color: #667086;
-    background: linear-gradient(180deg, #8893a8 0%, #667086 100%);
-    color: #f2f4f8;
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__status {
-    font-weight: 400;
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover) .project-card__meta {
-    opacity: 0.95;
-}
-
-.accueil-projets:has(.project-card:hover) .project-card:not(:hover):hover {
-    transform: translateY(-1px);
-}
-
-.project-card--pixel-blur-card {
-    border-color: #555c6c;
-    background: #b9bfd0;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-}
-
-.project-card--pixel-blur-card .project-card__header {
-    min-height: 1.95rem;
-    background: linear-gradient(180deg, #596274 0%, #3e4656 100%);
-    color: #f4f5f9;
-    text-shadow: 0 1px 0 rgba(10, 18, 42, 0.7);
-}
-
-.project-card--pixel-blur-card .project-card__icon {
-    border-color: rgba(255, 255, 255, 0.12);
-    background:
-        linear-gradient(135deg, var(--cyan-highlight-color) 0 40%, #0a122a 40% 60%, var(--rose-highlight-color) 60% 100%),
-        linear-gradient(180deg, #c8c37c 0%, #8f8640 100%);
-}
-
-.project-card--pixel-blur-card .project-card__control {
-    border-color: #505867;
-    background: linear-gradient(180deg, #d6dbe5 0%, #9098a8 100%);
-}
-
-.project-card--pixel-blur-card .project-card__body {
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(rgba(70, 219, 255, 0.28) 0.65px, transparent 0.65px),
-        radial-gradient(rgba(255, 191, 234, 0.24) 0.65px, transparent 0.65px),
-        linear-gradient(180deg, #aab3c4 0%, #7f8798 100%);
-    background-position: 0 0, 3px 3px, 0 0;
-    background-size: 4px 4px, 4px 4px, 100% 100%;
-    color: #454c5c;
-}
-
-.project-card--pixel-blur-card .project-card__body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(70, 219, 255, 0.14) 0%, rgba(70, 219, 255, 0) 18%),
-        linear-gradient(180deg, rgba(255, 191, 234, 0.14) 0%, rgba(255, 191, 234, 0) 26%),
-        linear-gradient(180deg, rgba(10, 18, 42, 0.12) 0%, rgba(10, 18, 42, 0) 34%);
-    pointer-events: none;
-}
-
-.project-card--pixel-blur-card .project-card__footer {
-    border-top-color: #667086;
-    background: linear-gradient(180deg, #8893a8 0%, #667086 100%);
-    color: #f2f4f8;
-}
-
-.project-card--pixel-blur-card .project-card__status {
-    font-weight: 400;
-}
-
-.project-card--pixel-blur-card .project-card__meta {
-    opacity: 0.95;
-}
-
-.project-card--pixel-blur-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-}
-
-.project-card--pixel-blur-card .project-card__image {
-    filter: saturate(0.6) contrast(0.82) brightness(0.86);
-}
-
-.project-card--pixel-blur-card:hover .project-card__body {
-    background:
-        radial-gradient(rgba(70, 219, 255, 0.3) 0.65px, transparent 0.65px),
-        radial-gradient(rgba(255, 191, 234, 0.28) 0.65px, transparent 0.65px),
-        linear-gradient(180deg, #949fb3 0%, #5f6677 100%);
-    background-position: 0 0, 2px 2px, 0 0;
-    background-size: 4px 4px, 4px 4px, 100% 100%;
-}
-
+/* SECTION À PROPOS */
 .accueil-a-propos {
     position: relative;
-    min-height: 32rem;
+    min-height: 50rem;
     padding: 2rem 4rem 6rem;
     scroll-margin-top: 3.5rem;
 }
 
+/*IMG STYLE-2*/
 .accueil-a-propos__decor {
     position: absolute;
-    top: 1.5rem;
+    top: 0;
     right: 200px;
-    width: clamp(16rem, 28vw, 26rem);
+    width: 10vw;
     height: auto;
     z-index: 0;
-    pointer-events: none;
-    user-select: none;
 }
 
 .accueil-a-propos__contenu {
@@ -397,6 +193,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    background-color: red;
 }
 
 .accueil-a-propos__titre {
@@ -451,6 +248,9 @@ body {
     letter-spacing: 0.08em;
 }
 
+
+
+/* SECTION FOOTER */
 .pied-de-page {
     padding: 3rem 3rem;
     background: #0a122a;
@@ -483,17 +283,8 @@ body {
     font-size: 1.15rem;
 }
 
-/*Sélection des éléments span dans .accueil-description*/
-.accueil-description span:nth-of-type(1),
-.accueil-description span:nth-of-type(4) {
-    color: var(--cyan-highlight-color);
-}
 
-.accueil-description span:nth-of-type(2),
-.accueil-description span:nth-of-type(3) {
-    color: var(--rose-fonce-highlight-color);
-}
-
+/* SECTION RESPONSIVE */
 @media (max-width: 700px) {
 
     .page-accueil .navigation ul {
@@ -560,5 +351,3 @@ body {
         width: 8rem;
     }
 }
-
-
