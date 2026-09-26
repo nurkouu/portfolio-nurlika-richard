@@ -344,6 +344,26 @@ body {
     display: inline-block;
 }
 
+/* Petite flèche au-dessus des icones */
+.link::before {
+    content: "";
+    position: absolute;
+
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--rose-highlight-color);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+
 .link::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -367,20 +387,115 @@ body {
     margin-bottom: 8px;
 }
 
-.link:hover::after {
+.link:hover::after,
+.link:hover::before {
     opacity: 1;
     visibility: visible;
 }
 
 
+
+
+.pastille {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.pastille img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.pastille {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.pastille img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+
+    /* Smooth zoom */
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+/* Agrandissement de l'image au hover */
+.pastille:hover img {
+    transform: scale(1.15);
+}
+
+/* La petite popup */
+.pastille::after {
+    content: attr(data-nom);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-60%);
+
+    background: var(--rose-highlight-color);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    font-size: 20px;
+    font-family: "VT323";
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Petite flèche au-dessus des icones */
+.pastille::before {
+    content: "";
+    position: absolute;
+
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--rose-highlight-color);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+/* Apparition au hover */
+.pastille:hover::after,
+.pastille:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pastille:hover::after {
+    transform: translateX(-50%) translateY(0);
+}
+
+
+
+
+
 /* SECTION FOOTER */
 .pied-de-page {
-    padding: 3rem 3rem;
-    background: #0a122a;
+    padding: 7rem;
+    background: var(--primary-nav-color);
     font-family: "Gruppo";
     text-align: center;
     font-size: 2rem;
-    color: #b6b8c4;
+    color: var(--text-color);
 }
 
 .pied-de-page p {
@@ -394,17 +509,19 @@ body {
     margin-top: 1rem;
 }
 
-.pied-de-page__liens span {
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: #d9d9d9;
-    color: #8f8f8f;
-    font-family: "VT323";
-    font-size: 1.15rem;
+/*Hover et effets sur les icones du footer*/
+.link-footer img {
+    transition: filter 0.25s ease, transform 0.25s ease;
 }
+
+.link-footer:hover img {
+    filter: brightness(1.5) drop-shadow(0 0 6px var(--text-color));
+    transform: scale(1.08);
+}
+
+
+
+
 
 
 /* SECTION RESPONSIVE */
