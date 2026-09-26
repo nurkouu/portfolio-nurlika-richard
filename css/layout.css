@@ -190,7 +190,8 @@ body {
     gap: 2rem;
     align-items: start;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 10rem auto 15rem;
+    padding-bottom: 10rem;
     position: relative;
     z-index: 1;
     background-color: red;
@@ -222,7 +223,7 @@ body {
 
 .accueil-a-propos__texte {
     max-width: 28rem;
-    margin: 2rem 0 0;
+    margin: 7rem 0 0;
     color: var(--texte-color);
     font-family: "Gruppo";
     font-size: 26.4px;
@@ -231,10 +232,27 @@ body {
 
 .accueil-a-propos__texte span:nth-of-type(1) {
     color: var(--rose-fonce-highlight-color);
+    font-family: "Soopafresh";
 }
 
 .accueil-a-propos__texte span:nth-of-type(2) {
     color: var(--cyan-highlight-color);
+    font-family: "Soopafresh";
+}
+
+.accueil-a-propos__texte span:nth-of-type(3) {
+    color: var(--rose-fonce-highlight-color);
+    font-family: "Soopafresh";
+}
+
+.accueil-a-propos__texte span:nth-of-type(4) {
+    color: var(--cyan-highlight-color);
+    font-family: "Soopafresh";
+}
+
+.accueil-a-propos__texte span:nth-of-type(5) {
+    color: var(--rose-fonce-highlight-color);
+    font-family: "Soopafresh";
 }
 
 .accueil-a-propos__grille {
@@ -246,11 +264,18 @@ body {
 
 .accueil-a-propos__bloc h3 {
     margin: 0 0 0.8rem;
-    color: #7b8090;
+    color: var(--texte-color);
     font-family: "Gruppo";
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.08em;
+}
+
+.accueil-pastilles {
+    /*width: 64px;
+    height: 64px;*/
+    display: flex;
+    align-items: center;
 }
 
 
