@@ -209,7 +209,7 @@
     right: 5rem;
     /*background-color: red;*/
     /* Playground size */
-    width: min(1500px, 100%);
+    width: min(1450px, 100%);
     height: 1000px;
 
     margin: 0 auto 15rem;

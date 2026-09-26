@@ -194,7 +194,7 @@ body {
     padding-bottom: 10rem;
     position: relative;
     z-index: 1;
-    background-color: red;
+    /*background-color: red;*/
 }
 
 
@@ -206,7 +206,7 @@ body {
 
 /*nurlika*/
 .accueil-a-propos__prenom {
-    color: var(--texte-color);
+    color: var(--text-color);
     font-family: "Vectroid";
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 400;
@@ -224,7 +224,7 @@ body {
 .accueil-a-propos__texte {
     max-width: 28rem;
     margin: 7rem 0 0;
-    color: var(--texte-color);
+    color: var(--text-color);
     font-family: "Gruppo";
     font-size: 26.4px;
     line-height: 1.15;
@@ -260,24 +260,117 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     align-self: end;
+
 }
 
+/*Titres logiciels et sociaux*/
 .accueil-a-propos__bloc h3 {
-    margin: 0 0 0.8rem;
-    color: var(--texte-color);
+    color: var(---color);
     font-family: "Gruppo";
-    font-size: 1rem;
+    font-size: 26px;
     font-weight: 400;
     letter-spacing: 0.08em;
+    text-decoration: underline;
 }
 
-.accueil-pastilles {
-    /*width: 64px;
-    height: 64px;*/
+.accueil-a-propos__bloc {
+    position: relative;
+    top: 10rem;
+}
+
+
+/*Sélection des du class pour les logiciels*/
+.accueil-a-propos__grille .accueil-pastilles:nth-of-type(1) {
+    /*enlève ça pour le mobile*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+/*Sélection des du class pour les sociaux*/
+.accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
+
+    /*enlève ça pour le mobile*/
     display: flex;
     align-items: center;
+    padding: 0;
 }
 
+.accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
+
+    /*enlève ça pour le mobile*/
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
+    position: relative;
+    left: 650px;
+}
+
+.accueil-pastilles img:nth-child(1) {
+    margin-right: 15px;
+}
+
+.accueil-pastilles img:nth-child(2) {
+    margin-right: 15px;
+}
+
+.accueil-pastilles img:nth-child(3) {
+    margin-right: 15px;
+}
+
+.accueil-pastilles img:nth-child(4) {
+    margin-right: 15px;
+}
+
+.accueil-pastilles img:nth-child(5) {
+    margin-right: 15px;
+}
+
+.link img {
+    width: 55px;
+    transition: transform 0.2s ease;
+}
+
+.link:hover img {
+    transform: scale(1.1);
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+}
+
+.link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-60%);
+
+    background-color: var(--rose-highlight-color);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 5px;
+
+    font-size: 20px;
+    font-family: "VT323";
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+
+    margin-bottom: 8px;
+}
+
+.link:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
 
 /* SECTION FOOTER */
