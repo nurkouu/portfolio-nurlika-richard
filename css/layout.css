@@ -102,6 +102,100 @@ body {
     line-height: 0.9;
 }
 
+#titre-accueil span {
+    display: inline-block;
+    opacity: 0;
+    animation: glitch-letter 5s ease-in infinite;
+}
+
+#titre-accueil span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#titre-accueil span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+#titre-accueil span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+#titre-accueil span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+#titre-accueil span:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+#titre-accueil span:nth-child(6) {
+    animation-delay: 0.75s;
+}
+
+#titre-accueil span:nth-child(7) {
+    animation-delay: 0.9s;
+}
+
+#titre-accueil span:nth-child(8) {
+    animation-delay: 1.05s;
+}
+
+#titre-accueil span:nth-child(9) {
+    animation-delay: 1.2s;
+}
+
+
+
+@keyframes glitch-letter {
+
+    /* p */
+    0% {
+        opacity: 0;
+    }
+
+    /* por */
+    12% {
+        opacity: 1;
+    }
+
+    /* po */
+    24% {
+        opacity: 0;
+    }
+
+    /* ort */
+    36% {
+        opacity: 1;
+    }
+
+    /* portf */
+    48% {
+        opacity: 1;
+    }
+
+    /* ptfo */
+    60% {
+        opacity: 0;
+    }
+
+    /* portfol */
+    72% {
+        opacity: 1;
+    }
+
+    /* foli */
+    84% {
+        opacity: 0;
+    }
+
+    /* portfolio */
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
 .accueil-description {
     max-width: 34rem;
     margin: 4rem 0 0;
@@ -142,6 +236,11 @@ body {
     right: 8vw;
     top: 1rem;
     font-family: "Vectroid";
+}
+
+#titre-projets span {
+    display: inline-block;
+    transition: font-family 0.15s ease;
 }
 
 .accueil-projets__decor {

@@ -66,6 +66,7 @@
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+
 }
 
 
@@ -171,10 +172,7 @@
     opacity: 0.85;
 }
 
-/*.project-card:hover {
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-}
-*/
+
 /* Variante pixel-blur plus sombre et plus pixelisée */
 
 
@@ -235,6 +233,35 @@
     object-fit: contain;
 }
 
+/*Image dans la boite d'imparfaite*/
+.image-imparfaite {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    scale: 1.8;
+    object-fit: contain;
+}
+
+/*Image dans la boite d'intervalle*/
+.image-intervalle {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    scale: 1.8;
+    object-fit: contain;
+}
+
+/*Image dans la boite de liquid-loom*/
+.image-liquid-loom {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    scale: 1.9;
+    object-fit: contain;
+}
 
 
 /*
@@ -278,6 +305,7 @@
 }
 
 
+
 /* =========================================================
    PROJETS NON SURVOLÉ
    ========================================================= */
@@ -296,28 +324,24 @@
             #596274 0%,
             #3e4656 100%);
     color: #f4f5f9;
-
-    text-shadow:
-        0 1px 0 rgba(10, 18, 42, 0.7);
 }
 
 
 /* Icon */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__icon {
     border-color: rgba(255, 255, 255, 0.12);
-    background-image: url("../../assets/images/dossier.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-/* Couleur du body des cartes non survoler */
+/* Couleur du body des cartes non survoler 
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__body {
     background:
         linear-gradient(180deg,
-            #CACACA 0%,
+            var(--text-color) 0%,
             #ACACAC 100%);
 
-}
+}*/
 
 
 /* Pixel scanline / blur effect */

@@ -61,146 +61,146 @@ document.addEventListener("DOMContentLoaded", () => {
      * directly on top of each other.
      */
 
-    
-function placeCards() {
 
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+    function placeCards() {
 
-
-    objects.forEach((object, index) => {
-
-        let placed = false;
-        let attempts = 0;
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
 
 
-        /*
-         * On essaye plusieurs positions aléatoires.
-         */
-        while (!placed && attempts < 200) {
+        objects.forEach((object, index) => {
 
-            const maxX =
-                Math.max(
-                    0,
-                    containerWidth - object.width
-                );
-
-            const maxY =
-                Math.max(
-                    0,
-                    containerHeight - object.height
-                );
-
-
-            const x =
-                Math.random() * maxX;
-
-            const y =
-                Math.random() * maxY;
-
-
-            const candidate = {
-                x: x,
-                y: y,
-                width: object.width,
-                height: object.height
-            };
+            let placed = false;
+            let attempts = 0;
 
 
             /*
-             * Vérifie si cette position touche
-             * une autre carte.
+             * On essaye plusieurs positions aléatoires.
              */
-            const overlaps = objects.some(other => {
+            while (!placed && attempts < 200) {
+
+                const maxX =
+                    Math.max(
+                        0,
+                        containerWidth - object.width
+                    );
+
+                const maxY =
+                    Math.max(
+                        0,
+                        containerHeight - object.height
+                    );
+
+
+                const x =
+                    Math.random() * maxX;
+
+                const y =
+                    Math.random() * maxY;
+
+
+                const candidate = {
+                    x: x,
+                    y: y,
+                    width: object.width,
+                    height: object.height
+                };
+
 
                 /*
-                 * Une carte ne peut évidemment pas
-                 * entrer en collision avec elle-même.
+                 * Vérifie si cette position touche
+                 * une autre carte.
                  */
-                if (other === object) {
-                    return false;
+                const overlaps = objects.some(other => {
+
+                    /*
+                     * Une carte ne peut évidemment pas
+                     * entrer en collision avec elle-même.
+                     */
+                    if (other === object) {
+                        return false;
+                    }
+
+
+                    /*
+                     * Ignore les cartes qui n'ont pas
+                     * encore reçu de position.
+                     */
+                    if (
+                        other.x === 0 &&
+                        other.y === 0
+                    ) {
+                        return false;
+                    }
+
+
+                    return rectanglesOverlap(
+                        candidate,
+                        other
+                    );
+                });
+
+
+                /*
+                 * La position est libre.
+                 */
+                if (!overlaps) {
+
+                    object.x = x;
+                    object.y = y;
+
+                    placed = true;
                 }
 
 
-                /*
-                 * Ignore les cartes qui n'ont pas
-                 * encore reçu de position.
-                 */
-                if (
-                    other.x === 0 &&
-                    other.y === 0
-                ) {
-                    return false;
-                }
-
-
-                return rectanglesOverlap(
-                    candidate,
-                    other
-                );
-            });
-
-
-            /*
-             * La position est libre.
-             */
-            if (!overlaps) {
-
-                object.x = x;
-                object.y = y;
-
-                placed = true;
+                attempts++;
             }
 
 
-            attempts++;
-        }
+            /*
+             * =================================================
+             * FALLBACK
+             * =================================================
+             *
+             * Si aucune position libre n'a été trouvée
+             * après plusieurs essais, on donne quand même
+             * une position à la carte.
+             */
+            if (!placed) {
+
+                const maxX =
+                    Math.max(
+                        0,
+                        containerWidth - object.width
+                    );
+
+                const maxY =
+                    Math.max(
+                        0,
+                        containerHeight - object.height
+                    );
 
 
-        /*
-         * =================================================
-         * FALLBACK
-         * =================================================
-         *
-         * Si aucune position libre n'a été trouvée
-         * après plusieurs essais, on donne quand même
-         * une position à la carte.
-         */
-        if (!placed) {
+                object.x =
+                    Math.min(
+                        (index * 150) % Math.max(1, maxX),
+                        maxX
+                    );
 
-            const maxX =
-                Math.max(
-                    0,
-                    containerWidth - object.width
-                );
-
-            const maxY =
-                Math.max(
-                    0,
-                    containerHeight - object.height
-                );
+                object.y =
+                    Math.min(
+                        (index * 110) % Math.max(1, maxY),
+                        maxY
+                    );
+            }
 
 
-            object.x =
-                Math.min(
-                    (index * 150) % Math.max(1, maxX),
-                    maxX
-                );
-
-            object.y =
-                Math.min(
-                    (index * 110) % Math.max(1, maxY),
-                    maxY
-                );
-        }
-
-
-        /*
-         * Affiche immédiatement la carte.
-         */
-        render(object);
-    });
-}
+            /*
+             * Affiche immédiatement la carte.
+             */
+            render(object);
+        });
+    }
 
 
 
@@ -531,3 +531,6 @@ function placeCards() {
     });
 
 });
+
+
+
