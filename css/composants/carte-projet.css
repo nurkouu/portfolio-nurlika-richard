@@ -469,6 +469,7 @@
     margin: clamp(2rem, 7vw, 5rem) auto;
 }
 
+/*Bordure des boites de projets dans les pages projets*/
 .projet-detail__carte {
     width: 100%;
     min-height: 0;
@@ -503,10 +504,11 @@
     margin: 2rem auto 4rem;
 }
 
+/*contenu sur les pages projets*/
 .projet-detail__description,
 .projet-detail__infos {
     border-radius: 1.4rem;
-    background: #dedede;
+    background: var(--primary-nav-color);
     color: #0a122a;
 }
 
@@ -515,10 +517,10 @@
 }
 
 .projet-detail__titre {
-    margin: -3.2rem 0 1.5rem;
-    color: #0a122a;
+    margin: -4rem 0 1.5rem;
+    color: var(--text-color);
     font-family: "Vectroid";
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: 4rem;
     font-weight: 400;
     line-height: 1;
 }
@@ -547,14 +549,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
-    padding: 0;
     margin: 0;
     list-style: none;
     font-family: "Gruppo";
     font-size: 0.85rem;
 }
 
-.projet-detail__liste li {
+.projet-detail__liste {
     padding: 0.25rem 0.45rem;
     border-radius: 999px;
     background: #bcbcbc;
@@ -564,14 +565,14 @@
     display: block;
     width: min(100% - 4rem, 700px);
     margin: 0 auto 3rem;
-    color: #0a122a;
+    color: var(--text-color);
     font-size: 1.3rem;
     text-decoration: none;
 }
 
 .projet-detail__retour:hover,
 .projet-detail__retour:focus-visible {
-    color: #ff9edf;
+    color: var(--cyan-highlight-color);
 }
 
 @media (max-width: 700px) {
