@@ -445,3 +445,156 @@
         min-height: 420px;
     }
 }
+
+.project-card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+/* Fenetre principale de la page detail d'un projet. */
+.page-projet {
+    min-height: 100vh;
+    background: #081129;
+}
+
+.page-projet .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.projet-detail {
+    width: min(100% - 2rem, 920px);
+    margin: clamp(2rem, 7vw, 5rem) auto;
+}
+
+.projet-detail__carte {
+    width: 100%;
+    min-height: 0;
+    border: 3px solid #777;
+    box-shadow: 0 0 0 1px #111, 0 18px 40px rgb(0 0 0 / 28%);
+}
+
+.projet-detail__fenetre {
+    display: block;
+    width: min(100%, 650px);
+    aspect-ratio: 16 / 9;
+    margin: clamp(1.5rem, 5vw, 3.5rem) auto 0;
+    border: 1px solid #999;
+    background: #d6d6d6;
+    object-fit: cover;
+}
+
+.projet-detail__date {
+    display: block;
+    width: min(100%, 650px);
+    margin: 0 auto;
+    color: #0a122a;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.projet-detail__contenu {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    gap: 1.5rem;
+    width: min(100% - 4rem, 700px);
+    margin: 2rem auto 4rem;
+}
+
+.projet-detail__description,
+.projet-detail__infos {
+    border-radius: 1.4rem;
+    background: #dedede;
+    color: #0a122a;
+}
+
+.projet-detail__description {
+    padding: 2rem 2.5rem;
+}
+
+.projet-detail__titre {
+    margin: -3.2rem 0 1.5rem;
+    color: #0a122a;
+    font-family: "Vectroid";
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.projet-detail__texte {
+    margin: 0;
+    font-family: "Gruppo";
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.projet-detail__infos {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.projet-detail__bloc h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.projet-detail__liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "Gruppo";
+    font-size: 0.85rem;
+}
+
+.projet-detail__liste li {
+    padding: 0.25rem 0.45rem;
+    border-radius: 999px;
+    background: #bcbcbc;
+}
+
+.projet-detail__retour {
+    display: block;
+    width: min(100% - 4rem, 700px);
+    margin: 0 auto 3rem;
+    color: #0a122a;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.projet-detail__retour:hover,
+.projet-detail__retour:focus-visible {
+    color: #ff9edf;
+}
+
+@media (max-width: 700px) {
+    .projet-detail {
+        width: min(100% - 1rem, 920px);
+        margin-block: 1rem 2rem;
+    }
+
+    .projet-detail__contenu {
+        grid-template-columns: 1fr;
+        width: min(100% - 2rem, 700px);
+        margin-top: 2rem;
+    }
+
+    .projet-detail__description {
+        padding: 1.5rem;
+    }
+
+    .projet-detail__titre {
+        margin-top: -2.5rem;
+    }
+
+    .projet-detail__retour {
+        width: min(100% - 2rem, 700px);
+    }
+}

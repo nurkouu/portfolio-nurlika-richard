@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | Portfolio Nurlika Richard</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/composants/navigation.css">
+    <link rel="stylesheet" href="./css/composants/carte-projet.css">
+    <script src="./js/projet.js" defer></script>
+</head>
+
+<body class="page-projet">
+    <nav class="navigation" aria-label="Navigation principale">
+        <ul>
+            <li><a href="./index.html#accueil">Accueil</a></li>
+            <li><a href="./index.html#projets">Projets</a></li>
+            <li><a href="./index.html#a-propos">À propos</a></li>
+        </ul>
+    </nav>
+
+    <main class="projet-detail">
+        <article class="project-card projet-detail__carte" aria-labelledby="projet-titre">
+            <header class="project-card__header">
+                <span class="project-card__icon" aria-hidden="true"></span>
+                <h1 class="project-card__title" id="fenetre-titre">projet.exe</h1>
+                <div class="project-card__controls" aria-hidden="true">
+                    <span class="project-card__control project-card__control--minimize"></span>
+                    <span class="project-card__control project-card__control--maximize"></span>
+                    <span class="project-card__control project-card__control--close"></span>
+                </div>
+            </header>
+
+            <section class="project-card__body" aria-labelledby="projet-titre">
+                <img class="projet-detail__fenetre" id="projet-image" src="./assets/images/boite-erreur.png"
+                    alt="Visuel du projet">
+                <time class="projet-detail__date" id="projet-date" datetime="2026">2026</time>
+
+                <section class="projet-detail__contenu">
+                    <section class="projet-detail__description">
+                        <h2 class="projet-detail__titre" id="projet-titre">Projet</h2>
+                        <p class="projet-detail__texte" id="projet-description"></p>
+                    </section>
+
+                    <aside class="projet-detail__infos" aria-label="Informations du projet">
+                        <section class="projet-detail__bloc" aria-labelledby="titre-logiciels-projet">
+                            <h2 id="titre-logiciels-projet">logiciels</h2>
+                            <ul class="projet-detail__liste" id="projet-logiciels"></ul>
+                        </section>
+                        <section class="projet-detail__bloc" aria-labelledby="titre-equipe-projet">
+                            <h2 id="titre-equipe-projet">rôles - équipe</h2>
+                            <ul class="projet-detail__liste" id="projet-equipe"></ul>
+                        </section>
+                    </aside>
+                </section>
+
+                <a class="projet-detail__retour" href="./index.html#projets">← retour aux projets</a>
+            </section>
+
+            <footer class="project-card__footer">
+                <span class="project-card__status" id="projet-numero">01</span>
+                <span class="project-card__meta" id="projet-meta">portfolio / projet</span>
+            </footer>
+        </article>
+    </main>
+</body>
+
+</html>

@@ -4,6 +4,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.querySelector(".cartes-projets");
+
+    if (!container) {
+        return;
+    }
+
     const cards = [...container.querySelectorAll(".project-card")];
 
     /*
