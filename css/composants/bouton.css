@@ -1,0 +1,70 @@
+/* Style du bouton*/
+
+.projet-detail__media-action,
+.projet-detail__carousel-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.6rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+        180deg,
+        var(--primary-nav-color) 0%,
+        var(--secondary-nav-color) 100%
+    );
+    color: var(--text-color);
+    font-family: "VT323";
+    font-size: 1.1rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+/* Always visible */
+.projet-detail__media-action::after,
+.projet-detail__carousel-button::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px dotted var(--text-color);
+    pointer-events: none;
+}
+
+
+
+.projet-detail__media-action:hover,
+.projet-detail__media-action:focus-visible,
+.projet-detail__carousel-button:hover,
+.projet-detail__carousel-button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1),
+        0 4px 0 var(--primary-nav-color);
+}
+
+.projet-detail__media-action:active,
+.projet-detail__carousel-button:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 1px 0 var(--primary-nav-color);
+}
+
+.projet-detail__carousel {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.projet-detail__carousel-button {
+    min-width: 2.8rem;
+    padding-inline: 0.7rem;
+}
+
+.projet-detail__media-action {
+    margin-top: 0.8rem;
+}

@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/composants/navigation.css">
     <link rel="stylesheet" href="./css/composants/carte-projet.css">
+    <link rel="stylesheet" href="./css/composants/bouton.css">
     <script src="./js/projet.js" defer></script>
 </head>
 
 <body class="page-projet">
     <nav class="navigation" aria-label="Navigation principale">
         <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
             <li><a href="./index.html#accueil">Accueil</a></li>
             <li><a href="./index.html#projets">Projets</a></li>
             <li><a href="./index.html#a-propos">À propos</a></li>
@@ -34,8 +40,7 @@
             </header>
 
             <section class="project-card__body" aria-labelledby="projet-titre">
-                <img class="projet-detail__fenetre" id="projet-image" src="./assets/images/boite-erreur.png"
-                    alt="Visuel du projet">
+                <div class="projet-detail__media" id="projet-media" aria-live="polite"></div>
                 <time class="projet-detail__date" id="projet-date" datetime="2026">2026</time>
 
                 <section class="projet-detail__contenu">
@@ -53,6 +58,8 @@
                             <h2 id="titre-equipe-projet">rôles - équipe</h2>
                             <ul class="projet-detail__liste" id="projet-equipe"></ul>
                         </section>
+                        <section class="projet-detail__bloc projet-detail__bloc--prix" id="projet-prix" aria-label="Prix du projet"></section>
+                        <section class="projet-detail__bloc projet-detail__bloc--cta" id="projet-cta" aria-label="Action du projet"></section>
                     </aside>
                 </section>
 
