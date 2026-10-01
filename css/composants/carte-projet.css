@@ -503,8 +503,48 @@
 }
 
 .projet-detail__media {
-    width: min(100%, 650px);
+    width: 100%;
     margin: clamp(1.5rem, 5vw, 3.5rem) auto 0;
+}
+
+.projet-detail__process-gallery {
+    position: relative;
+    z-index: 20;
+    /*width: calc(100% + 15rem);*/
+    width: 50vw;
+    margin: 2.5rem auto 2.5rem;
+    transform: translateX(-50%);
+}
+
+.projet-detail__process-gallery .projet-detail__carousel {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "track";
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-track {
+    position: relative;
+    overflow: hidden;
+    min-height: 22rem;
+    width: 100%;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-slide {
+    position: absolute;
+    margin-left: 50%;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms ease;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-button {
+    display: none;
 }
 
 .projet-detail__media-item {
@@ -576,6 +616,20 @@
 
 .projet-detail__carousel-slide.is-active {
     display: block;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-slide {
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms ease;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .projet-detail__carousel-button {
@@ -653,12 +707,14 @@
 }
 
 .projet-detail__contenu {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.9fr);
     gap: 2rem;
     width: min(100% - 3rem, 1100px);
     margin: 2.5rem auto 4rem;
     align-items: start;
+    z-index: 1;
 }
 
 /*contenu sur les pages projets*/
@@ -669,6 +725,8 @@
 }
 
 .projet-detail__description {
+    position: relative;
+    z-index: 2;
     padding: 2.2rem 2.8rem 1.5rem;
     min-height: 420px;
     display: flex;
@@ -698,6 +756,15 @@
 
 .projet-detail__texte p {
     margin: 0 0 1rem;
+}
+
+.projet-detail__texte--large {
+    position: static;
+    z-index: auto;
+    width: auto;
+    max-width: 38rem;
+    margin-left: 0;
+    padding-right: 0;
 }
 
 .projet-detail__texte p:last-child {
@@ -740,6 +807,8 @@
 }
 
 .projet-detail__infos {
+    position: relative;
+    z-index: 1;
     display: grid;
     align-content: start;
     gap: 1rem;
