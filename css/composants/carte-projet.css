@@ -704,6 +704,25 @@
     margin-bottom: 0;
 }
 
+.projet-detail__sous-titre {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+    font-family: "VT323";
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1;
+    text-transform: lowercase;
+}
+
+.projet-detail__sous-titre-ligne {
+    flex: 1;
+    height: 0;
+    border-top: 1px dotted var(--text-color);
+}
+
 /*color rose-cyan-soopafresh*/
 .projet-detail__highlight {
     display: inline-block;

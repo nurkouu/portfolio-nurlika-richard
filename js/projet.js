@@ -17,6 +17,10 @@ const projets = {
             "Manel Yaya : Actrice / Réalisatrice / Monteuse vidéo et sonore",
             "Sarah Muller François : Actrice / Réalisatrice / Monteuse vidéo et sonore"
         ],
+        cta: {
+            label: "voir le projet",
+            href: "https://youtu.be/x7VoHxT9l_A?si=aUcGsNKWk_Ec4oTn"
+        },
         media: [
             { type: "image", src: "./assets/images/imparfaite-img-2.png", alt: "Visuel 1 du projet Imparfaite" },
             { type: "image", src: "./assets/images/imparfaite-img-3.png", alt: "Visuel 2 du projet Imparfaite" },
@@ -32,14 +36,18 @@ const projets = {
         date: "2025-05-08",
         annee: "2025",
         numero: "02",
-        description: "<p><span class=\"projet-detail__highlight projet-detail__highlight--cyan\">Intervalle</span> observe les espaces entre deux états, entre le mouvement et l’immobilité, entre la matière et le silence.</p><p>Cette recherche graphique associe <span class=\"projet-detail__highlight projet-detail__highlight--rose\">rythme</span>, lumière et matière pour construire une expérience visuelle calme, immersive et respirante.</p><p>Chaque séquence cherche à faire émerger une sensation de flottement, comme si le temps s’écoulait en pauses, en respirations et en retraits subtils.</p>",
+        description: "<p><em>Intervalle</em> est une animation 3D qui plonge le spectateur dans un univers froid et isolé, où un robot en panne tente désespérément d’atteindre une source de lumière représentant sa seule chance de survie. Les transitions, les défaillances du robot et l’ambiance visuelle contribuent à créer une expérience étrange, perturbante et émotionnelle.</p><h3 class=\"projet-detail__sous-titre\">Processus<span class=\"projet-detail__sous-titre-ligne\" aria-hidden=\"true\"></span></h3><p>Ce projet consistait à créer un court métrage 3D immersif et émotionnel à partir d’un audio réalisé dans le cours d’Audio 2. La professeure nous demandait de concevoir un environnement 3D ainsi que plusieurs séquences d’animation afin de raconter une histoire cohérente et percutante.</p><p>J’ai d’abord développé le concept du projet à l’aide d’une présentation PowerPoint comprenant des moodboards, une palette de couleurs et différentes références visuelles pour établir la direction artistique. J’ai ensuite consacré les premières semaines à la conception de l’environnement, des objets, de l’éclairage et de l’audio, avant de passer à la génération des séquences d’animation et à leur assemblage dans DaVinci Resolve.</p><p>La création des séquences m’a demandé beaucoup de temps et de patience afin de maintenir une cohérence visuelle entre chaque scène. Après avoir reçu des rétroactions constructives de ma professeure, j’ai apporté plusieurs corrections et améliorations, notamment en modifiant la couleur du robot directement dans DaVinci Resolve plutôt que de tout régénérer dans Maya, ce qui m’a permis d’améliorer mes compétences en masquages et en colorisation.</p>",
         logiciels: [
             { nom: "Reaper", image: "./assets/icones/reaper.png" },
             { nom: "DaVinci Resolve", image: "./assets/icones/davinci.png" },
             { nom: "Maya", image: "./assets/icones/maya-1.png" }
 
         ],
-        equipe: ["Nurlika Richard - conception et réalisation"],
+        equipe: ["Nurlika Richard : Animatrice 3D / Modélisatrice / Coloriste / Scénariste"],
+        cta: {
+            label: "voir le projet",
+            href: "https://youtu.be/ytghy2JGJlY?si=dDNwDuCUqqqLg5vR"
+        },
         media: [
             {
                 type: "video",
@@ -64,8 +72,8 @@ const projets = {
         ],
         equipe: ["Nurlika Richard - modélisation et image"],
         cta: {
-            label: "play the game",
-            href: "#"
+            label: "jouer au jeu",
+            href: "https://nrlka.itch.io/armorade"
         },
         media: [
             { type: "image", src: "./assets/images/armorade-img.png", alt: "Visuel du projet Armorade" },
@@ -88,8 +96,8 @@ const projets = {
         ],
         equipe: ["Nurlika Richard - création numérique"],
         cta: {
-            label: "see the website",
-            href: "#"
+            label: "voir le projet",
+            href: "https://202396410.tim-momo.com/projet-final/"
         },
         media: [
             { type: "image", src: "./assets/images/liquid-loom-img.png", alt: "Visuel du projet Liquid Loom" },

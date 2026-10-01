@@ -86,3 +86,8 @@
 .projet-detail__media-action {
     margin-top: 0.8rem;
 }
+
+.projet-detail__description>.projet-detail__bloc--cta {
+    margin-top: 1.25rem;
+    padding: 0;
+}
