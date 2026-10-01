@@ -455,7 +455,7 @@
 /* Fenetre principale de la page detail d'un projet. */
 .page-projet {
     min-height: 100vh;
-    background: #f3f3f3;
+    background: var(--text-color);
 }
 
 .page-projet .navigation {
@@ -555,12 +555,16 @@
 
 .projet-detail__carousel {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "track track track"
+        "previous view next";
     gap: 0.75rem;
     align-items: center;
 }
 
 .projet-detail__carousel-track {
+    grid-area: track;
     position: relative;
     overflow: hidden;
     min-height: 100%;
@@ -581,6 +585,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.projet-detail__carousel-button--previous {
+    grid-area: previous;
+}
+
+.projet-detail__carousel-button--next {
+    grid-area: next;
+}
+
+.projet-detail__carousel-view {
+    grid-area: view;
+    justify-self: center;
+    width: 50vh;
 }
 
 .projet-detail__lightbox {
@@ -656,7 +674,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 /*titre pour chaque page projet*/
@@ -725,22 +743,28 @@
     letter-spacing: 0;
 }
 
+/*prix section sur page intervalle et imparfaite*/
 .projet-detail__bloc--prix {
     display: grid;
     gap: 0.8rem;
 }
 
-.projet-detail__prix-zone {
+.projet-detail__prix {
     width: 100%;
-    min-height: 120px;
     padding: 0.8rem 0.9rem;
-    border: 1px solid rgba(10, 18, 42, 0.4);
+    border: 5px solid var(--secondary-nav-color);
     border-radius: 0.7rem;
-    resize: vertical;
+    box-shadow: 0 6px 14px rgb(0 0 0 / 12%);
+    transition: box-shadow 180ms ease;
     background: rgba(255, 255, 255, 0.4);
     color: var(--text-color);
     font-family: "Gruppo";
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.projet-detail__prix:hover {
+    box-shadow: 0 0 22px var(--cyan-highlight-color);
 }
 
 .projet-detail__liste {
@@ -756,20 +780,40 @@
 
 #projet-logiciels {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     padding: 0.5rem 0 0.2rem;
 }
 
+#projet-logiciels:has(> li:nth-child(3)) {
+    display: grid;
+    grid-template-columns: repeat(2, 52px);
+    justify-content: start;
+    gap: 1rem;
+}
+
+#projet-logiciels.projet-detail__liste--intervalle:has(> li:nth-child(3)) {
+    gap: 2rem;
+}
+
 #projet-logiciels li {
+    color: transparent;
+}
+
+#projet-logiciels .projet-detail__logiciel {
+    margin: 0;
+    overflow: visible;
+}
+
+#projet-logiciels .projet-detail__logiciel img {
     width: 52px;
     height: 52px;
-    border-radius: 50%;
-    background: rgba(10, 18, 42, 0.18);
-    display: grid;
-    place-items: center;
-    color: transparent;
-    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+#projet-logiciels .projet-detail__logiciel:hover img {
+    transform: scale(1.1);
 }
 
 #projet-equipe {

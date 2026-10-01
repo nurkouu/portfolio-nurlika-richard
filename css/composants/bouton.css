@@ -8,11 +8,9 @@
     justify-content: center;
     min-height: 2.6rem;
     padding: 0.5rem 1rem;
-    background: linear-gradient(
-        180deg,
-        var(--primary-nav-color) 0%,
-        var(--secondary-nav-color) 100%
-    );
+    background: linear-gradient(180deg,
+            var(--primary-nav-color) 0%,
+            var(--secondary-nav-color) 100%);
     color: var(--text-color);
     font-family: "VT323";
     font-size: 1.1rem;
@@ -55,9 +53,29 @@
 
 .projet-detail__carousel {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "track track track"
+        "previous view next";
     gap: 0.75rem;
     align-items: center;
+}
+
+.projet-detail__carousel-track {
+    grid-area: track;
+}
+
+.projet-detail__carousel-button--previous {
+    grid-area: previous;
+}
+
+.projet-detail__carousel-button--next {
+    grid-area: next;
+}
+
+.projet-detail__carousel-view {
+    grid-area: view;
+    justify-self: center;
 }
 
 .projet-detail__carousel-button {

@@ -7,19 +7,21 @@ const projets = {
         date: "2024-10-14",
         annee: "2024",
         numero: "01",
-        description: "<p><span class=\"projet-detail__highlight projet-detail__highlight--rose\">Imparfaite</span> est un court métrage expérimental d’environ 1 minute 30 qui raconte l’histoire d’une jeune fille qui se maquille pour se sentir mieux dans sa peau.</p><p>Le projet explore le <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">corps</span> comme langage visuel et sonore, en jouant sur le ralenti, l’accélération, les plans rapprochés et le montage des fréquences pour transmettre une émotion brute et intime.</p><p>Les rôles ont été répartis entre les membres de l’équipe afin que chacun participe à la préparation, au tournage, au montage vidéo et au montage sonore, dans une logique de collaboration totale.</p>",
+        description: "<p><em>Imparfaite</em> est un court métrage expérimental d’environ <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">1 minute 30 </span> qui raconte l’histoire d’une jeune fille qui se <span class=\"projet-detail__highlight projet-detail__highlight--rose\">maquille</span> pour se sentir mieux dans sa peau.</p><p>Le projet explore le <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">corps</span> comme langage visuel et sonore, en jouant sur le ralenti, l’accélération, les plans rapprochés et le montage des fréquences pour transmettre une émotion <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">brute</span> et <span class=\"projet-detail__highlight projet-detail__highlight--rose\">intime</span>.</p><p>Les <span class=\"projet-detail__highlight projet-detail__highlight--rose\">rôles</span> ont été répartis entre les membres de l’équipe afin que chacun participe à la préparation, au tournage, au montage vidéo et au montage sonore, dans une logique de collaboration <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">totale</span>.</p>",
         logiciels: [
-    { nom: "Davinci Resolve", image: "./assets/icones/davinci.png" },
-    { nom: "Reaper", image: "./assets/icones/reaper.png" }
-],
-        equipe: ["Nurlika Richard - direction artistique"],
+            { nom: "DaVinci Resolve", image: "./assets/icones/davinci.png" },
+            { nom: "Reaper", image: "./assets/icones/reaper.png" }
+        ],
+        equipe: [
+            "Nurlika Richard : Cadreuse / Réalisatrice / Monteuse vidéo et sonore",
+            "Manel Yaya : Actrice / Réalisatrice / Monteuse vidéo et sonore",
+            "Sarah Muller François : Actrice / Réalisatrice / Monteuse vidéo et sonore"
+        ],
         media: [
-            {
-                type: "video",
-                src: "./assets/videos/imparfaite.mp4",
-                poster: "./assets/images/imparfaite-img-2.png",
-                alt: "Vidéo du projet Imparfaite"
-            }
+            { type: "image", src: "./assets/images/imparfaite-img-2.png", alt: "Visuel 1 du projet Imparfaite" },
+            { type: "image", src: "./assets/images/imparfaite-img-3.png", alt: "Visuel 2 du projet Imparfaite" },
+            { type: "image", src: "./assets/images/imparfaite-img-4.png", alt: "Visuel 3 du projet Imparfaite" },
+            { type: "image", src: "./assets/images/imparfaite-img-5.png", alt: "Visuel 4 du projet Imparfaite" }
         ]
     },
     intervalle: {
@@ -32,10 +34,11 @@ const projets = {
         numero: "02",
         description: "<p><span class=\"projet-detail__highlight projet-detail__highlight--cyan\">Intervalle</span> observe les espaces entre deux états, entre le mouvement et l’immobilité, entre la matière et le silence.</p><p>Cette recherche graphique associe <span class=\"projet-detail__highlight projet-detail__highlight--rose\">rythme</span>, lumière et matière pour construire une expérience visuelle calme, immersive et respirante.</p><p>Chaque séquence cherche à faire émerger une sensation de flottement, comme si le temps s’écoulait en pauses, en respirations et en retraits subtils.</p>",
         logiciels: [
-    { nom: "Maya", image: "./assets/icones/maya-1.png" },
-    { nom: "DaVinci Resolve", image: "./assets/icones/davinci-resolve.png" },
-    { nom: "Reaper", image: "./assets/icones/reaper.png" }
-],
+            { nom: "Reaper", image: "./assets/icones/reaper.png" },
+            { nom: "DaVinci Resolve", image: "./assets/icones/davinci.png" },
+            { nom: "Maya", image: "./assets/icones/maya-1.png" }
+
+        ],
         equipe: ["Nurlika Richard - conception et réalisation"],
         media: [
             {
@@ -56,10 +59,9 @@ const projets = {
         numero: "03",
         description: "<p><span class=\"projet-detail__highlight projet-detail__highlight--rose\">Armorade</span> raconte l’histoire fascinante d’une chasseuse courageuse prisonnière d’une forêt étrange et mystérieuse.</p><p>Pour s’en échapper, elle doit affronter un puissant boss final et récupérer un artefact capable de réveiller une force essentielle, qu’elle devra maîtriser pour retrouver sa liberté.</p><p>Le projet met en scène <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">quête</span>, danger et survie à travers un univers sombre, visuel et narratif.</p>",
         logiciels: [
-    { nom: "Maya", image: "./assets/icones/maya-1.png" },
-    { nom: "Substance 3D", image: "./assets/icones/substance-3d.png" },
-    { nom: "Photoshop", image: "./assets/icones/photoshop.png" }
-],
+            { nom: "Phaser v3", image: "./assets/icones/phaser.png" },
+            { nom: "HTML5", image: "./assets/icones/html5.png" }
+        ],
         equipe: ["Nurlika Richard - modélisation et image"],
         cta: {
             label: "play the game",
@@ -82,10 +84,8 @@ const projets = {
         numero: "04",
         description: "<p><span class=\"projet-detail__highlight projet-detail__highlight--cyan\">Liquid Loom</span> transforme une matière fluide en motif vivant, en ramenant la répétition, la lumière et le mouvement dans une composition organique.</p><p>Le projet explore la <span class=\"projet-detail__highlight projet-detail__highlight--rose\">répétition</span> comme mécanisme visuel, en jouant sur la texture, l’oscillation et le rythme pour créer des formes qui semblent respirer.</p><p>Chaque variation cherche à rendre visible une sensation de flux, presque textile, presque liquide, presque synthétique.</p>",
         logiciels: [
-    { nom: "Maya", image: "./assets/icones/maya-1.png" },
-    { nom: "After Effects", image: "./assets/icones/after-effects.png" },
-    { nom: "Reaper", image: "./assets/icones/reaper.png" }
-],
+            { nom: "Wordpress", image: "./assets/icones/wdp.png" }
+        ],
         equipe: ["Nurlika Richard - création numérique"],
         cta: {
             label: "see the website",
@@ -220,13 +220,19 @@ function renderMedia(project) {
         activeIndex = activeIndex === 0 ? mediaItems.length - 1 : activeIndex - 1;
         updateSlides();
     });
-    prevButton.classList.add("projet-detail__carousel-button");
+    prevButton.classList.add(
+        "projet-detail__carousel-button",
+        "projet-detail__carousel-button--previous"
+    );
 
     const nextButton = createMediaButton("→", () => {
         activeIndex = activeIndex === mediaItems.length - 1 ? 0 : activeIndex + 1;
         updateSlides();
     });
-    nextButton.classList.add("projet-detail__carousel-button");
+    nextButton.classList.add(
+        "projet-detail__carousel-button",
+        "projet-detail__carousel-button--next"
+    );
 
     const viewButton = createMediaButton("voir plus grand", () => {
         const currentMedia = mediaItems[activeIndex];
@@ -256,6 +262,7 @@ function renderMedia(project) {
         lightboxImage.alt = currentMedia.alt || project.alt;
         createLightbox(lightboxImage);
     });
+    viewButton.classList.add("projet-detail__carousel-view");
 
     carousel.append(slides, prevButton, nextButton, viewButton);
     updateSlides();
@@ -266,7 +273,19 @@ function renderMedia(project) {
 function remplirListe(liste, valeurs) {
     valeurs.forEach(valeur => {
         const element = document.createElement("li");
-        element.textContent = valeur;
+
+        if (typeof valeur === "object" && valeur.image) {
+            element.className = "pastille projet-detail__logiciel";
+            element.dataset.nom = valeur.nom;
+
+            const image = document.createElement("img");
+            image.src = valeur.image;
+            image.alt = `Logo ${valeur.nom}`;
+            element.append(image);
+        } else {
+            element.textContent = valeur;
+        }
+
         liste.append(element);
     });
 }
@@ -322,13 +341,20 @@ function renderPrice(project) {
     const title = document.createElement("h2");
     title.textContent = "prix";
 
-    const textarea = document.createElement("textarea");
-    textarea.className = "projet-detail__prix-zone";
-    textarea.name = "prix";
-    textarea.rows = 4;
-    textarea.placeholder = "Écrivez le prix ou le devis...";
+    const message = document.createElement("p");
+    message.className = "projet-detail__prix";
 
-    priceContainer.append(title, textarea);
+    if (idProjet === "imparfaite") {
+        message.textContent = "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
+    } else {
+        message.append(
+            "J’ai également eu la chance de participer au Concours d’essais audiovisuels 2025 en y présentant ",
+            Object.assign(document.createElement("em"), { textContent: "Intervalle" }),
+            ", un projet qui m’a permis de remporter le prix dans la catégorie « Projet paysage » ! Une belle reconnaissance qui a rendu cette expérience encore plus spéciale."
+        );
+    }
+
+    priceContainer.append(title, message);
 }
 
 elements.titre.textContent = projet.titre;
@@ -341,6 +367,10 @@ elements.meta.textContent = `portfolio / projet-${idProjet}`;
 
 renderMedia(projet);
 
+elements.logiciels.classList.toggle(
+    "projet-detail__liste--intervalle",
+    idProjet === "intervalle"
+);
 remplirListe(elements.logiciels, projet.logiciels);
 remplirListe(elements.equipe, projet.equipe);
 renderCta(projet);
