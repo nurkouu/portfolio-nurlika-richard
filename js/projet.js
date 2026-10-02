@@ -111,8 +111,11 @@ const projets = {
             href: "https://202396410.tim-momo.com/projet-final/"
         },
         media: [
-            { type: "image", src: "./assets/images/liquid-loom-img.png", alt: "Visuel du projet Liquid Loom" },
-            { type: "image", src: "./assets/images/liquid-loom-boite.png", alt: "Deuxième visuel du projet Liquid Loom" }
+            { type: "image", src: "./assets/images/liquid-loom-img-4.png", alt: "Deuxième visuel du projet Liquid Loom" },
+            { type: "image", src: "./assets/images/liquid-loom-img-5.png", alt: "Troisième visuel du projet Liquid Loom" },
+            { type: "image", src: "./assets/images/liquid-loom-img-2.png", alt: "Quatrième visuel du projet Liquid Loom" },
+            { type: "image", src: "./assets/images/liquid-loom-img.png", alt: "Cinquième visuel du projet Liquid Loom" },
+            { type: "image", src: "./assets/images/liquid-loom-img-3.png", alt: "Sixième visuel du projet Liquid Loom" }
         ]
     }
 };
