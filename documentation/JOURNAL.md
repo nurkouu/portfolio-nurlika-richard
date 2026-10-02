@@ -44,14 +44,6 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 
 
 
-
-## 5 questions - Bloc 2
-1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? 
-2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? 
-3. Qu’est-ce que j’ai appris que je ne savais pas avant ? 
-4. Quelle est ma prochaine étape concrète ? 
-5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? 
-
 ## 2026-09-18 - Pomodoro
 1. Sprint 1 (15 mins): Je veux travailler sur ma page d'index.html en reliant tous mes pages et ensuite commencer un peu à coder.
 2. Pause courte (5 min)
@@ -62,10 +54,17 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 7. Sprint 4 (25 min):
 
 
+## 5 questions - Bloc 2
+1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? J’ai réussi à accomplir tellement de choses en si peu de temps. J’ai terminé de coder l’ensemble de mon site web, ajouté quelques animations et finalisé le responsive pour les versions desktop et mobile.
+2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Le responsive était une des grandes difficultés que j'avais. Je dirais que communiquer avec Copilot était également un autre défi, parce qu’on faisait constamment des allers-retours pour ajuster le responsive.
+3. Qu’est-ce que j’ai appris que je ne savais pas avant ? Je dirais que faire ce bloc m’a aidé à me remettre dans le codage et à mieux comprendre comment faire fonctionner les choses comme je le veux. Ça m’a aussi appris à être plus patient et à mieux résoudre les problèmes.
+4. Quelle est ma prochaine étape concrète ? Faire les dernières modifications là où c’est nécessaire et ajouter plus d’animations.
+5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? J’ai utilisé Copilot pour m’aider avec le placement de mes pages, ajuster certains éléments et faire le responsive. Ça m’a vraiment fait gagner beaucoup de temps avec mon code. Mais au lieu de lui demander de tout faire, j’ai aussi pris le temps de regarder le code et de faire certaines modifications moi-même.
+
+
 ## Utilisation de L'IA
 
 - **Date :** 2026-09-20
-- **Prompt :** "Donne moi le code pour refaire cette page d'accueil (insertion de l'image de la page d'accueil)"
+- **Prompt :** "Pour ma page projet.html, je veux que tu suis cette modèle en utilisant le code nécessaire pour le reproduire dans mon projet. Pour le style de la boite qui contiendra le contenu, utilise le style de carte-projet dans carte-projet.css. Assure toi de faire un lien avec les projets sur la page index.html pour que quand on clique sur les boites flottantes de la section projet elle nous amènera a la page projet.html respective pour le projet en question."
 - **Outil :** Copilot
-- **Résultat :** 
-
+- **Résultat :**
