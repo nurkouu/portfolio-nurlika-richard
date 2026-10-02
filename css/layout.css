@@ -651,7 +651,7 @@ body {
 /* SECTION RESPONSIVE */
 @media (max-width: 700px) {
 
-    /*RESPONSIVE POUR LA NAVIGATION*/
+    /*RESPONSIVE POUR LA NAVIGATION DE LA PAGE D'ACCUEIL ET SECTION HÉRO*/
     .page-accueil .navigation {
         flex-direction: column;
         align-items: center;
@@ -663,8 +663,59 @@ body {
 
     .accueil-introduction {
         min-height: 55vh;
-        padding: 4rem 2rem;
+        padding: 15vh 2rem 25vh;
     }
+
+    /*nurlika richard*/
+    .accueil-sur-titre {
+        font-size: 5.7vh;
+        padding-top: 5rem;
+        padding-left: 1.5rem;
+    }
+
+    .accueil-description {
+        margin-left: 3rem;
+        padding-top: 3rem;
+        padding-right: 8rem;
+        font-size: 1.5rem;
+    }
+
+
+
+    /*RESPONSIVE POUR LA NAVIGATION DANS LES PROJETS*/
+    .page-projet .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-projet .navigation a {
+        font-size: 1.2rem;
+    }
+
+    .page-projet .navigation ul {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .page-projet .navigation li:nth-child(-n + 5) {
+        display: none;
+    }
+
+    .page-projet .navigation li:nth-child(n + 6) {
+        flex: 1 1 calc(33.333% - 0.25rem);
+        min-width: 0;
+    }
+
+    .page-projet .navigation li:nth-child(n + 6) a {
+        min-height: 2.5rem;
+        padding: 0.25rem 0.5rem;
+        font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+
+
+    /*LE RESPONSIVE POUR LES BOITES/CARTES PROJETS EST DANS CARTE-PROJETS.CSS*/
+    
+
 
     /*RESPONSIVE POUR SECTION À PROPOS*/
 
@@ -748,6 +799,14 @@ body {
         font-size: 4rem;
     }
 
+    .accueil-a-propos__decor {
+        width: 15vh;
+        position: relative;
+        left: 15rem;
+        top: 7rem;
+        z-index: 1;
+    }
+
     .accueil-a-propos__contenu>.Images-de-moi:first-of-type {
         display: none;
     }
@@ -765,7 +824,7 @@ body {
         top: 0;
         right: 0;
         width: 100%;
-        height: 50vh;
+        height: 45vh;
         min-height: 0;
         aspect-ratio: 4 / 3;
     }
@@ -796,8 +855,11 @@ body {
         row-gap: 5vh;
         width: 100%;
         margin-top: 7vh;
+        position: relative;
+        left: 4.5vh;
     }
 
+  
     .accueil-a-propos__bloc,
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
         position: static;
@@ -825,6 +887,14 @@ body {
         padding: 0;
     }
 
+
+
+  /*Bouge les titres logicels et sociaux*/
+     .accueil-a-propos__bloc h3{
+        position: relative;
+        left: 1.7vh;
+     }
+
     .pastille {
         width: 3rem;
         height: 3rem;
@@ -845,6 +915,8 @@ body {
 
     .link img {
         width: 3rem;
+        position: relative;
+        right: 1.1rem;
     }
 
 

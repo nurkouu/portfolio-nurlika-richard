@@ -107,7 +107,7 @@ const projets = {
         ],
         equipe: ["Nurlika Richard : Designer / Développeuse web"],
         cta: {
-            label: "voir le projet",
+            label: "voir le site",
             href: "https://202396410.tim-momo.com/projet-final/"
         },
         media: [
@@ -136,6 +136,78 @@ const elements = {
     meta: document.querySelector("#projet-meta"),
     titreEquipe: document.querySelector("#titre-equipe-projet")
 };
+
+function restoreDateToDesktopLayout() {
+    const descriptionSection = document.querySelector(".projet-detail__description");
+    if (!descriptionSection) {
+        return;
+    }
+
+    const row = descriptionSection.querySelector(".projet-detail__header-row");
+    if (!row) {
+        return;
+    }
+
+    const title = row.querySelector(".projet-detail__titre");
+    const date = row.querySelector(".projet-detail__date");
+    const parentBody = document.querySelector(".project-card__body");
+    const contenu = parentBody ? parentBody.querySelector(".projet-detail__contenu") : null;
+
+    if (title) {
+        descriptionSection.insertBefore(title, descriptionSection.firstChild);
+    }
+
+    if (date && parentBody) {
+        if (contenu) {
+            parentBody.insertBefore(date, contenu);
+        } else {
+            parentBody.append(date);
+        }
+    }
+
+    row.remove();
+}
+
+function moveDateNextToTitle() {
+    if (window.innerWidth > 768) {
+        restoreDateToDesktopLayout();
+        return;
+    }
+
+    if (!elements.titre || !elements.date) {
+        return;
+    }
+
+    const descriptionSection = elements.titre.closest(".projet-detail__description");
+    if (!descriptionSection) {
+        return;
+    }
+
+    const existingRow = descriptionSection.querySelector(".projet-detail__header-row");
+    if (existingRow) {
+        return;
+    }
+
+    const title = elements.titre;
+    const date = elements.date;
+
+    const row = document.createElement("div");
+    row.className = "projet-detail__header-row";
+
+    title.remove();
+    date.remove();
+
+    row.append(title, date);
+    descriptionSection.prepend(row);
+}
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth <= 768) {
+        moveDateNextToTitle();
+    } else {
+        restoreDateToDesktopLayout();
+    }
+});
 
 if (elements.titreEquipe) {
     elements.titreEquipe.textContent = projetsSansEquipe.includes(idProjet) ? "rôles" : "rôles - équipe";
@@ -430,6 +502,7 @@ elements.titre.textContent = projet.titre;
 elements.fenetreTitre.textContent = projet.fenetre;
 elements.date.textContent = projet.annee;
 elements.date.dateTime = projet.date;
+moveDateNextToTitle();
 elements.description.innerHTML = projet.description;
 if (idProjet === "intervalle") {
     renderIntervalleGallery();
