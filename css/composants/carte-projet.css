@@ -444,6 +444,7 @@
 
         min-height: 420px;
     }
+
 }
 
 .project-card__link {
@@ -952,7 +953,7 @@
     color: var(--cyan-highlight-color);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .projet-detail {
         width: min(100% - 1rem, 920px);
         margin-block: 1rem 2rem;

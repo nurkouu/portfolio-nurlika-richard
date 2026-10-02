@@ -651,12 +651,10 @@ body {
 /* SECTION RESPONSIVE */
 @media (max-width: 700px) {
 
-    .page-accueil .navigation ul {
-        flex-wrap: wrap;
-    }
-
-    .page-accueil .navigation li {
-        flex: 1 1 33%;
+    /*RESPONSIVE POUR LA NAVIGATION*/
+    .page-accueil .navigation {
+        flex-direction: column;
+        align-items: center;
     }
 
     .page-accueil .navigation a {
@@ -668,16 +666,18 @@ body {
         padding: 4rem 2rem;
     }
 
+    /*RESPONSIVE POUR SECTION À PROPOS*/
+
     .accueil-projets,
     .accueil-a-propos {
         padding-inline: 1.25rem;
     }
 
+    .accueil-a-propos {
+        padding-bottom: 0;
+    }
 
-    /*
-     * Sur mobile, on revient à une disposition
-     * classique en colonne.
-     */
+
     .cartes-projets {
         display: grid;
         grid-template-columns: 1fr;
@@ -691,9 +691,6 @@ body {
     }
 
 
-    /*
-     * Les cartes ne sont plus absolues sur mobile.
-     */
     .project-card {
         position: relative;
 
@@ -714,4 +711,150 @@ body {
     .accueil-a-propos__decor {
         width: 8rem;
     }
+
+    .accueil-a-propos__contenu {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 8vh;
+        margin-left: 3.5vh;
+    }
+
+    .accueil-a-propos__titre {
+        display: contents;
+    }
+
+    .accueil-a-propos__prenom,
+    .accueil-a-propos__nom,
+    .accueil-a-propos__texte {
+        width: 80vw;
+    }
+
+    .accueil-a-propos__prenom {
+        position: relative;
+        right: 8rem;
+        order: 1;
+        align-self: center;
+        font-size: clamp(2.8rem, 15vw, 4.5rem);
+        text-align: center;
+    }
+
+    .accueil-a-propos__nom {
+        position: relative;
+        left: 6rem;
+        order: 2;
+        align-self: center;
+        margin: -0.25rem 0 3vh 18vw;
+        font-size: 4rem;
+    }
+
+    .accueil-a-propos__contenu>.Images-de-moi:first-of-type {
+        display: none;
+    }
+
+    .accueil-a-propos__contenu>.Images-de-moi:nth-of-type(2) {
+        position: relative;
+        right: 3.5rem;
+        order: 3;
+        align-self: center;
+        width: 82vw;
+        margin: 0;
+    }
+
+    .accueil-a-propos__contenu .project-card--nrlka2 {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 50vh;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    .accueil-a-propos__contenu .image-moi-1 {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 0;
+        object-fit: cover;
+    }
+
+    .accueil-a-propos__texte {
+        position: relative;
+        right: 3rem;
+        order: 4;
+        align-self: center;
+        margin: 6vh auto 0;
+        font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+        line-height: 1.15;
+    }
+
+    .accueil-a-propos__grille {
+        order: 5;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        row-gap: 5vh;
+        width: 100%;
+        margin-top: 7vh;
+    }
+
+    .accueil-a-propos__bloc,
+    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
+        position: static;
+        top: auto;
+        left: auto;
+        margin-top: 3rem;
+    }
+
+
+    .accueil-a-propos__grille .accueil-pastilles:nth-of-type(1) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(1.75rem, 1fr));
+        column-gap: 2.2rem;
+        row-gap: 2.7rem;
+        width: max-content;
+        margin: 0;
+        padding: 0;
+    }
+
+    .accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pastille {
+        width: 3rem;
+        height: 3rem;
+        margin: 0;
+    }
+
+    .pastille img {
+        transform: scale(1);
+    }
+
+    .pastille:hover img {
+        transform: scale(1.15);
+    }
+
+    .link {
+        flex: 0 0 1.85rem;
+    }
+
+    .link img {
+        width: 3rem;
+    }
+
+
+    .pied-de-page p {
+        display: inline;
+        white-space: nowrap;
+    }
+
+    .pied-de-page__liens {
+        align-items: center;
+    }
+
 }

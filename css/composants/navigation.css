@@ -31,6 +31,28 @@
     background-position: center;
 }
 
+@media (max-width: 700px) {
+    .navigation ul {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .navigation li:nth-child(-n + 5) {
+        display: none;
+    }
+
+    .navigation li:nth-child(n + 6) {
+        flex: 1 1 calc(33.333% - 0.25rem);
+        min-width: 0;
+    }
+
+    .navigation li:nth-child(n + 6) a {
+        min-height: 2.5rem;
+        padding: 0.25rem 0.5rem;
+        font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+}
+
 
 /* Img dossier pour les liens 6, 7 et 8*/
 .navigation li:nth-child(n + 6) a {
