@@ -17,6 +17,20 @@ body {
     color: var(--text-color);
 }
 
+.page-accueil__content {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.page-accueil {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
 /* SECTION ACCUEIL */
 .page-accueil {
     display: flex;
