@@ -818,11 +818,11 @@ body {
 
     .accueil-a-propos__contenu>.Images-de-moi:nth-of-type(2) {
         position: relative;
-        right: 3.5rem;
+        right: auto;
         order: 3;
         align-self: center;
         width: 82vw;
-        margin: 0;
+        margin: 0 auto;
     }
 
     .accueil-a-propos__contenu .project-card--nrlka2 {
@@ -843,10 +843,10 @@ body {
     }
 
     .accueil-a-propos__texte {
-        position: relative;
-        right: 3rem;
+        position: static;
         order: 4;
         align-self: center;
+        text-align: center;
         margin: 6vh auto 0;
         font-size: clamp(1.15rem, 4.8vw, 1.5rem);
         line-height: 1.15;
@@ -924,18 +924,15 @@ body {
 
 
     .pied-de-page p {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
+        position: static;
+        margin: 0;
         text-align: center;
     }
 
     .pied-de-page__liens {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        position: static;
         display: flex;
+        width: 100%;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
