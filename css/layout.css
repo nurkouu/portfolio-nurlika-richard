@@ -647,31 +647,51 @@ body {
 
 
 
-
-/* SECTION RESPONSIVE */
 @media (max-width: 700px) {
+
+    /* =========================================================
+       BASE MOBILE / EMPÊCHER LE DÉBORDEMENT HORIZONTAL
+       ========================================================= */
 
     html,
     body {
+        width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
-    /*RESPONSIVE POUR LA NAVIGATION DE LA PAGE D'ACCUEIL ET SECTION HÉRO*/
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================================
+       NAVIGATION - PAGE D'ACCUEIL
+       ========================================================= */
+
     .page-accueil .navigation {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .page-accueil .navigation a {
         font-size: 1.2rem;
     }
 
+
+    /* =========================================================
+       SECTION HERO
+       ========================================================= */
+
     .accueil-introduction {
         min-height: 55vh;
         padding: 15vh 2rem 25vh;
+        width: 100%;
     }
 
-    /*nurlika richard*/
     .accueil-sur-titre {
         font-size: 5.7vh;
         padding-top: 5rem;
@@ -679,18 +699,26 @@ body {
     }
 
     .accueil-description {
-        margin-left: 3rem;
-        padding-top: 3rem;
-        padding-right: 8rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        margin-left: 0;
+        padding: 3rem 1rem 0;
+
         font-size: 1.5rem;
+        text-align: center;
     }
 
 
+    /* =========================================================
+       NAVIGATION - PAGE PROJETS
+       ========================================================= */
 
-    /*RESPONSIVE POUR LA NAVIGATION DANS LES PROJETS*/
     .page-projet .navigation {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .page-projet .navigation a {
@@ -700,6 +728,7 @@ body {
     .page-projet .navigation ul {
         flex-wrap: wrap;
         gap: 0.25rem;
+        max-width: 100%;
     }
 
     .page-projet .navigation li:nth-child(-n + 5) {
@@ -718,99 +747,110 @@ body {
     }
 
 
-    /*LE RESPONSIVE POUR LES BOITES/CARTES PROJETS EST DANS CARTE-PROJETS.CSS*/
-
-
-
-    /*RESPONSIVE POUR SECTION À PROPOS*/
+    /* =========================================================
+       SECTION PROJETS
+       ========================================================= */
 
     .accueil-projets,
     .accueil-a-propos {
+        width: 100%;
+        max-width: 100%;
         padding-inline: 1.25rem;
+        box-sizing: border-box;
     }
 
     .accueil-a-propos {
         padding-bottom: 0;
     }
 
-
     .cartes-projets {
         display: grid;
         grid-template-columns: 1fr;
 
         width: 100%;
+        max-width: 100%;
         height: auto;
 
         gap: 2rem;
-
         overflow: visible;
     }
-
 
     .project-card {
         position: relative;
 
         width: 100%;
+        max-width: 100%;
         min-height: 22rem;
 
         left: auto;
+        right: auto;
         top: auto;
     }
 
 
-    .accueil-a-propos__contenu,
-    .accueil-a-propos__grille {
-        grid-template-columns: 1fr;
-    }
-
-    .accueil-projets__decor,
-    .accueil-a-propos__decor {
-        width: 8rem;
-    }
+    /* =========================================================
+       SECTION À PROPOS - STRUCTURE
+       ========================================================= */
 
     .accueil-a-propos__contenu {
         display: flex;
         flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        max-width: 100%;
+
         gap: 0;
+
         margin-top: 8vh;
-        margin-left: 3.5vh;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .accueil-a-propos__titre {
         display: contents;
     }
 
-    .accueil-a-propos__prenom,
-    .accueil-a-propos__nom,
-    .accueil-a-propos__texte {
-        width: 80vw;
+    .accueil-a-propos__contenu,
+    .accueil-a-propos__grille {
+        grid-template-columns: 1fr;
     }
 
-    .accueil-a-propos__prenom {
-        position: relative;
-        right: 8rem;
-        order: 1;
-        align-self: center;
-        font-size: clamp(2.8rem, 15vw, 4.5rem);
-        text-align: center;
-    }
 
-    .accueil-a-propos__nom {
-        position: relative;
-        left: 6rem;
-        order: 2;
-        align-self: center;
-        margin: -0.25rem 0 3vh 18vw;
-        font-size: 4rem;
+    /* =========================================================
+       DÉCORATION À PROPOS
+       ========================================================= */
+
+    .accueil-projets__decor,
+    .accueil-a-propos__decor {
+        width: 8rem;
+        max-width: 100%;
     }
 
     .accueil-a-propos__decor {
         width: 15vh;
+
         position: relative;
-        left: 15rem;
+
+        /*
+         * IMPORTANT :
+         * On retire left: 15rem qui pouvait créer
+         * un débordement horizontal.
+         */
+        left: 0;
+        right: auto;
+
         top: 7rem;
+
+        align-self: center;
+
         z-index: 1;
     }
+
+
+    /* =========================================================
+       IMAGES DE MOI
+       ========================================================= */
 
     .accueil-a-propos__contenu>.Images-de-moi:first-of-type {
         display: none;
@@ -818,90 +858,206 @@ body {
 
     .accueil-a-propos__contenu>.Images-de-moi:nth-of-type(2) {
         position: relative;
+
         right: auto;
+        left: auto;
+
         order: 3;
+
         align-self: center;
+
         width: 82vw;
+        max-width: 100%;
+
         margin: 0 auto;
     }
 
     .accueil-a-propos__contenu .project-card--nrlka2 {
         top: 0;
+        right: 0;
+        left: auto;
+
         width: 100%;
+        max-width: 100%;
+
         height: 45vh;
         min-height: 0;
+
         aspect-ratio: 4 / 3;
     }
 
     .accueil-a-propos__contenu .image-moi-1 {
         display: block;
+
         width: 100%;
+        max-width: 100%;
+
         height: 100%;
+
         padding-top: 0;
+
         object-fit: cover;
     }
 
+
+    /* =========================================================
+       PRÉNOM
+       ========================================================= */
+
+    .accueil-a-propos__prenom {
+        position: relative;
+
+        /*
+         * IMPORTANT :
+         * On retire right: 8rem.
+         */
+        right: 0;
+        left: auto;
+
+        order: 1;
+
+        align-self: center;
+
+        width: 80vw;
+        max-width: 100%;
+
+        font-size: clamp(2.8rem, 15vw, 4.5rem);
+
+        text-align: center;
+    }
+
+
+    /* =========================================================
+       NOM
+       ========================================================= */
+
+    .accueil-a-propos__nom {
+        position: relative;
+
+        /*
+         * IMPORTANT :
+         * On retire left: 6rem.
+         */
+        left: 0;
+        right: auto;
+
+        order: 2;
+
+        align-self: center;
+
+        width: 80vw;
+        max-width: 100%;
+
+        /*
+         * On retire margin-left: 18vw.
+         */
+        margin: -0.25rem 0 3vh;
+
+        font-size: 4rem;
+
+        text-align: center;
+    }
+
+
+    /* =========================================================
+       TEXTE À PROPOS
+       ========================================================= */
+
     .accueil-a-propos__texte {
         position: static;
+
         order: 4;
+
         align-self: center;
+
+        width: 80vw;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
         text-align: center;
+
         margin: 6vh auto 0;
+
         font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+
         line-height: 1.15;
     }
 
+
+    /* =========================================================
+       GRILLE LOGICIELS / SOCIAUX
+       ========================================================= */
+
     .accueil-a-propos__grille {
         order: 5;
+
         display: grid;
         grid-template-columns: 1fr;
+
         align-items: center;
-        row-gap: 5vh;
+
         width: 100%;
+        max-width: 100%;
+
         margin-top: 7vh;
+
         position: relative;
+
         left: auto;
+        right: auto;
     }
 
+
+    /* =========================================================
+       BLOCS LOGICIELS / SOCIAUX
+       ========================================================= */
 
     .accueil-a-propos__bloc,
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
         position: static;
+
         top: auto;
         left: auto;
+        right: auto;
+
         margin-top: 3rem;
+
         text-align: center;
-    }
 
-
-    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(1) .accueil-pastilles {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(1.75rem, 1fr));
-        column-gap: 2.2rem;
-        row-gap: 2.7rem;
-        width: max-content;
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(2) .accueil-pastilles {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
         width: 100%;
-        margin: 0 auto;
-        padding: 0;
+        max-width: 100%;
     }
-
 
     .accueil-a-propos__bloc h3 {
         margin-inline: auto;
     }
 
+
+    /* =========================================================
+       PASTILLES LOGICIELS
+       ========================================================= */
+
+    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(1) .accueil-pastilles {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(1.75rem, 1fr));
+
+        column-gap: 2.2rem;
+        row-gap: 2.7rem;
+
+        width: max-content;
+        max-width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .pastille {
         width: 3rem;
         height: 3rem;
+
         margin: 0;
     }
 
@@ -913,29 +1069,69 @@ body {
         transform: scale(1.15);
     }
 
+
+    /* =========================================================
+       RÉSEAUX SOCIAUX
+       ========================================================= */
+
+    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(2) .accueil-pastilles {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 3rem;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .link {
         flex: 0 0 3rem;
     }
 
     .link img {
         width: 3rem;
+        max-width: 100%;
     }
 
 
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
     .pied-de-page p {
         position: static;
+
         margin: 0;
+
+        max-width: 100%;
+
         text-align: center;
+
+        /*
+         * Évite qu'un texte long force
+         * la page à devenir plus large.
+         */
+        white-space: normal;
     }
 
     .pied-de-page__liens {
         position: static;
+
         display: flex;
+
         width: 100%;
+        max-width: 100%;
+
         justify-content: center;
         align-items: center;
+
         flex-wrap: wrap;
+
         text-align: center;
     }
-
 }
