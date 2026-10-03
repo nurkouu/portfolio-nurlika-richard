@@ -861,7 +861,7 @@ body {
         width: 100%;
         margin-top: 7vh;
         position: relative;
-        left: 4.5vh;
+        left: auto;
     }
 
 
@@ -871,33 +871,33 @@ body {
         top: auto;
         left: auto;
         margin-top: 3rem;
+        text-align: center;
     }
 
 
-    .accueil-a-propos__grille .accueil-pastilles:nth-of-type(1) {
+    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(1) .accueil-pastilles {
         display: grid;
         grid-template-columns: repeat(3, minmax(1.75rem, 1fr));
         column-gap: 2.2rem;
         row-gap: 2.7rem;
         width: max-content;
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
     }
 
-    .accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
+    .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(2) .accueil-pastilles {
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 3rem;
-        margin: 0;
+        width: 100%;
+        margin: 0 auto;
         padding: 0;
     }
 
 
-
-    /*Bouge les titres logicels et sociaux*/
     .accueil-a-propos__bloc h3 {
-        position: relative;
-        left: 1.7vh;
+        margin-inline: auto;
     }
 
     .pastille {
@@ -915,23 +915,26 @@ body {
     }
 
     .link {
-        flex: 0 0 1.85rem;
+        flex: 0 0 3rem;
     }
 
     .link img {
         width: 3rem;
-        position: relative;
-        right: 1.1rem;
     }
 
 
     .pied-de-page p {
-        display: inline;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         white-space: nowrap;
         text-align: center;
     }
 
     .pied-de-page__liens {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
         align-items: center;
