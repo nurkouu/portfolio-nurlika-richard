@@ -651,6 +651,11 @@ body {
 /* SECTION RESPONSIVE */
 @media (max-width: 700px) {
 
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     /*RESPONSIVE POUR LA NAVIGATION DE LA PAGE D'ACCUEIL ET SECTION HÉRO*/
     .page-accueil .navigation {
         flex-direction: column;
@@ -714,7 +719,7 @@ body {
 
 
     /*LE RESPONSIVE POUR LES BOITES/CARTES PROJETS EST DANS CARTE-PROJETS.CSS*/
-    
+
 
 
     /*RESPONSIVE POUR SECTION À PROPOS*/
@@ -859,7 +864,7 @@ body {
         left: 4.5vh;
     }
 
-  
+
     .accueil-a-propos__bloc,
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
         position: static;
@@ -889,11 +894,11 @@ body {
 
 
 
-  /*Bouge les titres logicels et sociaux*/
-     .accueil-a-propos__bloc h3{
+    /*Bouge les titres logicels et sociaux*/
+    .accueil-a-propos__bloc h3 {
         position: relative;
         left: 1.7vh;
-     }
+    }
 
     .pastille {
         width: 3rem;
@@ -923,10 +928,15 @@ body {
     .pied-de-page p {
         display: inline;
         white-space: nowrap;
+        text-align: center;
     }
 
     .pied-de-page__liens {
+        display: flex;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
     }
 
 }
