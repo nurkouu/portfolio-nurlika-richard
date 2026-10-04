@@ -1,0 +1,301 @@
+/* ANIMATION PIXEL DE L'ACCUEIL */
+.animation-pixels {
+    position: absolute;
+    top: 8%;
+    right: 5vw;
+    width: min(36vw, 34rem);
+    height: 76%;
+    pointer-events: none;
+}
+
+/* ANIMATION PIXEL DES PROJETS */
+.animation-pixels--projet {
+    position: fixed;
+    top: 4.5rem;
+    right: auto;
+    width: clamp(10rem, 21vw, 20rem);
+    height: calc(100vh - 5rem);
+    z-index: 0;
+    overflow: hidden;
+}
+
+.animation-pixels--projet-gauche {
+    left: 4vw;
+}
+
+.animation-pixels--projet-droit {
+    right: 4vw;
+}
+
+.animation-pixels--projet .animation-pixels__boite {
+    width: clamp(3.5rem, 6vw, 6rem);
+}
+
+.animation-pixels--projet .animation-pixels__boite--cyan,
+.animation-pixels--projet .animation-pixels__boite--rose {
+    opacity: 0;
+    animation-name: apparition-pixel-projet;
+}
+
+/* POSITIONS DES PIXELS - PROJETS */
+.animation-pixels--projet .animation-pixels__boite:nth-child(1) {
+    top: 5%;
+    left: 0;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(2) {
+    top: 27%;
+    left: 42%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(3) {
+    top: 54%;
+    right: 0;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(4) {
+    top: 13%;
+    right: 39%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(5) {
+    top: 42%;
+    left: 67%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(6) {
+    bottom: 7%;
+    right: 0;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(7) {
+    top: 70%;
+    left: 8%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(8) {
+    top: 84%;
+    left: 72%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(9) {
+    top: 19%;
+    left: 52%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(10) {
+    top: 36%;
+    right: 61%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(11) {
+    top: 62%;
+    left: 0;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(12) {
+    top: 92%;
+    left: 55%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(13) {
+    top: 8%;
+    right: 0;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(14) {
+    top: 77%;
+    right: 48%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(15) {
+    top: 16%;
+    left: 20%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(16) {
+    top: 31%;
+    right: 8%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(17) {
+    top: 48%;
+    left: 36%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(18) {
+    top: 66%;
+    right: 24%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(19) {
+    top: 79%;
+    left: 20%;
+}
+
+.animation-pixels--projet .animation-pixels__boite:nth-child(20) {
+    top: 94%;
+    right: 8%;
+}
+
+/* PIXELS */
+.animation-pixels__boite {
+    position: absolute;
+    width: clamp(3.5rem, 8vw, 8rem);
+    aspect-ratio: 1;
+    border-radius: 0.65rem;
+    opacity: 0;
+    will-change: transform, opacity;
+
+    animation:
+        apparition-pixel var(--duree, 1.5s) ease-in-out var(--delai, 0s) infinite;
+}
+
+.animation-pixels__boite--cyan {
+    background: var(--cyan-highlight-color);
+}
+
+.animation-pixels__boite--rose {
+    background: var(--rose-highlight-color);
+}
+
+/* POSITIONS DES PIXELS - ACCUEIL */
+.animation-pixels__boite:nth-child(1) {
+    top: 2%;
+    left: 5%;
+}
+
+.animation-pixels__boite:nth-child(2) {
+    top: 23%;
+    left: 35%;
+}
+
+.animation-pixels__boite:nth-child(3) {
+    top: 47%;
+    left: 4%;
+}
+
+.animation-pixels__boite:nth-child(4) {
+    top: 68%;
+    left: 42%;
+}
+
+.animation-pixels__boite:nth-child(5) {
+    top: 15%;
+    right: 2%;
+}
+
+.animation-pixels__boite:nth-child(6) {
+    top: 55%;
+    right: 12%;
+}
+
+.animation-pixels__boite:nth-child(7) {
+    bottom: 1%;
+    left: 10%;
+}
+
+.animation-pixels__boite:nth-child(8) {
+    top: 8%;
+    left: 18%;
+}
+
+.animation-pixels__boite:nth-child(9) {
+    top: 30%;
+    right: 8%;
+}
+
+.animation-pixels__boite:nth-child(10) {
+    top: 51%;
+    left: 27%;
+}
+
+.animation-pixels__boite:nth-child(11) {
+    top: 72%;
+    left: 57%;
+}
+
+.animation-pixels__boite:nth-child(12) {
+    bottom: 4%;
+    right: 26%;
+}
+
+.animation-pixels__boite:nth-child(13) {
+    top: 39%;
+    left: 1%;
+}
+
+.animation-pixels__boite:nth-child(14) {
+    top: 81%;
+    right: 3%;
+}
+
+/* ANIMATION - ACCUEIL */
+@keyframes apparition-pixel {
+    0% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+
+    15% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    45% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    65% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+}
+
+/* ANIMATION - PROJETS */
+@keyframes apparition-pixel-projet {
+    0% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+
+    15%,
+    45% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+
+    65%,
+    100% {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+}
+
+/* ACCESSIBILITÉ */
+@media (prefers-reduced-motion: reduce) {
+    .animation-pixels__boite {
+        opacity: 0.7;
+        animation: none;
+        will-change: auto;
+    }
+
+    .animation-pixels--projet .animation-pixels__boite {
+        opacity: 0.35;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .animation-pixels,
+    .animation-pixels--projet {
+        display: none;
+    }
+}
