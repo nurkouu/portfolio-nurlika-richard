@@ -207,19 +207,12 @@
     right: 5rem;
     /*background-color: red;*/
     /* Playground size */
-    width: min(1450px, 100%);
+    width: min(1250px, 100%);
     height: 1000px;
-
     margin: 0 auto 15rem;
-
-    /* Remove grid layout */
     display: block;
-
     /*overflow: hidden;*/
-
     z-index: 1;
-
-    /* Optional subtle playground */
     isolation: isolate;
 }
 
