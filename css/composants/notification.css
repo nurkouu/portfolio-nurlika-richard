@@ -95,7 +95,7 @@
 
 
 
-/* MASQUAGE BADGE */
+/* MASQUAGE BADGE - NOTIFICATION MESSAGE POP UP */
 .notification-visite:hover .notification-visite__badge,
 .notification-visite:focus-within .notification-visite__badge {
     opacity: 0;
