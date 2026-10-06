@@ -67,3 +67,37 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 - **Prompt :** "Pour ma page projet.html, je veux que tu suis cette modèle en utilisant le code nécessaire pour le reproduire dans mon projet. Pour le style de la boite qui contiendra le contenu, utilise le style de carte-projet dans carte-projet.css. Assure toi de faire un lien avec les projets sur la page index.html pour que quand on clique sur les boites flottantes de la section projet elle nous amènera a la page projet.html respective pour le projet en question."
 - **Outil :** Copilot
 - **Résultat :**
+  
+##
+- **Date :** 2026-09-30
+- **Prompt :** "Supprime les cercles qui se trouvent dans le dossier projets, sous la section logiciels, et ajoute pour Imparfaite les logos de DaVinci Resolve et Reaper, pour Intervalle les logos de Maya, DaVinci Resolve et Reaper, pour Armorade les logos de Phaser v3 et HTML5, et pour Liquid Loom le logo de WordPress. Assure-toi que lorsque l’on survole ces logos, ils conservent exactement le même effet de survol que celui présent sur la page Accueil. Enfin, lorsque l’on survole les logos dans la section logciels et que la fenêtre affichant le nom du logiciel apparaît, fais en sorte qu’elle soit positionnée légèrement plus bas, juste en dessous de l’image du logo."
+- **Outil :** Copilot
+- **Résultat :**
+<img width="241" height="225" alt="Capture d’écran 2026-10-06 083008" src="https://github.com/user-attachments/assets/2e71cb9a-7d12-48c0-8137-b83c4ce3ee82" />
+
+##
+- **Date :** 2026-10-03
+- **Prompt :** "Pour la section à propos de la page accueil , qui affiche les logiciels et les sociaux, je veux que, lorsque le site est en mode responsive mobile, les titres « Sociaux  » et « Logiciels », ainsi que toutes les images/icônes correspondantes, soient parfaitement centrés sur l’axe X de la page. Assure-toi que l’ensemble soit réellement centré et bien aligné sur mobile, sans décalage vers la gauche ou la droite. Si nécessaire, modifie, ajoute ou supprime certains éléments CSS ou certaines propriétés de mise en page afin d’obtenir un résultat propre et parfaitement centré sur toutes les tailles d’écran mobile. Aussi en responsive mobile uniquement, centre parfaitement « Nurlika Richard - 2026 », la carte du projet avec mon image et le texte en dessous sur l’axe X. Ajuste le CSS si nécessaire, sans modifier le desktop."
+- **Outil :** Copilot
+- **Résultat :**
+<img width="453" height="605" alt="Capture d’écran 2026-10-06 085455" src="https://github.com/user-attachments/assets/14b40d6e-e2ca-4c16-ac5f-7c89c19efd54" />
+<img width="461" height="317" alt="Capture d’écran 2026-10-06 090849" src="https://github.com/user-attachments/assets/1cf67d29-84ee-4f70-a9f2-d8491cde3645" />
+
+##
+- **Date :** 2026-10-04
+- **Prompt :** "Je veux garder l’icône email telle qu’elle est actuellement, avec son lien vers Outlook. Ne la modifie pas. Ajoute simplement une petite notification/pop-up animée quelque part près de l’icône. Lorsqu’on la survole, elle doit afficher un message avec : « De : nrichardd25@gmail.com À : vous ! Merci d’avoir visité mon portfolio ! »" "Décale le « 1 » de la notification. Au survol, le « 1 » disparaît. En revenant à la section Projets, depuis projet.html ou la page principale, elle reprend son slide-in depuis la droite."
+- **Outil :** Copilot
+- **Résultat :**
+<img width="91" height="147" alt="Capture d’écran 2026-10-06 091207" src="https://github.com/user-attachments/assets/eeedb0eb-e18f-4eba-87a2-a532fbd12cfe" />
+<img width="374" height="142" alt="Capture d’écran 2026-10-06 091218" src="https://github.com/user-attachments/assets/ff13a2d3-d468-4ba2-80fa-efa40c4685fc" />
+
+##
+- **Date :** 2026-10-04
+- **Prompt :** "Ajoute une animation composée de petits carrés qui apparaissent et disparaissent aléatoirement dans la section accueil, juste à côté du titre portfolio. Réutilise le composant de pixels déjà existant pour éviter de dupliquer les styles. Ajoute ensuite cette même animation sur les deux côtés de chaque page projet, en conservant exactement le même comportement aléatoire."
+- **Outil :** Copilot
+- **Résultat :**
+<img width="2419" height="723" alt="Capture d’écran 2026-10-06 092529" src="https://github.com/user-attachments/assets/15a82f14-730f-4c89-a066-278d7a32458c" />
+<img width="2466" height="802" alt="Capture d’écran 2026-10-06 092551" src="https://github.com/user-attachments/assets/6e927905-87bb-4a98-ade6-f5c409b060cc" />
+
+
+
