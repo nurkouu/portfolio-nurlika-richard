@@ -1,4 +1,7 @@
+// DATABASE DES PROJETS
 const projets = {
+
+    // PROJET IMPARFAITE
     imparfaite: {
         titre: "imparfaite",
         fenetre: "Imparfaite.exe",
@@ -28,6 +31,9 @@ const projets = {
             { type: "image", src: "./assets/images/imparfaite-img-5.png", alt: "Visuel 4 du projet Imparfaite" }
         ]
     },
+
+
+    // PROJET INTERVALLE
     intervalle: {
         titre: "intervalle",
         fenetre: "Intervalle.exe",
@@ -37,6 +43,8 @@ const projets = {
         annee: "2025",
         numero: "02",
         description: "<p><em>Intervalle</em> est une animation 3D qui plonge le spectateur dans un univers <span class=\"projet-detail__highlight projet-detail__highlight--rose\">froid</span> et <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">isolé</span>, où un robot en panne tente désespérément d’atteindre une source de lumière représentant sa <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">seule</span> chance de <span class=\"projet-detail__highlight projet-detail__highlight--rose\">survie</span>. Les transitions, les défaillances du robot et l’ambiance visuelle contribuent à créer une expérience étrange, perturbante et émotionnelle.</p><h3 class=\"projet-detail__sous-titre\">Processus<span class=\"projet-detail__sous-titre-ligne\" aria-hidden=\"true\"></span></h3><p>Ce projet consistait à créer un court métrage 3D <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">immersif</span> et <span class=\"projet-detail__highlight projet-detail__highlight--rose\">émotionnel</span> à partir d’un audio réalisé dans le cours d’Audio 2. La professeure nous demandait de concevoir un environnement 3D ainsi que <span class=\"projet-detail__highlight projet-detail__highlight--rose\">plusieurs</span> séquences d’animation afin de raconter une histoire <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">cohérente</span> et percutante.</p><p>J’ai d’abord développé le concept du projet à l’aide d’une présentation PowerPoint comprenant des moodboards, une palette de couleurs et différentes références visuelles pour établir la direction <span class=\"projet-detail__highlight projet-detail__highlight--rose\">artistique</span>. J’ai ensuite consacré les premières semaines à la <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">conception</span> de l’environnement, des objets, de l’éclairage et de l’audio, avant de passer à la génération des séquences d’animation et à leur assemblage dans DaVinci Resolve.</p><section class=\"projet-detail__process-gallery\" id=\"intervalle-process-gallery\" aria-label=\"Galerie de références du projet Intervalle\"></section><p>La création des séquences m’a demandé beaucoup de temps et de <span class=\"projet-detail__highlight projet-detail__highlight--rose\">patience</span> afin de maintenir une cohérence visuelle entre chaque scène. Après avoir reçu des <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">rétroactions</span> constructives de ma professeure, j’ai apporté plusieurs corrections et <span class=\"projet-detail__highlight projet-detail__highlight--rose\">améliorations</span>, notamment en modifiant la couleur du robot directement dans DaVinci Resolve plutôt que de tout régénérer dans Maya, ce qui m’a permis d’améliorer mes <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">compétences</span> en matière de masquage et en colorisation.</p>",
+
+        // IMAGES DE PROCESSUS 
         gallery: [
             "plan-de-travail",
             "planche-inspo",
@@ -50,6 +58,7 @@ const projets = {
             "scene-avant-2",
             "scene-avant-3"
         ],
+
         logiciels: [
             { nom: "Reaper", image: "./assets/icones/reaper.png" },
             { nom: "DaVinci Resolve", image: "./assets/icones/davinci.png" },
@@ -68,6 +77,9 @@ const projets = {
             { type: "image", src: "./assets/images/intervalle-img-5.png", alt: "Visuel 4 du projet Intervalle" }
         ]
     },
+
+
+    // PROJET ARMORADE
     armorade: {
         titre: "armorade",
         fenetre: "Armorade.exe",
@@ -93,6 +105,9 @@ const projets = {
             { type: "image", src: "./assets/images/armorade-img-4.png", alt: "Quatrième visuel du projet Armorade" }
         ]
     },
+
+
+    // PROJET LIQUID LOOM
     "liquid-loom": {
         titre: "liquid-loom",
         fenetre: "Liquid-Loom.exe",
@@ -120,10 +135,15 @@ const projets = {
     }
 };
 
+
+
+// RÉCUPÉRATION DE L'IDENTIFIANT DU PROJET
 const idProjet = new URLSearchParams(window.location.search).get("id") || "imparfaite";
 const projet = projets[idProjet] || projets.imparfaite;
 const projetsSansEquipe = ["intervalle", "armorade", "liquid-loom"];
 
+
+// RÉCUPÉRATION DES ÉLÉMENTS HTML
 const elements = {
     titre: document.querySelector("#projet-titre"),
     fenetreTitre: document.querySelector("#fenetre-titre"),
@@ -137,6 +157,8 @@ const elements = {
     titreEquipe: document.querySelector("#titre-equipe-projet")
 };
 
+
+// RESTAURATION DE LA DATE POUR LA VERSION DESKTOP À SA PLACE ORIGINAL
 function restoreDateToDesktopLayout() {
     const descriptionSection = document.querySelector(".projet-detail__description");
     if (!descriptionSection) {
@@ -168,6 +190,8 @@ function restoreDateToDesktopLayout() {
     row.remove();
 }
 
+
+// DÉPLACEMENT DE LA DATE À CÔTÉ DU TITRE SUR MOBILE
 function moveDateNextToTitle() {
     if (window.innerWidth > 768) {
         restoreDateToDesktopLayout();
@@ -201,6 +225,8 @@ function moveDateNextToTitle() {
     descriptionSection.prepend(row);
 }
 
+
+// ADAPTATION DE LA DATE LORS DU REDIMENSIONNEMENT
 window.addEventListener("resize", () => {
     if (window.innerWidth <= 768) {
         moveDateNextToTitle();
@@ -209,10 +235,14 @@ window.addEventListener("resize", () => {
     }
 });
 
+
+// ADAPTATION DU TITRE DE LA SECTION ÉQUIPE
 if (elements.titreEquipe) {
     elements.titreEquipe.textContent = projetsSansEquipe.includes(idProjet) ? "rôles" : "rôles - équipe";
 }
 
+
+// CRÉATION D'UN BOUTON POUR LES MÉDIAS
 function createMediaButton(label, onClick) {
     const button = document.createElement("button");
     button.type = "button";
@@ -222,6 +252,8 @@ function createMediaButton(label, onClick) {
     return button;
 }
 
+
+// CRÉATION DE LA LIGHTBOX = STYLE AUTOUR DES MÉDIAS
 function createLightbox(content) {
     const overlay = document.createElement("div");
     overlay.className = "projet-detail__lightbox";
@@ -232,6 +264,7 @@ function createLightbox(content) {
     const panel = document.createElement("div");
     panel.className = "projet-detail__lightbox-panel";
 
+    // BOUTON POUR FERMER LA LIGHTBOX
     const closeButton = document.createElement("button");
     closeButton.type = "button";
     closeButton.className = "projet-detail__lightbox-close";
@@ -241,6 +274,8 @@ function createLightbox(content) {
 
     panel.append(closeButton, content);
     overlay.append(panel);
+
+    // FERMETURE EN CLIQUANT À L'EXTÉRIEUR DU CONTENU
     overlay.addEventListener("click", (event) => {
         if (event.target === overlay) {
             overlay.remove();
@@ -250,11 +285,14 @@ function createLightbox(content) {
     document.body.appendChild(overlay);
 }
 
+
+// AFFICHAGE DES MÉDIAS DU PROJET
 function renderMedia(project) {
     const mediaItems = Array.isArray(project.media) && project.media.length > 0
         ? project.media
         : [{ type: "image", src: project.image, alt: project.alt }];
 
+    // AFFICHAGE D'UNE VIDÉO UNIQUE
     if (mediaItems.length === 1 && mediaItems[0].type === "video") {
         const video = document.createElement("video");
         video.className = "projet-detail__media-item projet-detail__video";
@@ -274,16 +312,21 @@ function renderMedia(project) {
         return;
     }
 
+
+    // CRÉATION DU CARROUSEL
     const carousel = document.createElement("div");
     carousel.className = "projet-detail__carousel";
 
     const slides = document.createElement("div");
     slides.className = "projet-detail__carousel-track";
 
+
+    // CRÉATION DES DIFFÉRENTES DIAPOSITIVES
     mediaItems.forEach((media) => {
         const slide = document.createElement("div");
         slide.className = "projet-detail__carousel-slide";
 
+        // AJOUT D'UNE VIDÉO
         if (media.type === "video") {
             const video = document.createElement("video");
             video.className = "projet-detail__media-item";
@@ -297,6 +340,8 @@ function renderMedia(project) {
             video.setAttribute("aria-label", media.alt || project.alt);
             video.setAttribute("playsinline", "true");
             slide.append(video);
+
+            // AJOUT D'UNE IMAGE
         } else {
             const image = document.createElement("img");
             image.className = "projet-detail__media-item";
@@ -308,38 +353,53 @@ function renderMedia(project) {
         slides.append(slide);
     });
 
+
+    // GESTION DE LA DIAPOSITIVE ACTIVE
     let activeIndex = 0;
+
     const updateSlides = () => {
         const allSlides = slides.querySelectorAll(".projet-detail__carousel-slide");
+
         allSlides.forEach((slide, index) => {
             slide.classList.toggle("is-active", index === activeIndex);
         });
     };
 
+
+    // BOUTON PRÉCÉDENT
     const prevButton = createMediaButton("←", () => {
         activeIndex = activeIndex === 0 ? mediaItems.length - 1 : activeIndex - 1;
         updateSlides();
     });
+
     prevButton.classList.add(
         "projet-detail__carousel-button",
         "projet-detail__carousel-button--previous"
     );
 
+
+    // BOUTON SUIVANT
     const nextButton = createMediaButton("→", () => {
         activeIndex = activeIndex === mediaItems.length - 1 ? 0 : activeIndex + 1;
         updateSlides();
     });
+
     nextButton.classList.add(
         "projet-detail__carousel-button",
         "projet-detail__carousel-button--next"
     );
 
+
+    // BOUTON POUR AGRANDIR LE MÉDIA
     const viewButton = createMediaButton("voir plus grand", () => {
         const currentMedia = mediaItems[activeIndex];
+
         if (!currentMedia) {
             return;
         }
 
+
+        // AGRANDISSEMENT D'UNE VIDÉO
         if (currentMedia.type === "video") {
             const lightboxVideo = document.createElement("video");
             lightboxVideo.className = "projet-detail__media-item projet-detail__video";
@@ -352,36 +412,51 @@ function renderMedia(project) {
             lightboxVideo.playsInline = true;
             lightboxVideo.disablePictureInPicture = false;
             lightboxVideo.setAttribute("playsinline", "true");
+
             createLightbox(lightboxVideo);
             return;
         }
 
+
+        // AGRANDISSEMENT D'UNE IMAGE
         const lightboxImage = document.createElement("img");
         lightboxImage.className = "projet-detail__media-item";
         lightboxImage.src = currentMedia.src;
         lightboxImage.alt = currentMedia.alt || project.alt;
+
         createLightbox(lightboxImage);
     });
+
     viewButton.classList.add("projet-detail__carousel-view");
 
+
+    // AJOUT DES ÉLÉMENTS DU CARROUSEL
     carousel.append(slides, prevButton, nextButton, viewButton);
     updateSlides();
+
     elements.media.innerHTML = "";
     elements.media.append(carousel);
 }
 
+
+// AFFICHAGE DE LA GALERIE DE PROCESSUS DU PROJET INTERVALLE
 function renderIntervalleGallery() {
     const galleryElement = document.querySelector("#intervalle-process-gallery");
+
     if (!galleryElement || !Array.isArray(projet.gallery) || projet.gallery.length === 0) {
         return;
     }
 
+
+    // CRÉATION DE LA GALERIE
     const gallery = document.createElement("div");
     gallery.className = "projet-detail__carousel projet-detail__carousel--process";
 
     const slides = document.createElement("div");
     slides.className = "projet-detail__carousel-track";
 
+
+    // AJOUT DES IMAGES DE PROCESSUS
     projet.gallery.forEach((imageName, index) => {
         const slide = document.createElement("div");
         slide.className = `projet-detail__carousel-slide${index === 0 ? " is-active" : ""}`;
@@ -390,31 +465,43 @@ function renderIntervalleGallery() {
         image.className = "projet-detail__media-item";
         image.src = `./assets/images/${imageName}.png`;
         image.alt = imageName.replace(/-/g, " ");
+
         slide.append(image);
         slides.append(slide);
     });
 
+
+    // GESTION DE L'IMAGE ACTIVE
     let activeIndex = 0;
+
     const updateSlides = () => {
         slides.querySelectorAll(".projet-detail__carousel-slide").forEach((slide, index) => {
             slide.classList.toggle("is-active", index === activeIndex);
         });
     };
 
+
+    // AJOUT DE LA GALERIE À LA PAGE
     gallery.append(slides);
     galleryElement.append(gallery);
     updateSlides();
 
+
+    // CHANGEMENT AUTOMATIQUE DES IMAGES
     window.setInterval(() => {
         activeIndex = (activeIndex + 1) % projet.gallery.length;
         updateSlides();
     }, 3000);
 }
 
+
+// REMPLISSAGE DES LISTES D'INFORMATIONS
 function remplirListe(liste, valeurs) {
     valeurs.forEach(valeur => {
         const element = document.createElement("li");
 
+
+        // AFFICHAGE D'UNE PASTILLE DE LOGICIEL
         if (typeof valeur === "object" && valeur.image) {
             element.className = "pastille projet-detail__logiciel";
             element.dataset.nom = valeur.nom;
@@ -422,7 +509,10 @@ function remplirListe(liste, valeurs) {
             const image = document.createElement("img");
             image.src = valeur.image;
             image.alt = `Logo ${valeur.nom}`;
+
             element.append(image);
+
+            // AFFICHAGE D'UNE INFORMATION TEXTUELLE
         } else {
             element.textContent = valeur;
         }
@@ -431,14 +521,19 @@ function remplirListe(liste, valeurs) {
     });
 }
 
+
+// AFFICHAGE DU BOUTON D'ACTION DU PROJET
 function renderCta(project) {
     const ctaContainer = document.querySelector("#projet-cta");
+
     if (!ctaContainer) {
         return;
     }
 
     ctaContainer.innerHTML = "";
 
+
+    // MASQUER LE BOUTON SI AUCUNE ACTION N'EST DISPONIBLE
     if (!project.cta) {
         ctaContainer.hidden = true;
         ctaContainer.style.display = "none";
@@ -448,12 +543,16 @@ function renderCta(project) {
     ctaContainer.hidden = false;
     ctaContainer.style.display = "block";
 
+
+    // CRÉATION DU LIEN D'ACTION
     const link = document.createElement("a");
     link.href = project.cta.href || "#";
     link.className = "projet-detail__media-action projet-detail__cta";
     link.textContent = project.cta.label;
     link.setAttribute("aria-label", project.cta.label);
 
+
+    // OUVERTURE DU LIEN DANS UN NOUVEL ONGLET
     if (project.cta.href && project.cta.href !== "#") {
         link.target = "_blank";
         link.rel = "noopener noreferrer";
@@ -462,14 +561,19 @@ function renderCta(project) {
     ctaContainer.append(link);
 }
 
+
+// AFFICHAGE DU PRIX 
 function renderPrice(project) {
     const priceContainer = document.querySelector("#projet-prix");
+
     if (!priceContainer) {
         return;
     }
 
     priceContainer.innerHTML = "";
 
+
+    // MASQUER LA SECTION SI LE PROJET N'A PAS DE PRIX
     if (!["imparfaite", "intervalle"].includes(idProjet)) {
         priceContainer.hidden = true;
         priceContainer.style.display = "none";
@@ -479,14 +583,20 @@ function renderPrice(project) {
     priceContainer.hidden = false;
     priceContainer.style.display = "block";
 
+
+    // TITRE DE LA SECTION
     const title = document.createElement("h2");
     title.textContent = "prix";
 
     const message = document.createElement("p");
     message.className = "projet-detail__prix";
 
+
+    // MESSAGE POUR LE PROJET IMPARFAITE
     if (idProjet === "imparfaite") {
         message.textContent = "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
+
+        // MESSAGE POUR LE PROJET INTERVALLE
     } else {
         message.append(
             "J’ai également eu la chance de participer au Concours d’essais audiovisuels 2025 en y présentant ",
@@ -498,25 +608,52 @@ function renderPrice(project) {
     priceContainer.append(title, message);
 }
 
+
+// REMPLISSAGE DES INFORMATIONS DU PROJET
 elements.titre.textContent = projet.titre;
 elements.fenetreTitre.textContent = projet.fenetre;
 elements.date.textContent = projet.annee;
 elements.date.dateTime = projet.date;
+
+
+// ADAPTATION DE LA DATE SELON LA TAILLE DE L'ÉCRAN
 moveDateNextToTitle();
+
+
+// AFFICHAGE DE LA DESCRIPTION DU PROJET
 elements.description.innerHTML = projet.description;
+
+
+// AFFICHAGE DE LA GALERIE DE PROCESSUS POUR INTERVALLE
 if (idProjet === "intervalle") {
     renderIntervalleGallery();
 }
+
+
+// AFFICHAGE DU NUMÉRO ET DES INFORMATIONS DU PROJET
 elements.numero.textContent = projet.numero;
 elements.meta.textContent = `portfolio / projet-${idProjet}`;
 
+
+// AFFICHAGE DES MÉDIAS
 renderMedia(projet);
 
+
+// ADAPTATION DE LA LISTE DES LOGICIELS POUR INTERVALLE
 elements.logiciels.classList.toggle(
     "projet-detail__liste--intervalle",
     idProjet === "intervalle"
 );
+
+
+// AFFICHAGE DES LOGICIELS ET DE L'ÉQUIPE
 remplirListe(elements.logiciels, projet.logiciels);
 remplirListe(elements.equipe, projet.equipe);
+
+
+// AFFICHAGE DU BOUTON D'ACTION
 renderCta(projet);
+
+
+// AFFICHAGE DU PRIX OU DE LA DISTINCTION
 renderPrice(projet);

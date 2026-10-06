@@ -1,4 +1,4 @@
-/* NOTIFICATION DE VISITE */
+/* NOTIFICATION POP-UP — POSITION */
 .notification-visite {
     position: fixed;
     right: 1.5rem;
@@ -21,16 +21,22 @@
         opacity 0.5s ease, transform 0.5s ease;
 }
 
+
+/* ANIMATION D'ENTRÉE */
 .notification-visite--visible {
     animation: notification-entree 0.8s ease-out both;
 }
 
+
+/* HOVER / FOCUS */
 .notification-visite:hover,
 .notification-visite:focus-within {
     width: min(22rem, calc(100vw - 3rem));
     background-color: var(--cyan-highlight-color);
 }
 
+
+/* ICÔNE */
 .notification-visite__icone {
     display: grid;
     flex: 0 0 3.5rem;
@@ -42,6 +48,8 @@
     font-size: 1.8rem;
 }
 
+
+/* MESSAGE DE LA NOTIFICATION */
 .notification-visite__message {
     display: flex;
     flex-direction: column;
@@ -58,12 +66,16 @@
     transition: opacity 0.2s ease 0.1s, transform 0.35s ease;
 }
 
+
+/* AFFICHAGE MESSAGE */
 .notification-visite:hover .notification-visite__message,
 .notification-visite:focus-within .notification-visite__message {
     opacity: 1;
     transform: translateX(0);
 }
 
+
+/*  BADGE */
 .notification-visite__badge {
     position: absolute;
     top: -0.8rem;
@@ -81,12 +93,17 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+
+
+/* MASQUAGE BADGE */
 .notification-visite:hover .notification-visite__badge,
 .notification-visite:focus-within .notification-visite__badge {
     opacity: 0;
     transform: scale(0.5);
 }
 
+
+/* ANIMATION — ENTRÉE NOTIFICATION */
 @keyframes notification-entree {
     from {
         opacity: 0;
@@ -99,7 +116,10 @@
     }
 }
 
+
+/* ACCESSIBILITÉ — RÉDUCTION ANIMATIONS */
 @media (prefers-reduced-motion: reduce) {
+
     .notification-visite,
     .notification-visite--visible {
         animation: none;
@@ -108,6 +128,8 @@
     }
 }
 
+
+/* RESPONSIVE — MOBILE */
 @media (max-width: 700px) {
     .notification-visite {
         right: 1rem;

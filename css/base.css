@@ -1,4 +1,5 @@
 :root {
+    /* VARIABLES — COULEURS */
     --primary-bg-color: #ffffff;
     --primary-nav-color: #CACACA;
     --secondary-nav-color: #ACACAC;
@@ -8,6 +9,8 @@
     --rose-fonce-highlight-color: #ff9edf;
 }
 
+
+/* POLICES */
 @font-face {
     font-family: "Gruppo";
     src: url("../assets/polices/Gruppo-Regular.ttf") format("TrueType");
@@ -32,7 +35,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "VT323";
     src: url("../assets/polices/VT323-Regular.ttf") format("TrueType");
@@ -41,12 +43,15 @@
     font-display: swap;
 }
 
-/*Change le cursor du site à l'image png*/
+
+/* CURSEUR */
 body {
     background-color: var(--primary-bg-color);
     cursor: url("../assets/images/cursor-2.png") 4 2, auto;
 }
 
+
+/* CURSEUR — ÉLÉMENTS INTERACTIFS */
 a,
 button,
 summary,
@@ -57,32 +62,46 @@ label[for] {
     cursor: url("../assets/images/cursor-2.png") 4 2, pointer;
 }
 
+
+/* CONTENEUR GAUCHE — TITRE PRINCIPAL */
 .container-gauche h1 {
     background-color: red;
     font-size: 8rem;
 }
 
+
+/* CONTENEUR GAUCHE — SOUS-TITRE */
 .container-gauche h3 {
     font-size: 8rem;
 }
 
+
+/* CONTENEURS — STRUCTURE FLEX */
 .containers {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+
+/* CONTENEURS — RÉPARTITION */
 .container-gauche,
 .container-droite {
     flex: 1;
 }
 
+
+/* IMAGE — CONTENEUR DROIT */
 .container-droite img {
     max-width: 100%;
     height: auto;
 }
 
+
+/* RESPONSIVE — MOBILE */
 @media (max-width: 700px) {
+
+    /* CONTENEURS — DISPOSITION VERTICALE */
     .containers {
         flex-direction: column;
     }

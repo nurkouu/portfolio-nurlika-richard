@@ -1,3 +1,7 @@
+/* =========================================================
+   CARTE PROJET — STRUCTURE PRINCIPALE
+   ========================================================= */
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -9,6 +13,7 @@
     font-family: "VT323";
 }
 
+/* CARTE PROJET NRLKA 1 */
 .project-card--nrlka1 {
     display: flex;
     flex-direction: column;
@@ -20,6 +25,7 @@
     font-family: "VT323";
 }
 
+/* CARTE PROJET NRLKA 2 — POSITIONNEMENT */
 .project-card--nrlka2 {
     display: flex;
     flex-direction: column;
@@ -35,7 +41,13 @@
     font-family: "VT323";
 }
 
-/*Image dans la boite de moi*/
+
+
+/* =========================================================
+   MES IMAGES DE MES CARTES 
+   ========================================================= */
+
+/* IMAGE — MOI 2 */
 .image-moi-2 {
     position: relative;
     top: 0;
@@ -45,6 +57,7 @@
     padding-top: 2.5rem;
 }
 
+/* IMAGE — MOI 1 */
 .image-moi-1 {
     position: relative;
     top: 0;
@@ -54,6 +67,11 @@
     padding-top: 2.5rem;
 }
 
+
+
+/* =========================================================
+   EN-TÊTE DES CARTES PROJETS
+   ========================================================= */
 
 .project-card__header {
     display: flex;
@@ -69,15 +87,7 @@
 
 }
 
-
-/*ICON DOSSIER DANS LA CARTE DES PROJETS*/
-.project-card__icon {
-    flex: 0 0 auto;
-    width: 14px;
-    height: 14px;
-    background-image: url("../../assets/images/dossier.png");
-}
-
+/* TITRE — CARTE PROJET */
 .project-card__title {
     margin: 0;
     font-size: 1.4rem;
@@ -85,6 +95,15 @@
     line-height: 1;
 }
 
+/* ICÔNE DES CARTES — DOSSIER */
+.project-card__icon {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    background-image: url("../../assets/images/dossier.png");
+}
+
+/* CONTRÔLES — FENÊTRE */
 .project-card__controls {
     display: flex;
     align-items: center;
@@ -92,6 +111,7 @@
     margin-left: auto;
 }
 
+/* CONTRÔLES — STYLE */
 .project-card__control {
     position: relative;
     width: 16px;
@@ -101,6 +121,7 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
+/* BOUTON — MINIMISER */
 .project-card__control--minimize::before {
     content: "";
     position: absolute;
@@ -111,6 +132,7 @@
     background: #2b2b2b;
 }
 
+/* BOUTON — MAXIMISER */
 .project-card__control--maximize::before {
     content: "";
     position: absolute;
@@ -118,6 +140,7 @@
     border: 1px solid #2b2b2b;
 }
 
+/* BOUTON — FERMER */
 .project-card__control--close::before,
 .project-card__control--close::after {
     content: "";
@@ -130,6 +153,7 @@
     transform-origin: center;
 }
 
+/* CROIX — FERMETURE */
 .project-card__control--close::before {
     transform: rotate(45deg);
 }
@@ -137,6 +161,10 @@
 .project-card__control--close::after {
     transform: rotate(-45deg);
 }
+
+/* =========================================================
+   CORPS — CARTE PROJET
+   ========================================================= */
 
 .project-card__body {
     flex: 1 1 auto;
@@ -152,6 +180,11 @@
     object-fit: contain;
 }
 
+/* =========================================================
+   PIED DE CARTE — INFORMATIONS
+   ========================================================= */
+
+/* FOOTER — STRUCTURE — COULEURS */
 .project-card__footer {
     display: flex;
     align-items: center;
@@ -172,10 +205,11 @@
     opacity: 0.85;
 }
 
+/* =========================================================
+   RESPONSIVE — CARTE PROJET
+   ========================================================= */
 
-
-/* Pixel-blur plus sombre et plus pixelisée */
-
+/* MOBILE — ADAPTATION — PIXEL — BLUR */
 @media (max-width: 640px) {
     .project-card {
         min-height: 480px;
@@ -199,24 +233,21 @@
 
 
 /* =========================================================
-   FLOATING PROJECT CARDS
+   CARTES PROJETS FLOTTANTES DE LA PAGE D'ACCUEIL
    ========================================================= */
 
 .cartes-projets {
     position: relative;
     right: 5rem;
-    /*background-color: red;*/
-    /* Playground size */
     width: min(1250px, 100%);
     height: 1000px;
     margin: 0 auto 15rem;
     display: block;
-    /*overflow: hidden;*/
     z-index: 1;
     isolation: isolate;
 }
 
-/*Image dans la boite d'armorade*/
+/* IMAGE — ARMORADE */
 .image-armorade {
     position: relative;
     top: 0;
@@ -226,7 +257,7 @@
     object-fit: contain;
 }
 
-/*Image dans la boite d'imparfaite*/
+/* IMAGE — IMPARFAITE */
 .image-imparfaite {
     position: relative;
     top: 0;
@@ -236,7 +267,7 @@
     object-fit: contain;
 }
 
-/*Image dans la boite d'intervalle*/
+/* IMAGE — INTERVALLE */
 .image-intervalle {
     position: relative;
     top: 0;
@@ -246,7 +277,7 @@
     object-fit: contain;
 }
 
-/*Image dans la boite de liquid-loom*/
+/* IMAGE — LIQUID LOOM */
 .image-liquid-loom {
     position: relative;
     top: 0;
@@ -257,10 +288,10 @@
 }
 
 
-/*
- * Every card becomes an independently positioned object.
- * JS controls left/top/transform.
- */
+/* =========================================================
+   POSITIONNEMENT ET DIMENSIONS DES CARTES
+   ========================================================= */
+
 .cartes-projets .project-card {
     position: absolute;
     width: 390px;
@@ -276,22 +307,25 @@
     user-select: none;
 }
 
-/* Tailles des cartes*/
+/* CARTE 1 — DIMENSIONS */
 .cartes-projets .project-card:nth-child(1) {
     width: 400px;
     height: 350px;
 }
 
+/* CARTE 2 — DIMENSIONS */
 .cartes-projets .project-card:nth-child(2) {
     width: 400px;
     height: 350px;
 }
 
+/* CARTE 3 — DIMENSIONS */
 .cartes-projets .project-card:nth-child(3) {
     width: 400px;
     height: 350px;
 }
 
+/* CARTE 4 — DIMENSIONS */
 .cartes-projets .project-card:nth-child(4) {
     width: 400px;
     height: 350px;
@@ -300,15 +334,15 @@
 
 
 /* =========================================================
-   PROJETS NON SURVOLÉ
+   ÉTAT DES PROJETS NON SURVOLÉS
    ========================================================= */
 
-
+/* CURSEUR — ÉTAT PAUSE */
 .cartes-projets.is-paused {
     cursor: default;
 }
 
-/* Header */
+/* HEADER — ÉTAT INACTIF - COULEUR SUR SECTION TITRE ET FOOTER DES CARTES */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__header {
     min-height: 1.95rem;
 
@@ -320,7 +354,7 @@
 }
 
 
-/* Icon */
+/* ICÔNE — ÉTAT INACTIF */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__icon {
     border-color: rgba(255, 255, 255, 0.12);
     background-repeat: no-repeat;
@@ -328,8 +362,7 @@
 }
 
 
-/* Pixel scanline / blur effect */
-
+/* EFFET — PIXEL */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__body::before {
     content: "";
 
@@ -351,16 +384,14 @@
 }
 
 
-/* Image becomes slightly desaturated */
-
+/* IMAGE — DÉSATURATION */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__image {
     filter:
         saturate(0.6) contrast(0.82) brightness(0.86);
 }
 
 
-/* Footer */
-
+/* FOOTER — ÉTAT INACTIF */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__footer {
     border-top-color: #667086;
 
@@ -372,19 +403,22 @@
     color: #f2f4f8;
 }
 
+/* STATUT — ÉTAT INACTIF */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__status {
     font-weight: 400;
 }
 
+/* MÉTADONNÉES — ÉTAT INACTIF */
 .cartes-projets.is-paused .project-card:not(:hover) .project-card__meta {
     opacity: 0.95;
 }
 
 
 /* =========================================================
-   PROJET SURVOLÉ
+   ÉTAT DES PROJETS SURVOLÉS
    ========================================================= */
 
+/* HOVER — AGRANDISSEMENT */
 .cartes-projets.is-paused .project-card:hover {
     z-index: 20;
     scale: 1.2;
@@ -393,7 +427,7 @@
 
 
 /* =========================================================
-   MOBILE DE LA SECTION PROJETS
+   RESPONSIVE — MOBILE — SECTION PROJETS
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -403,14 +437,17 @@
         padding: 1.5rem 1rem 4rem;
     }
 
+    /* TITRE — MASQUAGE */
     #titre-projets {
         display: none;
     }
 
+    /* DÉCORATION — MASQUAGE */
     .accueil-projets__decor {
         display: none;
     }
 
+    /* CONTENEUR — COLONNE */
     .cartes-projets {
         position: relative;
         right: auto;
@@ -426,6 +463,7 @@
         transform: none;
     }
 
+    /* CARTES — DIMENSIONS — OMBRE */
     .cartes-projets .project-card,
     .cartes-projets .project-card:nth-child(1),
     .cartes-projets .project-card:nth-child(2),
@@ -442,42 +480,51 @@
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
     }
 
+    /* CARTE 1 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(1) {
         transform: translateX(-3rem);
     }
 
+    /* CARTE 2 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(2) {
         transform: translateX(-0.8rem);
     }
 
+    /* CARTE 3 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(3) {
         transform: translateX(-3rem);
     }
 
+    /* CARTE 4 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(4) {
         transform: translateX(-0.7rem);
     }
 
+    /* HEADER DES CARTES */
     .project-card__header {
         min-height: 2rem;
         padding-inline: 0.55rem;
     }
 
+    /* TITRE DES CARTES */
     .project-card__title {
         font-size: 1.15rem;
     }
 
+    /* CORPS DES CARTES */
     .project-card__body {
         min-height: 8.5rem;
         padding: 0.75rem;
     }
 
+    /* FOOTER DES CARTES */
     .project-card__footer {
         min-height: 1.5rem;
         padding-inline: 0.55rem;
         font-size: 1.15rem;
     }
 
+    /* IMAGES — ADAPTATION */
     .image-armorade,
     .image-imparfaite,
     .image-intervalle,
@@ -491,13 +538,22 @@
 
 }
 
+/* =========================================================
+   LIEN — CARTE PROJET
+   ========================================================= */
+
+/* LIEN — ZONE CLIQUABLE — SUPERPOSITION */
 .project-card__link {
     position: absolute;
     inset: 0;
     z-index: 2;
 }
 
-/* Fenetre principale de la page detail d'un projet. */
+/* =========================================================
+   PAGE — DÉTAIL PROJET
+   ========================================================= */
+
+/* PAGE PRINCIPALE — FOND — HAUTEUR */
 .page-projet {
     min-height: 100vh;
     background: var(--text-color);
@@ -524,12 +580,17 @@
     font-size: 1.5rem;
 }
 
+/* CONTENEUR — DÉTAIL PROJET */
 .projet-detail {
     width: min(100% - 2rem, 920px);
     margin: clamp(2rem, 7vw, 5rem) auto;
 }
 
-/*Bordure des boites de projets dans les pages projets*/
+/* =========================================================
+   CARTE — PAGE PROJET
+   ========================================================= */
+
+/* CARTE — BORDURE — OMBRE */
 .projet-detail__carte {
     width: 100%;
     min-height: 0;
@@ -537,6 +598,7 @@
     box-shadow: 0 0 0 1px #111, 0 18px 40px rgb(0 0 0 / 28%);
 }
 
+/* FENÊTRE — MÉDIA PRINCIPALE */
 .projet-detail__fenetre {
     display: block;
     width: min(100%, 650px);
@@ -547,26 +609,33 @@
     object-fit: cover;
 }
 
+/* MÉDIA — CONTENEUR */
 .projet-detail__media {
     width: 100%;
     margin: clamp(1.5rem, 5vw, 3.5rem) auto 0;
 }
 
+/* =========================================================
+   GALERIE — PROCESSUS — CARROUSEL
+   ========================================================= */
+
+/* GALERIE — POSITIONNEMENT — LARGEUR */
 .projet-detail__process-gallery {
     position: relative;
     z-index: 20;
-    /*width: calc(100% + 15rem);*/
     width: 50vw;
     margin: 2.5rem auto 2.5rem;
     transform: translateX(-50%);
 }
 
+/* CARROUSEL — GALERIE PROCESS */
 .projet-detail__process-gallery .projet-detail__carousel {
     width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas: "track";
 }
 
+/* PISTE — CARROUSEL */
 .projet-detail__process-gallery .projet-detail__carousel-track {
     position: relative;
     overflow: hidden;
@@ -574,6 +643,7 @@
     width: 100%;
 }
 
+/* SLIDES — CARROUSEL */
 .projet-detail__process-gallery .projet-detail__carousel-slide {
     position: absolute;
     margin-left: 50%;
@@ -583,15 +653,22 @@
     transition: opacity 600ms ease;
 }
 
+/* SLIDE — ACTIVE */
 .projet-detail__process-gallery .projet-detail__carousel-slide.is-active {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* BOUTONS — GALERIE — MASQUÉS */
 .projet-detail__process-gallery .projet-detail__carousel-button {
     display: none;
 }
 
+/* =========================================================
+   MÉDIAS — IMAGES 
+   ========================================================= */
+
+/* MÉDIA — IMAGE — FORMAT */
 .projet-detail__media-item {
     display: block;
     width: 100%;
@@ -602,10 +679,16 @@
     box-shadow: 0 12px 28px rgb(0 0 0 / 16%);
 }
 
+/* VIDÉO — FOND */
 .projet-detail__video {
     background: #0d1324;
 }
 
+/* =========================================================
+   BOUTONS — MÉDIAS — CARROUSEL
+   ========================================================= */
+
+/* BOUTONS — STYLE — INTERACTION */
 .projet-detail__media-action,
 .projet-detail__carousel-button {
     appearance: none;
@@ -623,6 +706,7 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
+/* HOVER — FOCUS — ANIMATION */
 .projet-detail__media-action:hover,
 .projet-detail__media-action:focus-visible,
 .projet-detail__carousel-button:hover,
@@ -631,6 +715,7 @@
     box-shadow: 0 6px 14px rgb(0 0 0 / 12%);
 }
 
+/* ACTION — MÉDIA */
 .projet-detail__media-action {
     display: inline-flex;
     align-items: center;
@@ -638,6 +723,11 @@
     margin-top: 0.8rem;
 }
 
+/* =========================================================
+   CARROUSEL — STRUCTURE
+   ========================================================= */
+
+/* CARROUSEL — GRID — NAVIGATION */
 .projet-detail__carousel {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -648,6 +738,7 @@
     align-items: center;
 }
 
+/* PISTE — CARROUSEL */
 .projet-detail__carousel-track {
     grid-area: track;
     position: relative;
@@ -655,14 +746,17 @@
     min-height: 100%;
 }
 
+/* SLIDE — MASQUÉ */
 .projet-detail__carousel-slide {
     display: none;
 }
 
+/* SLIDE — ACTIF */
 .projet-detail__carousel-slide.is-active {
     display: block;
 }
 
+/* SLIDES — GALERIE PROCESS */
 .projet-detail__process-gallery .projet-detail__carousel-slide {
     display: block;
     position: absolute;
@@ -672,11 +766,13 @@
     transition: opacity 600ms ease;
 }
 
+/* SLIDE — GALERIE — ACTIF */
 .projet-detail__process-gallery .projet-detail__carousel-slide.is-active {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* BOUTONS — CARROUSEL */
 .projet-detail__carousel-button {
     min-width: 2.8rem;
     min-height: 2.6rem;
@@ -686,20 +782,28 @@
     justify-content: center;
 }
 
+/* BOUTON — PRÉCÉDENT */
 .projet-detail__carousel-button--previous {
     grid-area: previous;
 }
 
+/* BOUTON — SUIVANT */
 .projet-detail__carousel-button--next {
     grid-area: next;
 }
 
+/* BOUTON — VUE */
 .projet-detail__carousel-view {
     grid-area: view;
     justify-self: center;
     width: 50vh;
 }
 
+/* =========================================================
+   LIGHTBOX — IMAGES MÉDIAS AGRANDIS
+   ========================================================= */
+
+/* LIGHTBOX — FOND — CENTRAGE */
 .projet-detail__lightbox {
     position: fixed;
     inset: 0;
@@ -710,6 +814,7 @@
     background: rgb(5 9 17 / 86%);
 }
 
+/* LIGHTBOX — PANNEAU */
 .projet-detail__lightbox-panel {
     position: relative;
     width: min(92vw, 1000px);
@@ -720,6 +825,7 @@
     box-shadow: 0 22px 48px rgb(0 0 0 / 34%);
 }
 
+/* LIGHTBOX — MÉDIA */
 .projet-detail__lightbox-panel .projet-detail__media-item {
     width: 100%;
     max-height: 78vh;
@@ -727,6 +833,7 @@
     border-color: #b5bfdc;
 }
 
+/* FERMETURE — LIGHTBOX */
 .projet-detail__lightbox-close {
     position: absolute;
     top: 0.5rem;
@@ -742,6 +849,10 @@
     line-height: 1;
 }
 
+/* =========================================================
+   DATE — PROJET
+   ========================================================= */
+
 .projet-detail__date {
     display: block;
     margin: 0 auto;
@@ -751,6 +862,11 @@
     text-align: right;
 }
 
+/* =========================================================
+   CONTENU — DESCRIPTION — INFORMATIONS
+   ========================================================= */
+
+/* CONTENU — GRID — COLONNES */
 .projet-detail__contenu {
     position: relative;
     display: grid;
@@ -762,13 +878,14 @@
     z-index: 1;
 }
 
-/*contenu sur les pages projets*/
+/* CONTENU — STYLE GÉNÉRAL */
 .projet-detail__description,
 .projet-detail__infos {
     border-radius: 0.9rem;
     color: var(--text-color);
 }
 
+/* DESCRIPTION — STRUCTURE — ALIGNEMENT */
 .projet-detail__description {
     position: relative;
     z-index: 2;
@@ -780,7 +897,10 @@
 
 }
 
-/*titre pour chaque page projet*/
+/* =========================================================
+   TITRES ET TEXTES DES PROJETS
+   ========================================================= */
+
 .projet-detail__titre {
     margin: 0 0 1rem;
     color: var(--text-color);
@@ -790,6 +910,7 @@
     text-transform: lowercase;
 }
 
+/* TEXTE — DESCRIPTION */
 .projet-detail__texte {
     margin: 0;
     font-family: "Gruppo";
@@ -798,11 +919,12 @@
     max-width: 38rem;
 }
 
-
+/* PARAGRAPHES — ESPACEMENT */
 .projet-detail__texte p {
     margin: 0 0 1rem;
 }
 
+/* TEXTE — FORMAT LARGE */
 .projet-detail__texte--large {
     position: static;
     z-index: auto;
@@ -812,9 +934,14 @@
     padding-right: 0;
 }
 
+/* DERNIER PARAGRAPHE — RESET */
 .projet-detail__texte p:last-child {
     margin-bottom: 0;
 }
+
+/* =========================================================
+   SOUS-TITRES — LIGNES
+   ========================================================= */
 
 .projet-detail__sous-titre {
     display: flex;
@@ -829,13 +956,18 @@
     text-transform: lowercase;
 }
 
+/* LIGNE — SÉPARATION POUR LE PROCESSUS D'INTERVALLE */
 .projet-detail__sous-titre-ligne {
     flex: 1;
     height: 0;
     border-top: 1px dotted var(--text-color);
 }
 
-/*color rose-cyan-soopafresh*/
+/* =========================================================
+   HIGHLIGHT — COULEURS 
+   ========================================================= */
+
+/* HIGHLIGHT — STYLE */
 .projet-detail__highlight {
     display: inline-block;
     font-family: "Soopafresh";
@@ -843,14 +975,21 @@
     letter-spacing: 0.02em;
 }
 
+/* HIGHLIGHT — ROSE */
 .projet-detail__highlight--rose {
     color: var(--rose-highlight-color);
 }
 
+/* HIGHLIGHT — CYAN */
 .projet-detail__highlight--cyan {
     color: var(--cyan-highlight-color);
 }
 
+/* =========================================================
+   INFORMATIONS — BLOCS
+   ========================================================= */
+
+/* INFORMATIONS — GRID — ESPACEMENT */
 .projet-detail__infos {
     position: relative;
     z-index: 1;
@@ -861,11 +1000,13 @@
     background: transparent;
 }
 
+/* BLOC — INFORMATIONS */
 .projet-detail__bloc {
     padding: 1.2rem 1.2rem 1rem;
     border-radius: 0.9rem;
 }
 
+/* TITRES — BLOCS */
 .projet-detail__bloc h2 {
     margin: 0 0 1rem;
     color: var(--text-color);
@@ -876,12 +1017,17 @@
     letter-spacing: 0;
 }
 
-/*prix section sur page intervalle et imparfaite*/
+/* =========================================================
+   SECTION PRIX POUR LES PROJETS INTERVALLE ET IMPARFAITE
+   ========================================================= */
+
+/* BLOC — PRIX — GRID */
 .projet-detail__bloc--prix {
     display: grid;
     gap: 0.8rem;
 }
 
+/* PRIX — STYLE — INTERACTION */
 .projet-detail__prix {
     width: 100%;
     padding: 0.8rem 0.9rem;
@@ -896,10 +1042,16 @@
     line-height: 1.35;
 }
 
+/* PRIX — HOVER — GLOW */
 .projet-detail__prix:hover {
     box-shadow: 0 0 22px var(--cyan-highlight-color);
 }
 
+/* =========================================================
+   LISTES — PROJET
+   ========================================================= */
+
+/* LISTE — STRUCTURE — FLEX */
 .projet-detail__liste {
     display: flex;
     flex-wrap: wrap;
@@ -911,6 +1063,11 @@
     font-size: 0.95rem;
 }
 
+/* =========================================================
+   LOGICIELS — ICÔNES
+   ========================================================= */
+
+/* LOGICIELS — FLEX — ESPACEMENT */
 #projet-logiciels {
     display: flex;
     justify-content: flex-start;
@@ -918,6 +1075,7 @@
     padding: 0.5rem 0 0.2rem;
 }
 
+/* LOGICIELS — GRID — PLUSIEURS ICÔNES */
 #projet-logiciels:has(> li:nth-child(3)) {
     display: grid;
     grid-template-columns: repeat(2, 52px);
@@ -925,19 +1083,23 @@
     gap: 1rem;
 }
 
+/* INTERVALLE — ESPACEMENT */
 #projet-logiciels.projet-detail__liste--intervalle:has(> li:nth-child(3)) {
     gap: 2rem;
 }
 
+/* TEXTE — MASQUAGE */
 #projet-logiciels li {
     color: transparent;
 }
 
+/* ICÔNE — LOGICIEL */
 #projet-logiciels .projet-detail__logiciel {
     margin: 0;
     overflow: visible;
 }
 
+/* IMAGE — LOGICIEL */
 #projet-logiciels .projet-detail__logiciel img {
     width: 52px;
     height: 52px;
@@ -945,10 +1107,16 @@
     transition: transform 0.25s ease;
 }
 
+/* IMAGE — HOVER — AGRANDISSEMENT */
 #projet-logiciels .projet-detail__logiciel:hover img {
     transform: scale(1.1);
 }
 
+/* =========================================================
+   ÉQUIPE — PROJET
+   ========================================================= */
+
+/* ÉQUIPE — LISTE */
 #projet-equipe {
     display: block;
     list-style: none;
@@ -956,6 +1124,7 @@
     margin: 0;
 }
 
+/* ÉQUIPE — MEMBRES */
 #projet-equipe li {
     display: block;
     margin: 0 0 0.8rem;
@@ -968,10 +1137,12 @@
     border-radius: 0;
 }
 
+/* DERNIER MEMBRE — RESET */
 #projet-equipe li:last-child {
     margin-bottom: 0;
 }
 
+/* PUCE — MEMBRE */
 #projet-equipe li::before {
     content: "";
     display: inline-block;
@@ -983,6 +1154,11 @@
     vertical-align: middle;
 }
 
+/* =========================================================
+   BOUTON DE RETOUR AU SECTION PROJETS
+   ========================================================= */
+
+/* LIEN — RETOUR */
 .projet-detail__retour {
     display: block;
     width: min(100% - 4rem, 700px);
@@ -992,37 +1168,49 @@
     text-decoration: none;
 }
 
+/* HOVER — FOCUS — RETOUR */
 .projet-detail__retour:hover,
 .projet-detail__retour:focus-visible {
     color: var(--cyan-highlight-color);
 }
 
+/* =========================================================
+   RESPONSIVE — MOBILE — PAGE PROJET
+   ========================================================= */
+
 @media (max-width: 768px) {
+
+    /* PAGE — DÉBORDEMENT HORIZONTAL */
     .page-projet {
         overflow-x: hidden;
     }
 
+    /* NAVIGATION — STICKY */
     .page-projet .navigation {
         position: sticky;
         top: 0;
         z-index: 20;
     }
 
+    /* NAVIGATION — FLEX */
     .page-projet .navigation ul {
         flex-wrap: wrap;
         gap: 0.25rem;
         justify-content: center;
     }
 
+    /* NAVIGATION — MASQUAGE */
     .page-projet .navigation li:nth-child(-n + 5) {
         display: none;
     }
 
+    /* NAVIGATION — ÉLÉMENTS MOBILES */
     .page-projet .navigation li:nth-child(n + 6) {
         flex: 1 1 calc(33.333% - 0.25rem);
         min-width: 0;
     }
 
+    /* NAVIGATION — LIENS MOBILES */
     .page-projet .navigation a {
         min-height: 2.4rem;
         height: auto;
@@ -1030,16 +1218,19 @@
         font-size: clamp(1rem, 4vw, 1.35rem);
     }
 
+    /* CONTENEUR */
     .projet-detail {
         width: min(100% - 0.75rem, 920px);
         margin-block: 1rem 2rem;
     }
 
+    /* CARTE — BORDURE — OMBRE */
     .projet-detail__carte {
         border-width: 2px;
         box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.8), 0 12px 32px rgba(0, 0, 0, 0.18);
     }
 
+    /* MÉDIAS */
     .projet-detail__fenetre,
     .projet-detail__media-item {
         width: 100%;
@@ -1048,11 +1239,13 @@
         object-fit: contain;
     }
 
+    /* MÉDIA */
     .projet-detail__media {
         width: 100%;
         margin-top: 1.5rem;
     }
 
+    /* GALERIE PROCESSUS — POSITIONNEMENT */
     .projet-detail__process-gallery {
         width: min(100%, 420px);
         position: relative;
@@ -1069,6 +1262,7 @@
 
 
 
+    /* CONTENU — MOBILE — COLONNE UNIQUE */
     .projet-detail__contenu {
         grid-template-columns: 1fr;
         width: min(100% - 1rem, 700px);
@@ -1076,11 +1270,13 @@
         gap: 1.2rem;
     }
 
+    /* DESCRIPTION */
     .projet-detail__description {
         padding: 1rem 1rem 0.75rem;
         min-height: auto;
     }
 
+    /* HEADER — TITRE — DATE */
     .projet-detail__header-row {
         display: flex;
         align-items: baseline;
@@ -1089,12 +1285,14 @@
         margin: 0 0 0.75rem;
     }
 
+    /* TITRE */
     .projet-detail__titre {
         margin: 0;
         font-size: clamp(2.2rem, 11vw, 4rem);
         line-height: 0.92;
     }
 
+    /* DATE */
     .projet-detail__date {
         display: inline-block;
         width: auto;
@@ -1107,30 +1305,40 @@
         color: var(--text-color);
     }
 
+    /* TEXTE */
     .projet-detail__texte {
         max-width: 100%;
         font-size: 1.06rem;
         line-height: 1.45;
     }
 
+    /* SOUS-TITRE */
     .projet-detail__sous-titre {
         margin-top: 1.4rem;
         font-size: clamp(1.5rem, 7vw, 2.2rem);
     }
 
+    /* INFORMATIONS */
     .projet-detail__infos {
         gap: 0.8rem;
     }
 
+    /* BLOCS */
     .projet-detail__bloc {
         padding: 0.9rem 0.9rem 1rem;
     }
 
+    /* TITRES BLOCS */
     .projet-detail__bloc h2 {
         margin-bottom: 0.8rem;
         font-size: clamp(1.3rem, 6vw, 2rem);
     }
 
+    /* =====================================================
+       LOGICIELS — MOBILE
+       ===================================================== */
+
+    /* LOGICIELS — FLEX */
     #projet-logiciels {
         display: flex;
         flex-wrap: wrap;
@@ -1138,21 +1346,33 @@
         gap: 0.7rem 1rem;
     }
 
+    /* LOGICIELS — GRID */
     #projet-logiciels:has(> li:nth-child(3)) {
         grid-template-columns: repeat(2, 44px);
         gap: 0.8rem 1rem;
     }
 
+    /* ICÔNES */
     #projet-logiciels .projet-detail__logiciel img {
         width: 42px;
         height: 42px;
     }
 
+    /* =====================================================
+       ÉQUIPE — MOBILE
+       ===================================================== */
+
+    /* MEMBRES */
     #projet-equipe li {
         font-size: 0.98rem;
         line-height: 1.35;
     }
 
+    /* =====================================================
+       BOUTONS — MOBILE
+       ===================================================== */
+
+    /* BOUTONS — MÉDIA — CARROUSEL */
     .projet-detail__media-action,
     .projet-detail__carousel-button {
         width: auto;
@@ -1161,6 +1381,7 @@
         font-size: 0.95rem;
     }
 
+    /* CTA — MOBILE */
     .projet-detail__cta {
         display: inline-flex;
         width: 100%;
@@ -1168,11 +1389,13 @@
         margin-top: 1rem;
     }
 
+    /* PRIX — MOBILE */
     .projet-detail__prix {
         font-size: 1rem;
         padding: 0.75rem 0.8rem;
     }
 
+    /* BOUTON RETOUR */
     .projet-detail__retour {
         width: min(100% - 1rem, 700px);
         font-size: 1rem;

@@ -1,4 +1,6 @@
-/* Style du bouton*/
+/* =========================================================
+  STYLE DES BOUTONS
+   ========================================================= */
 
 .projet-detail__media-action,
 .projet-detail__carousel-button {
@@ -20,7 +22,6 @@
     cursor: pointer;
 }
 
-/* Always visible */
 .projet-detail__media-action::after,
 .projet-detail__carousel-button::after {
     content: "";
@@ -31,6 +32,10 @@
 }
 
 
+
+/* =========================================================
+    SURVOL ET FOCUS DES BOUTONS
+   ========================================================= */
 
 .projet-detail__media-action:hover,
 .projet-detail__media-action:focus-visible,
@@ -43,6 +48,11 @@
         0 4px 0 var(--primary-nav-color);
 }
 
+
+/* =========================================================
+   CLIC ET ÉTAT ACTIF DES BOUTONS
+   ========================================================= */
+
 .projet-detail__media-action:active,
 .projet-detail__carousel-button:active {
     transform: translateY(2px);
@@ -50,6 +60,11 @@
         inset 0 2px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 var(--primary-nav-color);
 }
+
+
+/* =========================================================
+   CARROUSEL - ORGANISATION
+   ========================================================= */
 
 .projet-detail__carousel {
     display: grid;
@@ -65,27 +80,57 @@
     grid-area: track;
 }
 
+
+/* =========================================================
+   BOUTON PRÉCÉDENT - CARROUSEL
+   ========================================================= */
+
 .projet-detail__carousel-button--previous {
     grid-area: previous;
 }
 
+
+/* =========================================================
+   BOUTON SUIVANT - CARROUSEL
+   ========================================================= */
+
 .projet-detail__carousel-button--next {
     grid-area: next;
 }
+
+
+/* =========================================================
+   BOUTON VOIR PLUS GRAND - CARROUSEL
+   ========================================================= */
 
 .projet-detail__carousel-view {
     grid-area: view;
     justify-self: center;
 }
 
+
+/* ==============================================================
+   DIMENSIONS DES BOUTONS DU CARROUSEL D'IMAGE DES PAGES PROJETS
+   ============================================================== */
+
 .projet-detail__carousel-button {
     min-width: 2.8rem;
     padding-inline: 0.7rem;
 }
 
+
+/* =========================================================
+   BOUTON MÉDIA
+   ========================================================= */
+
 .projet-detail__media-action {
     margin-top: 0.8rem;
 }
+
+
+/* =========================================================
+   CTA = CALL TO ACTION (VOIR LE PROJET, VISITER LE SITE, ...)
+   ========================================================= */
 
 .projet-detail__description>.projet-detail__bloc--cta {
     margin-top: 1.25rem;

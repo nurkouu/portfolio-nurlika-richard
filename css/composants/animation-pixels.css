@@ -1,3 +1,7 @@
+/* =========================================================
+   ANIMATION PIXELS - FORMES COLORÉES
+   ========================================================= */
+
 /* ANIMATION PIXEL DE L'ACCUEIL */
 .animation-pixels {
     position: absolute;
@@ -8,7 +12,8 @@
     pointer-events: none;
 }
 
-/* ANIMATION PIXEL DES PROJETS */
+
+/* ANIMATION PIXEL SUR LES PAGES PROJETS */
 .animation-pixels--projet {
     position: fixed;
     top: 4.5rem;
@@ -19,13 +24,20 @@
     overflow: hidden;
 }
 
+/* POSITION GAUCHE */
 .animation-pixels--projet-gauche {
     left: 4vw;
 }
 
+/* POSITION DROITE */
 .animation-pixels--projet-droit {
     right: 4vw;
 }
+
+
+/* =========================================================
+   DIMENSIONS
+   ========================================================= */
 
 .animation-pixels--projet .animation-pixels__boite {
     width: clamp(3.5rem, 6vw, 6rem);
@@ -36,6 +48,11 @@
     opacity: 0;
     animation-name: apparition-pixel-projet;
 }
+
+
+/* =========================================================
+   POSITIONS
+   ========================================================= */
 
 /* POSITIONS DES PIXELS - PROJETS */
 .animation-pixels--projet .animation-pixels__boite:nth-child(1) {
@@ -138,6 +155,11 @@
     right: 8%;
 }
 
+
+/* =========================================================
+   STYLES DES PIXELS
+   ========================================================= */
+
 /* PIXELS */
 .animation-pixels__boite {
     position: absolute;
@@ -158,6 +180,11 @@
 .animation-pixels__boite--rose {
     background: var(--rose-highlight-color);
 }
+
+
+/* =========================================================
+   POSITIONS SUR PAGE ACCUEIL
+   ========================================================= */
 
 /* POSITIONS DES PIXELS - ACCUEIL */
 .animation-pixels__boite:nth-child(1) {
@@ -230,6 +257,7 @@
     right: 3%;
 }
 
+
 /* ANIMATION - ACCUEIL */
 @keyframes apparition-pixel {
     0% {
@@ -258,6 +286,7 @@
     }
 }
 
+
 /* ANIMATION - PROJETS */
 @keyframes apparition-pixel-projet {
     0% {
@@ -278,6 +307,7 @@
     }
 }
 
+
 /* ACCESSIBILITÉ */
 @media (prefers-reduced-motion: reduce) {
     .animation-pixels__boite {
@@ -290,6 +320,11 @@
         opacity: 0.35;
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE MOBILE SUR LES PAGES PROJETS
+   ========================================================= */
 
 /* MOBILE */
 @media (max-width: 700px) {

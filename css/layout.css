@@ -1,4 +1,4 @@
-/* GÉNÉRAL*/
+/* GÉNÉRAL */
 * {
     box-sizing: border-box;
 }
@@ -175,55 +175,45 @@ body {
 }
 
 
-
 @keyframes glitch-letter {
 
-    /* p */
+    /* OPACITÉ - ANIMATION DES LETTRES DU MOT PORTFOLIO*/
     0% {
         opacity: 0;
     }
 
-    /* por */
     12% {
         opacity: 1;
     }
 
-    /* po */
     24% {
         opacity: 0;
     }
 
-    /* ort */
     36% {
         opacity: 1;
     }
 
-    /* portf */
     48% {
         opacity: 1;
     }
 
-    /* ptfo */
     60% {
         opacity: 0;
     }
 
-    /* portfol */
     72% {
         opacity: 1;
     }
 
-    /* foli */
     84% {
         opacity: 0;
     }
 
-    /* portfolio */
     100% {
         opacity: 1;
     }
 }
-
 
 
 .accueil-description {
@@ -231,7 +221,7 @@ body {
     margin: 4rem 0 0;
     font-family: "Gruppo";
     font-size: clamp(1.2rem, 2vw, 1.65rem);
-    /* clamp: min, idéal, max */
+    /* TAILLE : MIN / IDÉAL / MAX */
     line-height: 1.25;
 }
 
@@ -239,7 +229,7 @@ body {
     font-family: "Soopafresh";
 }
 
-/*Sélection des éléments span dans .accueil-description*/
+/* COULEURS - SPANS */
 .accueil-description span:nth-of-type(1),
 .accueil-description span:nth-of-type(4) {
     color: var(--cyan-highlight-color);
@@ -249,7 +239,6 @@ body {
 .accueil-description span:nth-of-type(3) {
     color: var(--rose-fonce-highlight-color);
 }
-
 
 
 /* SECTION PROJETS */
@@ -293,8 +282,6 @@ body {
 }
 
 
-
-
 /* SECTION À PROPOS */
 .accueil-a-propos {
     position: relative;
@@ -303,7 +290,7 @@ body {
     scroll-margin-top: 3.5rem;
 }
 
-/*IMG STYLE-2*/
+/* DÉCORATION = IMAGE STYLE */
 .accueil-a-propos__decor {
     position: absolute;
     top: 0;
@@ -323,7 +310,6 @@ body {
     padding-bottom: 10rem;
     position: relative;
     z-index: 1;
-    /*background-color: red;*/
 }
 
 
@@ -333,7 +319,7 @@ body {
     line-height: 0.9;
 }
 
-/*nurlika*/
+/* PRÉNOM */
 .accueil-a-propos__prenom {
     color: var(--text-color);
     font-family: "Vectroid";
@@ -341,7 +327,7 @@ body {
     font-weight: 400;
 }
 
-/*richard*/
+/* NOM */
 .accueil-a-propos__nom {
     color: var(--cyan-highlight-color);
     margin-left: 5vw;
@@ -359,6 +345,7 @@ body {
     line-height: 1.15;
 }
 
+/* COULEURS DU TEXTE */
 .accueil-a-propos__texte span:nth-of-type(1) {
     color: var(--rose-fonce-highlight-color);
     font-family: "Soopafresh";
@@ -389,10 +376,9 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
     align-self: end;
-
 }
 
-/*Titres logiciels et sociaux*/
+/* TITRES - LOGICIELS / SOCIAUX */
 .accueil-a-propos__bloc h3 {
     color: var(---color);
     font-family: "Gruppo";
@@ -408,27 +394,25 @@ body {
 }
 
 
-/*Sélection du class pour les logiciels*/
+/* PASTILLES - LOGICIELS */
 .accueil-a-propos__grille .accueil-pastilles:nth-of-type(1) {
-    /*enlève ça pour le mobile*/
+    /* ALIGNEMENT - DESKTOP */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0;
 }
 
-/*Sélection des du class pour les sociaux*/
+/* PASTILLES - SOCIAUX */
 .accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
-
-    /*enlève ça pour le mobile*/
+    /* ALIGNEMENT - DESKTOP */
     display: flex;
     align-items: center;
     padding: 0;
 }
 
 .accueil-a-propos__grille .accueil-pastilles:nth-of-type(2) {
-
-    /*enlève ça pour le mobile*/
+    /* ALIGNEMENT - DESKTOP */
     display: flex;
     align-items: center;
     padding: 0;
@@ -459,6 +443,7 @@ body {
     margin-right: 15px;
 }
 
+/* LIENS - ICÔNES */
 .link img {
     width: 55px;
     transition: transform 0.2s ease;
@@ -473,7 +458,7 @@ body {
     display: inline-block;
 }
 
-/* Petite flèche au-dessus des icones */
+/* FLÈCHE - TOOLTIP */
 .link::before {
     content: "";
     position: absolute;
@@ -492,7 +477,7 @@ body {
     transition: opacity 0.2s ease;
 }
 
-
+/* TOOLTIP */
 .link::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -516,6 +501,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* HOVER - TOOLTIP */
 .link:hover::after,
 .link:hover::before {
     opacity: 1;
@@ -523,8 +509,7 @@ body {
 }
 
 
-
-
+/* PASTILLES */
 .pastille {
     position: relative;
     left: 0;
@@ -538,19 +523,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /*background-color: red;*/
 
-    /* Smooth zoom */
+    /* ZOOM */
     transform: scale(3);
     transition: transform 0.25s ease;
 }
 
-/* Agrandissement de l'image au hover */
+/* HOVER - ZOOM */
 .pastille:hover img {
     transform: scale(3.5);
 }
 
-/* La petite popup */
+/* POPUP */
 .pastille::after {
     content: attr(data-nom);
     position: absolute;
@@ -579,7 +563,7 @@ body {
     top: calc(100% + 0.5rem);
 }
 
-/* Petite flèche au-dessus des icones */
+/* FLÈCHE - POPUP */
 .pastille::before {
     content: "";
     position: absolute;
@@ -598,7 +582,7 @@ body {
     transition: opacity 0.2s ease;
 }
 
-/* Apparition au hover */
+/* HOVER - POPUP */
 .pastille:hover::after,
 .pastille:hover::before {
     opacity: 1;
@@ -608,9 +592,6 @@ body {
 .pastille:hover::after {
     transform: translateX(-50%) translateY(0);
 }
-
-
-
 
 
 /* SECTION FOOTER */
@@ -634,7 +615,7 @@ body {
     margin-top: 1rem;
 }
 
-/*Hover et effets sur les icones du footer*/
+/* HOVER - ICÔNES FOOTER */
 .link-footer img {
     transition: filter 0.25s ease, transform 0.25s ease;
 }
@@ -645,15 +626,9 @@ body {
 }
 
 
-
-
-
 @media (max-width: 700px) {
 
-    /* =========================================================
-       BASE MOBILE / EMPÊCHER LE DÉBORDEMENT HORIZONTAL
-       ========================================================= */
-
+    /* BASE MOBILE - RESPONSIVE */
     html,
     body {
         width: 100%;
@@ -668,10 +643,7 @@ body {
     }
 
 
-    /* =========================================================
-       NAVIGATION - PAGE D'ACCUEIL
-       ========================================================= */
-
+    /* NAVIGATION - ACCUEIL */
     .page-accueil .navigation {
         flex-direction: column;
         align-items: center;
@@ -683,10 +655,7 @@ body {
     }
 
 
-    /* =========================================================
-       SECTION HERO
-       ========================================================= */
-
+    /* HERO - MOBILE */
     .accueil-introduction {
         min-height: 55vh;
         padding: 15vh 2rem 25vh;
@@ -710,10 +679,7 @@ body {
     }
 
 
-    /* =========================================================
-       NAVIGATION DE CHAQUE PAGE PROJETS
-       ========================================================= */
-
+    /* NAVIGATION DES PAGES PROJETS */
     .page-projet .navigation {
         flex-direction: column;
         align-items: center;
@@ -746,10 +712,7 @@ body {
     }
 
 
-    /* =========================================================
-       SECTION PROJETS
-       ========================================================= */
-
+    /* PROJETS - MOBILE */
     .accueil-projets,
     .accueil-a-propos {
         width: 100%;
@@ -783,10 +746,7 @@ body {
     }
 
 
-    /* =========================================================
-       SECTION À PROPOS - STRUCTURE
-       ========================================================= */
-
+    /* À PROPOS - STRUCTURE */
     .accueil-a-propos__contenu {
         display: flex;
         flex-direction: column;
@@ -809,10 +769,7 @@ body {
     }
 
 
-    /* =========================================================
-       DÉCORATION À PROPOS
-       ========================================================= */
-
+    /* À PROPOS - DÉCORATION */
     .accueil-projets__decor,
     .accueil-a-propos__decor {
         width: 8rem;
@@ -830,10 +787,7 @@ body {
     }
 
 
-    /* =========================================================
-       IMAGES DE MOI
-       ========================================================= */
-
+    /* IMAGES - MOI */
     .accueil-a-propos__contenu>.Images-de-moi:first-of-type {
         display: none;
     }
@@ -870,10 +824,7 @@ body {
     }
 
 
-    /* =========================================================
-       PRÉNOM
-       ========================================================= */
-
+    /* PRÉNOM - MOBILE */
     .accueil-a-propos__prenom {
         position: relative;
         right: 0;
@@ -887,10 +838,7 @@ body {
     }
 
 
-    /* =========================================================
-       NOM
-       ========================================================= */
-
+    /* NOM - MOBILE */
     .accueil-a-propos__nom {
         position: relative;
         left: 0;
@@ -905,10 +853,7 @@ body {
     }
 
 
-    /* =========================================================
-       TEXTE À PROPOS
-       ========================================================= */
-
+    /* TEXTE - À PROPOS */
     .accueil-a-propos__texte {
         position: static;
         order: 4;
@@ -923,10 +868,7 @@ body {
     }
 
 
-    /* =========================================================
-       GRILLE LOGICIELS / SOCIAUX
-       ========================================================= */
-
+    /* GRILLE - LOGICIELS / SOCIAUX */
     .accueil-a-propos__grille {
         order: 5;
         display: grid;
@@ -941,10 +883,7 @@ body {
     }
 
 
-    /* =========================================================
-       BLOCS LOGICIELS / SOCIAUX
-       ========================================================= */
-
+    /* BLOCS - LOGICIELS / SOCIAUX */
     .accueil-a-propos__bloc,
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-of-type(2) {
         position: static;
@@ -962,10 +901,7 @@ body {
     }
 
 
-    /* =========================================================
-       PASTILLES LOGICIELS
-       ========================================================= */
-
+    /* PASTILLES - LOGICIELS */
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(1) .accueil-pastilles {
         display: grid;
         grid-template-columns:
@@ -993,10 +929,7 @@ body {
     }
 
 
-    /* =========================================================
-       RÉSEAUX SOCIAUX
-       ========================================================= */
-
+    /* RÉSEAUX SOCIAUX */
     .accueil-a-propos__grille .accueil-a-propos__bloc:nth-child(2) .accueil-pastilles {
         display: flex;
         justify-content: center;
@@ -1018,16 +951,14 @@ body {
     }
 
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
+    /* FOOTER - MOBILE */
     .pied-de-page p {
         position: static;
         margin: 0;
         max-width: 100%;
         text-align: center;
-        /* Évite qu'un texte long force la page à devenir plus large. */
+
+        /* RESPONSIVE - TEXTE */
         white-space: normal;
         display: flex;
         justify-content: center;

@@ -1,31 +1,23 @@
-// bien commenter les sections
-
-
+// ANIMATION DES CARTES / PHYSIQUE
 document.addEventListener("DOMContentLoaded", () => {
 
+    // CONTENEUR DES CARTES
     const container = document.querySelector(".cartes-projets");
 
+    // VÉRIFICATION DU CONTENEUR
     if (!container) {
         return;
     }
 
+    // RÉCUPÉRATION DES CARTES
     const cards = [...container.querySelectorAll(".project-card")];
 
-    /*
-     * Don't run the physics on small screens.
-     */
+    // DÉSACTIVATION SUR PETITS ÉCRANS
     if (window.innerWidth <= 700) {
         return;
     }
 
-    /*
-     * Each card gets:
-     *
-     * x  = horizontal position
-     * y  = vertical position
-     * vx = horizontal velocity
-     * vy = vertical velocity
-     */
+    // PROPRIÉTÉS DES CARTES
     const objects = cards.map((card, index) => {
 
         const rect = card.getBoundingClientRect();
@@ -33,40 +25,34 @@ document.addEventListener("DOMContentLoaded", () => {
         return {
             element: card,
 
+            // POSITION
             x: 0,
             y: 0,
 
+            // VITESSE
             vx: (Math.random() * 0.8 + 0.4) *
                 (index % 2 === 0 ? 1 : -1),
 
             vy: (Math.random() * 0.8 + 0.4) *
                 (index % 3 === 0 ? 1 : -1),
 
+            // DIMENSIONS
             width: rect.width,
             height: rect.height
         };
     });
 
 
-    /*
-     * Keep the cards from moving too quickly.
-     */
+    // VITESSE MAXIMALE
     const MAX_SPEED = 1.15;
 
 
-    /*
-     * Small gap between cards when they collide.
-     */
+    // ESPACE ENTRE LES CARTES
     //const COLLISION_PADDING = 4;
     const COLLISION_PADDING = 24;
 
 
-    /*
-     * Randomly position cards without putting them
-     * directly on top of each other.
-     */
-
-
+    // POSITIONNEMENT ALÉATOIRE
     function placeCards() {
 
         const containerWidth = container.clientWidth;
@@ -79,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let attempts = 0;
 
 
-            /*
-             * On essaye plusieurs positions aléatoires.
-             */
+            // TENTATIVES DE POSITIONNEMENT
             while (!placed && attempts < 200) {
 
                 const maxX =
@@ -97,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
 
 
+                // POSITION ALÉATOIRE
                 const x =
                     Math.random() * maxX;
 
@@ -112,25 +97,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
 
-                /*
-                 * Vérifie si cette position touche
-                 * une autre carte.
-                 */
+                // DÉTECTION DES CHEVAUCHEMENTS
                 const overlaps = objects.some(other => {
 
-                    /*
-                     * Une carte ne peut évidemment pas
-                     * entrer en collision avec elle-même.
-                     */
+                    // IGNORER LA CARTE ELLE-MÊME
                     if (other === object) {
                         return false;
                     }
 
 
-                    /*
-                     * Ignore les cartes qui n'ont pas
-                     * encore reçu de position.
-                     */
+                    // IGNORER LES CARTES SANS POSITION
                     if (
                         other.x === 0 &&
                         other.y === 0
@@ -146,9 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
 
-                /*
-                 * La position est libre.
-                 */
+                // POSITION LIBRE
                 if (!overlaps) {
 
                     object.x = x;
@@ -162,15 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /*
-             * =================================================
-             * FALLBACK
-             * =================================================
-             *
-             * Si aucune position libre n'a été trouvée
-             * après plusieurs essais, on donne quand même
-             * une position à la carte.
-             */
+            // POSITION DE SECOURS
             if (!placed) {
 
                 const maxX =
@@ -200,9 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /*
-             * Affiche immédiatement la carte.
-             */
+            // AFFICHAGE INITIAL
             render(object);
         });
     }
@@ -210,9 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /*
-     * Rectangle collision detection.
-     */
+    // DÉTECTION DES COLLISIONS
     function rectanglesOverlap(a, b) {
 
         return (
@@ -224,23 +186,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-     * Handle two cards colliding.
-     *
-     * This uses a simplified elastic collision:
-     * cards exchange their velocity along the collision axis.
-     */
+    // GESTION DES COLLISIONS
     function resolveCollision(a, b) {
 
+        // CENTRES DES CARTES
         const centerAX = a.x + a.width / 2;
         const centerAY = a.y + a.height / 2;
 
         const centerBX = b.x + b.width / 2;
         const centerBY = b.y + b.height / 2;
 
+        // DISTANCE ENTRE LES CENTRES
         const dx = centerBX - centerAX;
         const dy = centerBY - centerAY;
 
+        // CHEVAUCHEMENT
         const overlapX =
             (a.width + b.width) / 2 -
             Math.abs(dx);
@@ -249,33 +209,25 @@ document.addEventListener("DOMContentLoaded", () => {
             (a.height + b.height) / 2 -
             Math.abs(dy);
 
-        /*
-         * If there is no overlap, nothing to do.
-         */
+
+        // AUCUNE COLLISION
         if (overlapX <= 0 || overlapY <= 0) {
             return;
         }
 
 
-        /*
-         * Resolve the collision along whichever axis
-         * has the smallest overlap.
-         */
+        // AXE DE COLLISION
         if (overlapX < overlapY) {
 
             const direction = dx >= 0 ? 1 : -1;
 
-            /*
-             * Push cards apart.
-             */
+            // SÉPARATION DES CARTES
             const push = overlapX / 2 + 1;
 
             a.x -= push * direction;
             b.x += push * direction;
 
-            /*
-             * Bounce horizontally.
-             */
+            // REBOND HORIZONTAL
             const temp = a.vx;
 
             a.vx = b.vx;
@@ -285,17 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const direction = dy >= 0 ? 1 : -1;
 
-            /*
-             * Push cards apart.
-             */
+            // SÉPARATION DES CARTES
             const push = overlapY / 2 + 1;
 
             a.y -= push * direction;
             b.y += push * direction;
 
-            /*
-             * Bounce vertically.
-             */
+            // REBOND VERTICAL
             const temp = a.vy;
 
             a.vy = b.vy;
@@ -303,9 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-         * Make sure the cards don't become stuck.
-         */
+        // ÉVITER LE BLOCAGE
         if (Math.abs(a.vx) < 0.25) {
             a.vx += a.vx >= 0 ? 0.25 : -0.25;
         }
@@ -324,9 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-     * Bounce off the walls of the container.
-     */
+    // REBOND SUR LES MURS
     function handleWalls(object) {
 
         const maxX =
@@ -336,9 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
             container.clientHeight - object.height;
 
 
-        /*
-         * Left wall
-         */
+        // MUR GAUCHE
         if (object.x <= 0) {
 
             object.x = 0;
@@ -347,9 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-         * Right wall
-         */
+        // MUR DROIT
         if (object.x >= maxX) {
 
             object.x = maxX;
@@ -358,9 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-         * Top wall
-         */
+        // MUR SUPÉRIEUR
         if (object.y <= 0) {
 
             object.y = 0;
@@ -369,9 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /*
-         * Bottom wall
-         */
+        // MUR INFÉRIEUR
         if (object.y >= maxY) {
 
             object.y = maxY;
@@ -381,9 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-     * Apply position to the DOM.
-     */
+    // AFFICHAGE DE LA POSITION
     function render(object) {
 
         object.element.style.left =
@@ -394,9 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-     * Prevent cards from becoming too fast.
-     */
+    // LIMITATION DE LA VITESSE
     function limitSpeed(object) {
 
         object.vx = Math.max(
@@ -411,36 +343,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*
-     * Main physics loop.
-     */
+    // BOUCLE PRINCIPALE
     let animationFrame;
 
     function animate() {
 
-        /*
-         * If the user is hovering a card,
-         * don't update positions.
-         */
+        // PAUSE AU SURVOL
         if (!container.classList.contains("is-paused")) {
 
-            /*
-             * Move cards.
-             */
+            // DÉPLACEMENT DES CARTES
             objects.forEach(object => {
 
                 object.x += object.vx;
                 object.y += object.vy;
 
+                // LIMITATION DE VITESSE
                 limitSpeed(object);
 
+                // GESTION DES MURS
                 handleWalls(object);
             });
 
 
-            /*
-             * Check every pair of cards for collisions.
-             */
+            // DÉTECTION DES COLLISIONS
             for (let i = 0; i < objects.length; i++) {
 
                 for (
@@ -459,68 +384,52 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /*
-             * Render the new positions.
-             */
+            // MISE À JOUR DES POSITIONS
             objects.forEach(render);
         }
 
+        // PROCHAINE IMAGE
         animationFrame =
             requestAnimationFrame(animate);
     }
 
 
-    /*
-     * =====================================================
-     * HOVER BEHAVIOR
-     * =====================================================
-     */
-
+    // SURVOL DES CARTES
     cards.forEach(card => {
 
+        // SOURIS SUR LA CARTE
         card.addEventListener("mouseenter", () => {
 
-            /*
-             * Stop the physics.
-             */
+            // PAUSE DE L'ANIMATION
             container.classList.add("is-paused");
 
         });
 
 
+        // SOURIS HORS DE LA CARTE
         card.addEventListener("mouseleave", () => {
 
-            /*
-             * Resume the physics.
-             */
+            // REPRISE DE L'ANIMATION
             container.classList.remove("is-paused");
         });
     });
 
 
-    /*
-     * =====================================================
-     * START
-     * =====================================================
-     */
-
+    // DÉMARRAGE
     placeCards();
 
     animate();
 
 
-    /*
-     * Recalculate the playground when the window changes size.
-     */
+    // ADAPTATION À LA TAILLE DE LA FENÊTRE
     window.addEventListener("resize", () => {
 
+        // DÉSACTIVATION SUR PETITS ÉCRANS
         if (window.innerWidth <= 700) {
             return;
         }
 
-        /*
-         * Make sure cards remain inside the new container.
-         */
+        // AJUSTEMENT DES DIMENSIONS
         objects.forEach(object => {
 
             object.width =
@@ -529,11 +438,12 @@ document.addEventListener("DOMContentLoaded", () => {
             object.height =
                 object.element.offsetHeight;
 
+            // LIMITES DU CONTENEUR
             handleWalls(object);
 
+            // MISE À JOUR DE LA POSITION
             render(object);
         });
     });
 
 });
-
