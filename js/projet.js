@@ -90,7 +90,7 @@ const projets = {
         numero: "03",
         description: "<p><em>Armorade</em> est un jeu d’aventure en 2D qui raconte l’histoire d’une chasseuse prisonnière d’une forêt mystérieuse. Pour <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">s’échapper</span>, elle doit explorer la forêt, affronter des ennemis, améliorer ses capacités et trouver un <span class=\"projet-detail__highlight projet-detail__highlight--rose\">artefact</span> qui lui permettra de vaincre le boss final.</p><p>Pour ce projet, le professeur nous demandait de créer un jeu avec des mécaniques de <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">progression</span> simples, mais qui donnent au joueur de véritables objectifs. Je me suis <span class=\"projet-detail__highlight projet-detail__highlight--rose\">inspirée</span> du thème de <span class=\"projet-detail__highlight projet-detail__highlight--cyan\">l’aventure</span> et de certaines mécaniques du jeu <em>Rayman Adventures</em>, notamment de la collecte des pièces et de débloquer certains éléments. Grâce aux rétroactions du professeur, le concept a <span class=\"projet-detail__highlight projet-detail__highlight--rose\">évolué</span> pour devenir une expérience plus cohérente et axée sur la progression.</p>",
         logiciels: [
-            { nom: "Phaser v3", image: "./assets/icones/phaser.png" },
+            { nom: "Phaser", image: "./assets/icones/phaser.png" },
             { nom: "HTML5", image: "./assets/icones/html5.png" }
         ],
         equipe: ["Nurlika Richard : Game designeuse / Programmeuse / Designeuse d'interface"],
