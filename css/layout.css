@@ -138,6 +138,8 @@ body {
     animation: glitch-letter 5s ease-in infinite;
 }
 
+/* DÉLAI - ANIMATION DES LETTRES DU MOT PORTFOLIO*/
+
 #titre-accueil span:nth-child(1) {
     animation-delay: 0s;
 }
@@ -976,3 +978,4 @@ body {
         text-align: center;
     }
 }
+

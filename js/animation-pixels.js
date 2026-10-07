@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // DURÉE ALÉATOIRE
         const duration = isProjectPixel
             ? 6 + Math.random() * 3
-            : 2.5 + Math.random() * 2;
+            : 2.1 + Math.random() * 1.6;
 
         // APPLICATION DU DÉLAI
         box.style.setProperty("--delai", `${delay.toFixed(2)}s`);

@@ -3,16 +3,26 @@
    ========================================================= */
 
 /* ANIMATION PIXEL DE L'ACCUEIL */
-.animation-pixels {
+/*.animation-pixels {
     position: absolute;
     top: 8%;
     right: 5vw;
     width: min(36vw, 34rem);
     height: 76%;
     pointer-events: none;
+}*/
+
+.animation-pixels {
+    position: absolute;
+    top: 6%;
+    right: 3vw;
+    width: min(42vw, 42rem);
+    height: 100vw;
+    pointer-events: none;
 }
 
 
+        
 /* ANIMATION PIXEL SUR LES PAGES PROJETS */
 .animation-pixels--projet {
     position: fixed;
@@ -186,7 +196,7 @@
    POSITIONS SUR PAGE ACCUEIL
    ========================================================= */
 
-/* POSITIONS DES PIXELS - ACCUEIL */
+/* POSITIONS DES PIXELS ANIMMÉS - ACCUEIL */
 .animation-pixels__boite:nth-child(1) {
     top: 2%;
     left: 5%;
@@ -255,6 +265,26 @@
 .animation-pixels__boite:nth-child(14) {
     top: 81%;
     right: 3%;
+}
+
+.animation-pixels__boite:nth-child(15) {
+    top: 10%;
+    left: 46%;
+}
+
+.animation-pixels__boite:nth-child(16) {
+    top: 38%;
+    right: 20%;
+}
+
+.animation-pixels__boite:nth-child(17) {
+    top: 62%;
+    left: 18%;
+}
+
+.animation-pixels__boite:nth-child(18) {
+    top: 88%;
+    right: 18%;
 }
 
 
@@ -334,3 +364,18 @@
         display: none;
     }
 }
+
+/* =========================================================
+   RESPONSIVE ÉCRAN LARGE (2000PX ET PLUS)
+   ========================================================= */
+
+/* ÉCRAN LARGE 
+@media (min-width: 2001px) {
+
+    .animation-pixels {
+        top: 6%;
+        right: 3vw;
+        width: min(42vw, 42rem);
+        height: 100vw;
+    }
+}*/
