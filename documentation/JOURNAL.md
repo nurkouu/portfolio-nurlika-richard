@@ -100,9 +100,9 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 <img width="2466" height="802" alt="Capture d’écran 2026-10-06 092551" src="https://github.com/user-attachments/assets/6e927905-87bb-4a98-ade6-f5c409b060cc" />
 
 
-## 5 questions - Bloc 2
+## 5 questions - Bloc 3
 1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? Arrangement de l'adaptation du site pour le mobile et la correction du QA du portfolio.
 2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver pourquoi mon image d'icone HTML5 ne voulais pas s'afficher lorsque j'ouvre mon portfolio sur le web alors qu'il s'affichait bien quand je l'ouvrait avec le live open server de Visual Studio Code.
 3. Qu’est-ce que j’ai appris que je ne savais pas avant ? J'ai appris que Windows peut être stricte avec le nommage de fichiers et d'éléments et ne vas pas toujours lire les noms en majuscule.
 4. Si j'avais une semaine de plus, qu'est-ce que je changerais? Ajouter mon idée de page "loading" avant d'arriver sur ma page d'accueil.
-5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? Non.
+5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? Je n'ai pas utiliser l'IA.
