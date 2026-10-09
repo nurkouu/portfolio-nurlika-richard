@@ -119,6 +119,16 @@
     border: 1px solid #4a4a4a;
     background: linear-gradient(180deg, #dfdfdf 0%, #bfbfbf 100%);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.project-card__control--close:hover,
+.project-card__control--close:focus-visible {
+    outline: 1px solid var(--secondary-nav-color);
+    outline-offset: 1px;
 }
 
 /* BOUTON — MINIMISER */
@@ -631,8 +641,11 @@
 /* CARROUSEL — GALERIE PROCESS */
 .projet-detail__process-gallery .projet-detail__carousel {
     width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-areas: "track";
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas:
+        "track track track"
+    "previous counter next"
+    "view view view";
 }
 
 /* PISTE — CARROUSEL */
@@ -661,7 +674,48 @@
 
 /* BOUTONS — GALERIE — MASQUÉS */
 .projet-detail__process-gallery .projet-detail__carousel-button {
-    display: none;
+    display: inline-flex;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-button--previous {
+    grid-area: previous;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-button--next {
+    grid-area: next;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-view {
+    grid-area: view;
+    justify-self: end;
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.projet-detail__process-counter {
+    grid-area: counter;
+    justify-self: center;
+    align-self: center;
+    min-width: 5.5rem;
+    text-align: center;
+    color: var(--text-color);
+    font-family: "VT323";
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+}
+
+.projet-detail__process-figure {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+}
+
+.projet-detail__process-image {
+    cursor: zoom-in;
+}
+
+.projet-detail__process-zoom {
+    justify-self: start;
 }
 
 /* =========================================================

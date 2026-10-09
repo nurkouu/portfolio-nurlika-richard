@@ -141,6 +141,7 @@ const projets = {
 const idProjet = new URLSearchParams(window.location.search).get("id") || "imparfaite";
 const projet = projets[idProjet] || projets.imparfaite;
 const projetsSansEquipe = ["intervalle", "armorade", "liquid-loom"];
+const projetsAvecFermeture = new Set(["imparfaite", "intervalle", "armorade", "liquid-loom"]);
 
 
 // RÉCUPÉRATION DES ÉLÉMENTS HTML
@@ -154,8 +155,16 @@ const elements = {
     equipe: document.querySelector("#projet-equipe"),
     numero: document.querySelector("#projet-numero"),
     meta: document.querySelector("#projet-meta"),
-    titreEquipe: document.querySelector("#titre-equipe-projet")
+    titreEquipe: document.querySelector("#titre-equipe-projet"),
+    closeControl: document.querySelector(".project-card__control--close")
 };
+
+
+if (elements.closeControl && projetsAvecFermeture.has(idProjet)) {
+    elements.closeControl.addEventListener("click", () => {
+        window.location.href = "./index.html#accueil";
+    });
+}
 
 
 // RESTAURATION DE LA DATE POUR LA VERSION DESKTOP À SA PLACE ORIGINAL
@@ -461,12 +470,35 @@ function renderIntervalleGallery() {
         const slide = document.createElement("div");
         slide.className = `projet-detail__carousel-slide${index === 0 ? " is-active" : ""}`;
 
+        const figure = document.createElement("figure");
+        figure.className = "projet-detail__process-figure";
+
         const image = document.createElement("img");
-        image.className = "projet-detail__media-item";
+        image.className = "projet-detail__media-item projet-detail__process-image";
         image.src = `./assets/images/${imageName}.png`;
         image.alt = imageName.replace(/-/g, " ");
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
 
-        slide.append(image);
+        const openLightbox = () => {
+            const enlargedImage = document.createElement("img");
+            enlargedImage.className = "projet-detail__media-item";
+            enlargedImage.src = image.src;
+            enlargedImage.alt = image.alt;
+
+            createLightbox(enlargedImage);
+        };
+
+        image.addEventListener("click", openLightbox);
+        image.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openLightbox();
+            }
+        });
+
+        figure.append(image);
+        slide.append(figure);
         slides.append(slide);
     });
 
@@ -480,18 +512,64 @@ function renderIntervalleGallery() {
         });
     };
 
+    const goToSlide = (index) => {
+        activeIndex = (index + projet.gallery.length) % projet.gallery.length;
+        syncGalleryState();
+    };
+
+    const prevButton = createMediaButton("←", () => {
+        goToSlide(activeIndex - 1);
+    });
+
+    prevButton.classList.add(
+        "projet-detail__carousel-button",
+        "projet-detail__carousel-button--previous"
+    );
+
+    const nextButton = createMediaButton("→", () => {
+        goToSlide(activeIndex + 1);
+    });
+
+    nextButton.classList.add(
+        "projet-detail__carousel-button",
+        "projet-detail__carousel-button--next"
+    );
+
+    const viewButton = createMediaButton("voir plus grand", () => {
+        const currentImage = projet.gallery[activeIndex];
+
+        if (!currentImage) {
+            return;
+        }
+
+        const enlargedImage = document.createElement("img");
+        enlargedImage.className = "projet-detail__media-item";
+        enlargedImage.src = `./assets/images/${currentImage}.png`;
+        enlargedImage.alt = currentImage.replace(/-/g, " ");
+
+        createLightbox(enlargedImage);
+    });
+
+    viewButton.classList.add("projet-detail__carousel-view");
+
+    const counter = document.createElement("span");
+    counter.className = "projet-detail__process-counter";
+    counter.setAttribute("aria-live", "polite");
+
+    const updateCounter = () => {
+        counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(projet.gallery.length).padStart(2, "0")}`;
+    };
+
+    const syncGalleryState = () => {
+        updateSlides();
+        updateCounter();
+    };
+
 
     // AJOUT DE LA GALERIE À LA PAGE
-    gallery.append(slides);
+    gallery.append(slides, prevButton, counter, nextButton, viewButton);
     galleryElement.append(gallery);
-    updateSlides();
-
-
-    // CHANGEMENT AUTOMATIQUE DES IMAGES
-    window.setInterval(() => {
-        activeIndex = (activeIndex + 1) % projet.gallery.length;
-        updateSlides();
-    }, 3000);
+    syncGalleryState();
 }
 
 
@@ -592,11 +670,11 @@ function renderPrice(project) {
     message.className = "projet-detail__prix";
 
 
-    // MESSAGE POUR LE PROJET IMPARFAITE
+    // MESSAGE **PRIX** POUR LE PROJET IMPARFAITE
     if (idProjet === "imparfaite") {
         message.textContent = "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
 
-        // MESSAGE POUR LE PROJET INTERVALLE
+        // MESSAGE **PRIX** POUR LE PROJET INTERVALLE
     } else {
         message.append(
             "J’ai également eu la chance de participer au Concours d’essais audiovisuels 2025 en y présentant ",
