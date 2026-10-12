@@ -362,31 +362,7 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 
 ##
 - **Date :** 2026-10-12
-- **Prompt :** "Ajuste la section du sélecteur FR/EN pour qu’elle ait le même fond gris que la section « About », en faisant en sorte que le gris couvre toute la largeur et qu’aucun fond blanc ne soit visible derrière. Sur mobile, place les quatre options du menu de navigation sur une seule ligne, côte à côte. Ajuste leur taille, les espacements (tout ce qui est nécessaire) pour que tout rentre correctement dans l’écran, sans débordement. Garde le style actuel et modifie uniquement cette section."
+- **Prompt :** "Ajuste la section du sélecteur FR/EN pour qu’elle ait le même fond gris que la section « About », en faisant en sorte que le gris couvre toute la largeur et qu’aucun fond blanc ne soit visible derrière. Sur mobile, place les quatre options du menu de navigation sur une seule ligne, côte à côte, en ajustant leur taille, les espacements et les icônes au besoin pour que tout rentre correctement dans l’écran, sans débordement. Applique également ces modifications à la navigation de chaque page projet, soit Intervalle, Imparfaite, Armorade et Liquid-Loom. Sur ces pages, organise le menu mobile dans cet ordre : Accueil, Projets, À propos, puis le sélecteur FR/EN. Réduis la taille des icônes de dossiers et ajuste les espacements pour que les quatre éléments tiennent sur une seule ligne, avec un espacement équilibré, sans débordement et en restant bien lisibles sur les petits écrans. Conserve le design actuel et limite les modifications à la navigation mobile et à son arrière-plan, sans changer le reste du site ni la version ordinateur."
 - **Outil :** Copilot
 - **Résultat :** 
-
-
-##
-- **Date :** 2026-10-12
-- **Prompt :** "Pour la navigation de chaque page projet donc pour intervalle, imparfaite, armorade et liquid-loom, je veux que tu fasse ça aussi : Sur mobile, arrange le menu de navigation dans cet ordre : Accueil, Projets, À propos, puis le sélecteur FR/EN. Réduis la taille des icônes de dossiers pour que les quatre éléments tiennent sur une seule ligne, avec un espacement équilibré et sans débordement. Garde le design actuel et assure-toi que tout reste lisible et bien aligné sur les petits écrans."
-- **Outil :** Copilot
-- **Résultat :** 
-
-##
-- **Date :** 2026-10-12
-- **Prompt :** ""
-- **Outil :** Copilot
-- **Résultat :** 
-
-##
-- **Date :** 2026-10-12
-- **Prompt :** ""
-- **Outil :** Copilot
-- **Résultat :** 
-
-##
-- **Date :** 2026-10-12
-- **Prompt :** ""
-- **Outil :** Copilot
-- **Résultat :** 
+<img width="391" height="34" alt="Screenshot 2026-10-12 154131" src="https://github.com/user-attachments/assets/3958d455-b33d-47c6-9350-5f3d181f3443" />
