@@ -231,3 +231,19 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
     box-sizing: border-box;
     margin-top: 0.2rem;
 }
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Adapte la galerie d’images de processus du projet Intervalle pour qu’elle s’affiche correctement sur mobile. Ajuste sa largeur, ses dimensions et l’espacement des éléments pour qu’elle s’intègre bien à l’écran d’un téléphone, sans débordement ni éléments coupés. Garde les images centrées et assure-toi que les boutons de navigation et le bouton « Voir plus grand » restent visibles et accessibles. Modifie uniquement l’affichage mobile de cette galerie."
+- **Outil :** Copilot
+- **Résultat :**  
+    /* GALERIE PROCESSUS — POSITIONNEMENT */
+    .projet-detail__process-gallery {
+        width: 100%;
+        top: auto;
+        right: auto;
+        margin: 1.5rem 0 2rem;
+        transform: none;
+        scale: 1;
+        z-index: 5;
+    }

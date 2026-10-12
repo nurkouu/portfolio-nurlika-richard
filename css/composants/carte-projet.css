@@ -1310,14 +1310,13 @@
 
     /* GALERIE PROCESSUS — POSITIONNEMENT */
     .projet-detail__process-gallery {
-        width: min(100%, 420px);
-        position: relative;
-        top: 20vh;
-        right: 15vh;
-        margin: 1.5rem auto 2rem;
+        width: 100%;
+        top: auto;
+        right: auto;
+        margin: 1.5rem 0 2rem;
         transform: none;
-        scale: 2;
-        z-index: -2;
+        scale: 1;
+        z-index: 5;
     }
 
 
