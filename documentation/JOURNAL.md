@@ -102,7 +102,132 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
 
 ## 5 questions - Bloc 3 - correctifs et finalisation
 1. Qu’est-ce que j’ai accompli depuis le dernier bloc ? Arrangement de l'adaptation du site pour le mobile et la correction du QA du portfolio.
-2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver pourquoi mon image d'icone HTML5 ne voulais pas s'afficher lorsque j'ouvre mon portfolio sur le web alors qu'il s'affichait bien quand je l'ouvrait avec le live open server de Visual Studio Code.
+2. Quelle a été ma principale difficulté et comment je l’ai surmontée ? Trouver pourquoi mon image d'icone HTML5 ne voulais pas s'afficher lorsque j'ouvrais mon portfolio sur le web alors qu'il s'affichait bien quand je l'ouvrais avec le live open server de Visual Studio Code.
 3. Qu’est-ce que j’ai appris que je ne savais pas avant ? J'ai appris que Windows peut être stricte avec le nommage de fichiers et d'éléments et ne vas pas toujours lire les noms en majuscule.
 4. Si j'avais une semaine de plus, qu'est-ce que je changerais? Ajouter mon idée de page "loading" avant d'arriver sur ma page d'accueil.
-5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? Je n'ai pas utiliser l'IA.
+5. Est-ce que j’ai utilisé l’IA ? Si oui, pour quoi et qu’est-ce que ça m’a appris ? Oui pour apporter des derniers changements à mon portfolio plus spécifiquement au gallery d'images de processus pour mon projet Intervalle.
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Trouve la cause exacte du problème et corrige-le : dans la galerie d’images du processus de mon projet Intervalle, le bouton de navigation vers la gauche est beaucoup trop long comparé à celui vers la droite. Ajuste uniquement le CSS ou les styles nécessaires pour que les deux boutons aient exactement la même taille, la même forme et le même alignement. Limite strictement les modifications à cette section de la galerie. Ne modifie aucune autre section, aucun autre bouton et aucune autre fonctionnalité du site."
+- **Outil :** Copilot
+- **Résultat :** .projet-detail__process-gallery .projet-detail__carousel-view { 
+    grid-area: previous;
+    position: relative;
+    left: 30vh;
+    justify-self: start;
+}  
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Ajuste la grille de la galerie d’images du processus de mon projet Intervalle pour qu’elle s’intègre correctement dans la carte du projet et que le bouton « Précédent » à gauche soit entièrement visible. Décale la grille vers la droite ou réduis légèrement sa largeur du côté gauche, selon ce qui fonctionne le mieux, tout en gardant tous les éléments centrés et bien alignés. Assure-toi que les boutons « Précédent » et « Suivant » sont entièrement visibles, de la même taille, et que la grille reste à l’intérieur des limites de la carte, sans débordement ni coupure. Maintiens une mise en page responsive sur toutes les tailles d’écran et limite strictement les modifications au CSS et aux styles de cette galerie du projet Intervalle, sans toucher aux autres sections du site ni modifier le fonctionnement de la galerie."
+- **Outil :** Copilot
+- **Résultat :** .projet-detail__process-gallery {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+/* CARROUSEL — GALERIE PROCESS */
+.projet-detail__process-gallery .projet-detail__carousel {
+    width: 100%;
+    margin: 2.5rem auto 2.5rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+        "track track track"
+        "previous counter next"
+}
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Corrige le bouton « Voir plus grand » de la galerie d’images du processus du projet Intervalle, car il déborde actuellement vers la gauche et dépasse les limites de la grille. Réduis sa largeur et ajuste ses styles afin qu’il s’intègre parfaitement à l’intérieur de la grille, sans débordement, tout en restant centré horizontalement. Assure-toi que le bouton conserve une apparence cohérente avec le design actuel et qu’il reste responsive. Modifie uniquement le CSS et les styles du bouton « Voir plus grand » de la galerie d’images du processus du projet Intervalle. Ne modifie aucun autre bouton, aucune autre galerie et aucune autre section du site."
+- **Outil :** Copilot
+- **Résultat :** /*BOUTON VOIR PLUS GRAND POUR LES IMAGES DE PROCESSUS*/
+.projet-detail__process-gallery .projet-detail__carousel-view {
+    grid-area: view;
+    justify-self: center;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+}
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Aussi, agrandis la galerie d’images de processus dans la grille du projet Intervalle, parce qu’elle est vraiment trop petite en ce moment. Fais en sorte qu’elle prenne plus de place dans la grille, tout en restant bien centrée. Modifie seulement cette galerie."
+- **Outil :** Copilot
+- **Résultat :** .projet-detail__process-gallery .projet-detail__carousel-slide {
+    position: absolute;
+    width: 100%;
+    margin-left: 0;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Peux-tu rapprocher les boutons de navigation du carrousel de la galerie d’images de processus pour qu’ils soient plus près de la galerie? Modifie seulement cette section du projet Intervalle."
+- **Outil :** Copilot
+- **Résultat :** .projet-detail__process-gallery .projet-detail__carousel {
+    width: 100%;
+    margin: 2.5rem auto 2.5rem;
+    gap: 0.25rem;
+    /*3 Colonnes : 1e = auto, 2e = espace min de 0 et max d'une fraction, 3e = auto */
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+        "track track track"
+        "previous counter next"
+        "view view view";
+}
+
+/* PISTE — CARROUSEL */
+.projet-detail__process-gallery .projet-detail__carousel-track {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+/* SLIDES — CARROUSEL */
+.projet-detail__process-gallery .projet-detail__carousel-slide {
+    position: absolute;
+    width: 100%;
+    margin-left: 0;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms ease;
+}
+
+/* SLIDE — ACTIVE */
+.projet-detail__process-gallery .projet-detail__carousel-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* BOUTONS — GALERIE — MASQUÉS */
+.projet-detail__process-gallery .projet-detail__carousel-button {
+    display: inline-flex;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-button--previous {
+    grid-area: previous;
+    position: relative;
+    justify-self: start;
+}
+
+.projet-detail__process-gallery .projet-detail__carousel-button--next {
+    grid-area: next;
+}
+
+/*BOUTON VOIR PLUS GRAND POUR LES IMAGES DE PROCESSUS*/
+.projet-detail__process-gallery .projet-detail__carousel-view {
+    grid-area: view;
+    justify-self: center;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+}
