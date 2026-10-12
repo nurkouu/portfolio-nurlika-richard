@@ -10,12 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
+
+    // OUVRIR LA NOTIFICATION AU TOUCHER SUR MOBILE
+    const toggleNotification = () => {
+        if (!mobileQuery.matches) {
+            return;
+        }
+
+        const isOpen = notification.classList.toggle("notification-visite--ouvert");
+        notification.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    notification.addEventListener("click", toggleNotification);
+    notification.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+            return;
+        }
+
+        event.preventDefault();
+        toggleNotification();
+    });
+
     // FONCTION PERMETTANT D'AFFICHER OU DE MASQUER LA NOTIFICATION
     const showNotification = (isVisible, replay = false) => {
 
         // MASQUER LA NOTIFICATION LORSQUE LA SECTION N'EST PLUS VISIBLE
         if (!isVisible) {
             notification.classList.remove("notification-visite--visible");
+            notification.classList.remove("notification-visite--ouvert");
+            notification.setAttribute("aria-expanded", "false");
             return;
         }
 
