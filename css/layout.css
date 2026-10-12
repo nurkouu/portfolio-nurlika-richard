@@ -138,6 +138,10 @@ body {
     animation: glitch-letter 5s ease-in infinite;
 }
 
+#titre-accueil .titre-accueil__ligne {
+    display: contents;
+}
+
 /* DÉLAI - ANIMATION DES LETTRES DU MOT PORTFOLIO*/
 
 #titre-accueil span:nth-child(1) {
@@ -665,11 +669,22 @@ body {
     }
 
     .accueil-sur-titre {
+        width: 100%;
+        margin: 1rem 0 0;
         font-size: 5.7vh;
-        padding-top: 5rem;
-        padding-left: 1.5rem;
-        display: flex;
-        justify-content: center;
+        padding: 5rem 0 0;
+        text-align: center;
+    }
+
+    #titre-accueil {
+        width: 100%;
+        font-size: clamp(8rem, 35vw, 9.375rem);
+        line-height: 0.9;
+        text-align: center;
+    }
+
+    #titre-accueil .titre-accueil__ligne {
+        display: block;
     }
 
     .accueil-description {
