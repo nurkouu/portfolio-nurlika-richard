@@ -492,7 +492,7 @@
 
     /* CARTE 1 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(1) {
-        transform: translateX(-3rem);
+        transform: translateX(0.8rem);
     }
 
     /* CARTE 2 — DÉCALAGE */
@@ -502,12 +502,12 @@
 
     /* CARTE 3 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(3) {
-        transform: translateX(-3rem);
+        transform: translateX(0.8rem);
     }
 
     /* CARTE 4 — DÉCALAGE */
     .cartes-projets .project-card:nth-child(4) {
-        transform: translateX(-0.7rem);
+        transform: translateX(-0.8rem);
     }
 
     /* HEADER DES CARTES */
