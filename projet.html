@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/composants/carte-projet.css">
     <link rel="stylesheet" href="./css/composants/bouton.css">
     <link rel="stylesheet" href="./css/composants/animation-pixels.css">
+    <script src="./js/i18n.js" defer></script>
     <script src="./js/projet.js" defer></script>
     <script src="./js/animation-pixels.js" defer></script>
 </head>
@@ -27,9 +28,9 @@
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
-            <li><a href="./index.html#accueil">Accueil</a></li>
-            <li><a href="./index.html#projets">Projets</a></li>
-            <li><a href="./index.html#a-propos">À propos</a></li>
+            <li><a href="./index.html#accueil" data-i18n="home">Accueil</a></li>
+            <li><a href="./index.html#projets" data-i18n="projects">Projets</a></li>
+            <li><a href="./index.html#a-propos" data-i18n="about">À propos</a></li>
         </ul>
     </nav>
 
@@ -102,6 +103,7 @@
                     <span class="project-card__control project-card__control--minimize" aria-hidden="true"></span>
                     <span class="project-card__control project-card__control--maximize" aria-hidden="true"></span>
                     <button type="button" class="project-card__control project-card__control--close"
+                        data-i18n-aria-label="closeHome"
                         aria-label="Retour à la page d'accueil"></button>
                 </div>
             </header>
@@ -131,23 +133,24 @@
 
                         <!-- BOUTON "CALL TO ACTION" DES PROJETS -->
                         <section class="projet-detail__bloc projet-detail__bloc--cta" id="projet-cta"
+                            data-i18n-aria-label="projectAction"
                             aria-label="Action du projet"></section>
                     </section>
 
 
                     <!-- INFORMATIONS DES PROJETS -->
-                    <aside class="projet-detail__infos" aria-label="Informations du projet">
+                    <aside class="projet-detail__infos" data-i18n-aria-label="projectInfo" aria-label="Informations du projet">
 
                         <!-- LOGICIELS UTILISÉS -->
                         <section class="projet-detail__bloc" aria-labelledby="titre-logiciels-projet">
-                            <h2 id="titre-logiciels-projet">logiciels</h2>
+                            <h2 id="titre-logiciels-projet" data-i18n="software">logiciels</h2>
                             <ul class="projet-detail__liste" id="projet-logiciels"></ul>
                         </section>
 
 
                         <!-- RÔLES ET ÉQUIPE -->
                         <section class="projet-detail__bloc" aria-labelledby="titre-equipe-projet">
-                            <h2 id="titre-equipe-projet">rôles - équipe</h2>
+                            <h2 id="titre-equipe-projet" data-i18n="team">rôles - équipe</h2>
                             <ul class="projet-detail__liste" id="projet-equipe"></ul>
                         </section>
 
@@ -155,14 +158,15 @@
 
                         <!-- PRIX DES PROJETS -->
                         <section class="projet-detail__bloc projet-detail__bloc--prix" id="projet-prix"
-                            aria-label="Prix du projet"></section>
+                        data-i18n-aria-label="projectPrize"
+                        aria-label="Prix du projet"></section>
                     </aside>
                 </section>
 
 
 
                 <!-- LIEN POUR RETOURNER AU SECTION PROJETS -->
-                <a class="projet-detail__retour" href="./index.html#projets">← retour à la section projets</a>
+                <a class="projet-detail__retour" data-i18n="backProjects" href="./index.html#projets">← retour à la section projets</a>
             </section>
 
 

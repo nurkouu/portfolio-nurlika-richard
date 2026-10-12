@@ -247,3 +247,146 @@ Je veux que la personne retienne à quel point je m’engage dans mes projets."
         scale: 1;
         z-index: 5;
     }
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Sur la version mobile de mon portfolio, je veux que les projets dans la section « Projets » de la page d’accueil soient bien centrés sur l’écran, notamment sur mon iPhone 15 Plus. Je veux aussi que mon nom, dans le titre de la section « Accueil », soit parfaitement centré en mode mobile. Enfin, ajuste la taille du texte et la mise en page du mot « Portfolio » pour que le « o » reste collé au « i » et ne se retrouve pas tout seul sur une troisième ligne. Assure-toi que tout soit bien aligné et lisible sur mobile, sans modifier la version ordinateur."
+- **Outil :** Copilot
+- **Résultat :** 
+    #titre-accueil .titre-accueil__ligne {
+        display: contents;
+    }
+
+    .accueil-sur-titre {
+        width: 100%;
+        margin: 1rem 0 0;
+        font-size: 5.7vh;
+        padding: 5rem 0 0;
+        text-align: center;
+    }
+
+    #titre-accueil {
+        width: 100%;
+        font-size: clamp(8rem, 35vw, 9.375rem);
+        line-height: 0.9;
+        text-align: center;
+    }
+
+    #titre-accueil .titre-accueil__ligne {
+        display: block;
+    }
+
+    <!-- TITRE PRINCIPAL -->
+                <h1 id="titre-accueil">
+                    <span class="titre-accueil__ligne"><span>p</span><span>o</span><span>rt</span></span><span
+                        class="titre-accueil__ligne"><span>f</span><span>o</span><span>li</span><span>o</span></span>
+                </h1>
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Sur mobile, je veux que le badge de notification dans la section « À propos » ouvre le pop-up lorsqu’on clique dessus. Assure-toi que le badge soit bien cliquable sur les appareils mobiles et que le pop-up s’affiche correctement, comme sur la version ordinateur, sans modifier le fonctionnement de la version desktop."
+- **Outil :** Copilot
+- **Résultat :**     
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
+
+    // OUVRIR LA NOTIFICATION AU TOUCHER SUR MOBILE
+    const toggleNotification = () => {
+        if (!mobileQuery.matches) {
+            return;
+        }
+
+        const isOpen = notification.classList.toggle("notification-visite--ouvert");
+        notification.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    notification.addEventListener("click", toggleNotification);
+    notification.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+            return;
+        }
+
+        event.preventDefault();
+        toggleNotification();
+    });
+
+            if (!isVisible) {
+            notification.classList.remove("notification-visite--visible");
+            notification.classList.remove("notification-visite--ouvert");
+            notification.setAttribute("aria-expanded", "false");
+            return;
+        }
+
+    .notification-visite.notification-visite--ouvert {
+        width: min(22rem, calc(100vw - 3rem));
+        background-color: var(--cyan-highlight-color);
+    }
+
+    .notification-visite.notification-visite--ouvert .notification-visite__message {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .notification-visite.notification-visite--ouvert .notification-visite__badge {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    .notification-visite:not(.notification-visite--ouvert):focus-within {
+        width: 3.5rem;
+        background-color: var(--rose-highlight-color);
+    }
+
+    .notification-visite:not(.notification-visite--ouvert):focus-within .notification-visite__message {
+        opacity: 0;
+        transform: translateX(0.5rem);
+    }
+
+    .notification-visite:not(.notification-visite--ouvert):focus-within .notification-visite__badge {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    <!-- NOTIFICATION DE REMERCIEMENTS -->
+    <aside class="notification-visite" aria-label="Message de bienvenue" role="button" tabindex="0"
+        aria-expanded="false">
+        <span class="notification-visite__badge" aria-hidden="true">1</span>
+        <span class="notification-visite__icone" aria-hidden="true">✉</span>
+
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Ajoute une option FR / EN à mon site web pour permettre aux visiteurs de passer du français à l’anglais et vice versa. Assure-toi que tout le site soit traduit, incluant les menus, les titres, les boutons, les descriptions de projets et les autres textes. Utilise un système de traduction centralisé pour éviter de dupliquer le code. Le changement de langue doit se faire instantanément, sans recharger la page, et le choix de l’utilisateur doit être conservé lorsqu’il navigue sur le site. Par défaut, garde le français comme langue principale. Intègre le sélecteur FR / EN discrètement dans la navigation, avec un design cohérent avec le site actuel. Assure-toi que toutes les pages et les versions mobiles fonctionnent correctement dans les deux langues, sans modifier le design existant."
+- **Outil :** Copilot
+- **Résultat :** La page i18n.js
+
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Ajuste la section du sélecteur FR/EN pour qu’elle ait le même fond gris que la section « About », en faisant en sorte que le gris couvre toute la largeur et qu’aucun fond blanc ne soit visible derrière. Sur mobile, place les quatre options du menu de navigation sur une seule ligne, côte à côte. Ajuste leur taille, les espacements (tout ce qui est nécessaire) pour que tout rentre correctement dans l’écran, sans débordement. Garde le style actuel et modifie uniquement cette section."
+- **Outil :** Copilot
+- **Résultat :** 
+
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** "Pour la navigation de chaque page projet donc pour intervalle, imparfaite, armorade et liquid-loom, je veux que tu fasse ça aussi : Sur mobile, arrange le menu de navigation dans cet ordre : Accueil, Projets, À propos, puis le sélecteur FR/EN. Réduis la taille des icônes de dossiers pour que les quatre éléments tiennent sur une seule ligne, avec un espacement équilibré et sans débordement. Garde le design actuel et assure-toi que tout reste lisible et bien aligné sur les petits écrans."
+- **Outil :** Copilot
+- **Résultat :** 
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** ""
+- **Outil :** Copilot
+- **Résultat :** 
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** ""
+- **Outil :** Copilot
+- **Résultat :** 
+
+##
+- **Date :** 2026-10-12
+- **Prompt :** ""
+- **Outil :** Copilot
+- **Résultat :** 

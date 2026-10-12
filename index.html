@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/composants/notification.css">
     <link rel="stylesheet" href="./css/composants/animation-pixels.css">
     <script src="./js/main.js"></script>
+    <script src="./js/i18n.js" defer></script>
     <script src="./js/notification.js" defer></script>
     <script src="./js/animation-pixels.js" defer></script>
 </head>
@@ -31,9 +32,9 @@
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#accueil" data-i18n="home">Accueil</a></li>
+                <li><a href="#projets" data-i18n="projects">Projets</a></li>
+                <li><a href="#a-propos" data-i18n="about">À propos</a></li>
             </ul>
         </nav>
 
@@ -73,7 +74,7 @@
 
                 <!-- NOM ET DESCRIPTION -->
                 <p class="accueil-sur-titre">nurlika richard</p>
-                <p class="accueil-description">
+                <p class="accueil-description" data-i18n="intro" data-i18n-html="true">
                     Un peu de <span>3D</span>, un peu de <span>web</span>, un peu de <span>motion</span> et beaucoup de
                     <span>curiosité</span> !
                 </p>
@@ -89,7 +90,7 @@
 
                 <!-- TITRE  -->
                 <h2 id="titre-projets">
-                    <span>projets</span>
+                    <span data-i18n="projectsTitle">projets</span>
                 </h2>
 
                 <!-- CARTES DES PROJETS -->
@@ -98,6 +99,7 @@
                     <!-- PROJET IMPARFAITE -->
                     <article class="project-card">
                         <a class="project-card__link" href="./projet.html?id=imparfaite"
+                            data-i18n-aria-label="viewProjectImparfaite"
                             aria-label="Voir le projet Imparfaite.exe"></a>
 
                         <!-- EN-TÊTE DE LA CARTE -->
@@ -130,6 +132,7 @@
                     <!-- PROJET INTERVALLE -->
                     <article class="project-card project-card--intervalle">
                         <a class="project-card__link" href="./projet.html?id=intervalle"
+                            data-i18n-aria-label="viewProjectIntervalle"
                             aria-label="Voir le projet Intervalle.exe"></a>
 
                         <!-- EN-TÊTE DE LA CARTE -->
@@ -162,6 +165,7 @@
                     <!-- PROJET ARMORADE -->
                     <article class="project-card project-card--armorade">
                         <a class="project-card__link" href="./projet.html?id=armorade"
+                            data-i18n-aria-label="viewProjectArmorade"
                             aria-label="Voir le projet Armorade.exe"></a>
 
                         <!-- EN-TÊTE DE LA CARTE -->
@@ -194,6 +198,7 @@
                     <!-- PROJET LIQUID LOOM -->
                     <article class="project-card project-card--liquid-loom">
                         <a class="project-card__link" href="./projet.html?id=liquid-loom"
+                            data-i18n-aria-label="viewProjectLiquidLoom"
                             aria-label="Voir le projet Liquid-Loom.exe"></a>
 
                         <!-- EN-TÊTE DE LA CARTE -->
@@ -302,7 +307,7 @@
                         <span class="accueil-a-propos__nom">richard</span>
 
                         <!-- DESCRIPTION  -->
-                        <p class="accueil-a-propos__texte">
+                        <p class="accueil-a-propos__texte" data-i18n="aboutText" data-i18n-html="true">
                             Je souhaite rejoindre une équipe dans le domaine de la
                             création numérique en tant que <span>designer</span> <span>multimédia</span>, où je
                             pourrai
@@ -319,7 +324,7 @@
 
                         <!-- SECTION LOGICIELS -->
                         <section class="accueil-a-propos__bloc" aria-labelledby="titre-logiciels">
-                            <h3 id="titre-logiciels">LOGICIELS</h3>
+                            <h3 id="titre-logiciels" data-i18n="software">LOGICIELS</h3>
 
                             <!-- LISTE DES LOGICIELS -->
                             <ul class="accueil-pastilles" aria-label="Logiciels">
@@ -357,7 +362,7 @@
 
                         <!-- SECTION RÉSEAUX SOCIAUX -->
                         <section class="accueil-a-propos__bloc" aria-labelledby="titre-sociaux">
-                            <h3 id="titre-sociaux">SOCIAUX</h3>
+                            <h3 id="titre-sociaux" data-i18n="social">SOCIAUX</h3>
 
                             <!-- LIENS VERS LES RÉSEAUX SOCIAUX -->
                             <ul class="accueil-pastilles" aria-label="Réseaux sociaux">
@@ -380,16 +385,16 @@
 
 
     <!-- NOTIFICATION DE REMERCIEMENTS -->
-    <aside class="notification-visite" aria-label="Message de bienvenue" role="button" tabindex="0"
+    <aside class="notification-visite" data-i18n-aria-label="welcome" aria-label="Message de bienvenue" role="button" tabindex="0"
         aria-expanded="false">
         <span class="notification-visite__badge" aria-hidden="true">1</span>
         <span class="notification-visite__icone" aria-hidden="true">✉</span>
 
         <!-- MESSAGE DE LA NOTIFICATION -->
         <p class="notification-visite__message">
-            <span>De : nrichardd25@gmail.com</span>
-            <span>À : Vous !</span><br>
-            <span>Merci d'avoir visité mon portfolio !</span>
+            <span data-i18n="from">De : nrichardd25@gmail.com</span>
+            <span data-i18n="to">À : Vous !</span><br>
+            <span data-i18n="thanks">Merci d'avoir visité mon portfolio !</span>
         </p>
     </aside>
 

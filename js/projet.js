@@ -143,6 +143,25 @@ const projet = projets[idProjet] || projets.imparfaite;
 const projetsSansEquipe = ["intervalle", "armorade", "liquid-loom"];
 const projetsAvecFermeture = new Set(["imparfaite", "intervalle", "armorade", "liquid-loom"]);
 
+function projetLocalise() {
+    const traduction = window.portfolioI18n
+        ? window.portfolioI18n.getProjectTranslation(idProjet)
+        : null;
+    return traduction ? Object.assign({}, projet, traduction) : projet;
+}
+
+function labelCta() {
+    const labels = {
+        imparfaite: "viewProject",
+        intervalle: "viewProject",
+        armorade: "playGame",
+        "liquid-loom": "viewSite"
+    };
+    return window.portfolioI18n
+        ? window.portfolioI18n.getText(labels[idProjet])
+        : projet.cta.label;
+}
+
 
 // RÉCUPÉRATION DES ÉLÉMENTS HTML
 const elements = {
@@ -247,7 +266,9 @@ window.addEventListener("resize", () => {
 
 // ADAPTATION DU TITRE DE LA SECTION ÉQUIPE
 if (elements.titreEquipe) {
-    elements.titreEquipe.textContent = projetsSansEquipe.includes(idProjet) ? "rôles" : "rôles - équipe";
+    elements.titreEquipe.textContent = projetsSansEquipe.includes(idProjet)
+        ? (window.portfolioI18n ? window.portfolioI18n.getText("roles") : "rôles")
+        : (window.portfolioI18n ? window.portfolioI18n.getText("team") : "rôles - équipe");
 }
 
 
@@ -268,7 +289,9 @@ function createLightbox(content) {
     overlay.className = "projet-detail__lightbox";
     overlay.setAttribute("role", "dialog");
     overlay.setAttribute("aria-modal", "true");
-    overlay.setAttribute("aria-label", "Vue rapprochée du média");
+    overlay.setAttribute("aria-label", window.portfolioI18n
+        ? window.portfolioI18n.getText("closeView")
+        : "Vue rapprochée du média");
 
     const panel = document.createElement("div");
     panel.className = "projet-detail__lightbox-panel";
@@ -277,7 +300,9 @@ function createLightbox(content) {
     const closeButton = document.createElement("button");
     closeButton.type = "button";
     closeButton.className = "projet-detail__lightbox-close";
-    closeButton.setAttribute("aria-label", "Fermer la vue rapprochée");
+    closeButton.setAttribute("aria-label", window.portfolioI18n
+        ? window.portfolioI18n.getText("closeLightbox")
+        : "Fermer la vue rapprochée");
     closeButton.textContent = "×";
     closeButton.addEventListener("click", () => overlay.remove());
 
@@ -400,7 +425,9 @@ function renderMedia(project) {
 
 
     // BOUTON POUR AGRANDIR LE MÉDIA
-    const viewButton = createMediaButton("voir plus grand", () => {
+    const viewButton = createMediaButton(
+        window.portfolioI18n ? window.portfolioI18n.getText("enlarge") : "voir plus grand",
+        () => {
         const currentMedia = mediaItems[activeIndex];
 
         if (!currentMedia) {
@@ -434,7 +461,8 @@ function renderMedia(project) {
         lightboxImage.alt = currentMedia.alt || project.alt;
 
         createLightbox(lightboxImage);
-    });
+        }
+    );
 
     viewButton.classList.add("projet-detail__carousel-view");
 
@@ -455,6 +483,7 @@ function renderIntervalleGallery() {
     if (!galleryElement || !Array.isArray(projet.gallery) || projet.gallery.length === 0) {
         return;
     }
+    galleryElement.innerHTML = "";
 
 
     // CRÉATION DE LA GALERIE
@@ -535,7 +564,9 @@ function renderIntervalleGallery() {
         "projet-detail__carousel-button--next"
     );
 
-    const viewButton = createMediaButton("voir plus grand", () => {
+    const viewButton = createMediaButton(
+        window.portfolioI18n ? window.portfolioI18n.getText("enlarge") : "voir plus grand",
+        () => {
         const currentImage = projet.gallery[activeIndex];
 
         if (!currentImage) {
@@ -548,7 +579,8 @@ function renderIntervalleGallery() {
         enlargedImage.alt = currentImage.replace(/-/g, " ");
 
         createLightbox(enlargedImage);
-    });
+        }
+    );
 
     viewButton.classList.add("projet-detail__carousel-view");
 
@@ -626,8 +658,8 @@ function renderCta(project) {
     const link = document.createElement("a");
     link.href = project.cta.href || "#";
     link.className = "projet-detail__media-action projet-detail__cta";
-    link.textContent = project.cta.label;
-    link.setAttribute("aria-label", project.cta.label);
+    link.textContent = labelCta();
+    link.setAttribute("aria-label", labelCta());
 
 
     // OUVERTURE DU LIEN DANS UN NOUVEL ONGLET
@@ -664,7 +696,9 @@ function renderPrice(project) {
 
     // TITRE DE LA SECTION
     const title = document.createElement("h2");
-    title.textContent = "prix";
+    title.textContent = window.portfolioI18n
+        ? window.portfolioI18n.getText("prizeTitle")
+        : "prix";
 
     const message = document.createElement("p");
     message.className = "projet-detail__prix";
@@ -672,15 +706,21 @@ function renderPrice(project) {
 
     // MESSAGE **PRIX** POUR LE PROJET IMPARFAITE
     if (idProjet === "imparfaite") {
-        message.textContent = "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
+        message.textContent = window.portfolioI18n
+            ? window.portfolioI18n.getText("prizeImparfaite")
+            : "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
 
         // MESSAGE **PRIX** POUR LE PROJET INTERVALLE
     } else {
-        message.append(
-            "J’ai également eu la chance de participer au Concours d’essais audiovisuels 2025 en y présentant ",
-            Object.assign(document.createElement("em"), { textContent: "Intervalle" }),
-            ", un projet qui m’a permis de remporter le prix dans la catégorie « Projet paysage » ! Une belle reconnaissance qui a rendu cette expérience encore plus spéciale."
-        );
+        if (window.portfolioI18n) {
+            message.textContent = window.portfolioI18n.getText("prizeIntervalle");
+        } else {
+            message.append(
+                "J’ai également eu la chance de participer au Concours d’essais audiovisuels 2025 en y présentant ",
+                Object.assign(document.createElement("em"), { textContent: "Intervalle" }),
+                ", un projet qui m’a permis de remporter le prix dans la catégorie « Projet paysage » ! Une belle reconnaissance qui a rendu cette expérience encore plus spéciale."
+            );
+        }
     }
 
     priceContainer.append(title, message);
@@ -688,7 +728,7 @@ function renderPrice(project) {
 
 
 // REMPLISSAGE DES INFORMATIONS DU PROJET
-elements.titre.textContent = projet.titre;
+elements.titre.textContent = projetLocalise().titre;
 elements.fenetreTitre.textContent = projet.fenetre;
 elements.date.textContent = projet.annee;
 elements.date.dateTime = projet.date;
@@ -699,7 +739,7 @@ moveDateNextToTitle();
 
 
 // AFFICHAGE DE LA DESCRIPTION DU PROJET
-elements.description.innerHTML = projet.description;
+elements.description.innerHTML = projetLocalise().description;
 
 
 // AFFICHAGE DE LA GALERIE DE PROCESSUS POUR INTERVALLE
@@ -726,12 +766,28 @@ elements.logiciels.classList.toggle(
 
 // AFFICHAGE DES LOGICIELS ET DE L'ÉQUIPE
 remplirListe(elements.logiciels, projet.logiciels);
-remplirListe(elements.equipe, projet.equipe);
+remplirListe(elements.equipe, projetLocalise().equipe);
 
 
 // AFFICHAGE DU BOUTON D'ACTION
-renderCta(projet);
+renderCta(projetLocalise());
 
 
 // AFFICHAGE DU PRIX OU DE LA DISTINCTION
 renderPrice(projet);
+
+document.addEventListener("portfolio:languagechange", () => {
+    const projetTraduit = projetLocalise();
+    elements.titre.textContent = projetTraduit.titre;
+    elements.description.innerHTML = projetTraduit.description;
+    elements.titreEquipe.textContent = projetsSansEquipe.includes(idProjet)
+        ? window.portfolioI18n.getText("roles")
+        : window.portfolioI18n.getText("team");
+    elements.equipe.innerHTML = "";
+    remplirListe(elements.equipe, projetTraduit.equipe);
+    renderCta(projetTraduit);
+    renderPrice(projetTraduit);
+    if (idProjet === "intervalle") {
+        renderIntervalleGallery();
+    }
+});
