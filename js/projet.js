@@ -428,39 +428,39 @@ function renderMedia(project) {
     const viewButton = createMediaButton(
         window.portfolioI18n ? window.portfolioI18n.getText("enlarge") : "voir plus grand",
         () => {
-        const currentMedia = mediaItems[activeIndex];
+            const currentMedia = mediaItems[activeIndex];
 
-        if (!currentMedia) {
-            return;
-        }
-
-
-        // AGRANDISSEMENT D'UNE VIDÉO
-        if (currentMedia.type === "video") {
-            const lightboxVideo = document.createElement("video");
-            lightboxVideo.className = "projet-detail__media-item projet-detail__video";
-            lightboxVideo.src = currentMedia.src;
-            lightboxVideo.poster = currentMedia.poster || "";
-            lightboxVideo.controls = true;
-            lightboxVideo.controlsList = "nodownload";
-            lightboxVideo.autoplay = true;
-            lightboxVideo.muted = false;
-            lightboxVideo.playsInline = true;
-            lightboxVideo.disablePictureInPicture = false;
-            lightboxVideo.setAttribute("playsinline", "true");
-
-            createLightbox(lightboxVideo);
-            return;
-        }
+            if (!currentMedia) {
+                return;
+            }
 
 
-        // AGRANDISSEMENT D'UNE IMAGE
-        const lightboxImage = document.createElement("img");
-        lightboxImage.className = "projet-detail__media-item";
-        lightboxImage.src = currentMedia.src;
-        lightboxImage.alt = currentMedia.alt || project.alt;
+            // AGRANDISSEMENT D'UNE VIDÉO
+            if (currentMedia.type === "video") {
+                const lightboxVideo = document.createElement("video");
+                lightboxVideo.className = "projet-detail__media-item projet-detail__video";
+                lightboxVideo.src = currentMedia.src;
+                lightboxVideo.poster = currentMedia.poster || "";
+                lightboxVideo.controls = true;
+                lightboxVideo.controlsList = "nodownload";
+                lightboxVideo.autoplay = true;
+                lightboxVideo.muted = false;
+                lightboxVideo.playsInline = true;
+                lightboxVideo.disablePictureInPicture = false;
+                lightboxVideo.setAttribute("playsinline", "true");
 
-        createLightbox(lightboxImage);
+                createLightbox(lightboxVideo);
+                return;
+            }
+
+
+            // AGRANDISSEMENT D'UNE IMAGE
+            const lightboxImage = document.createElement("img");
+            lightboxImage.className = "projet-detail__media-item";
+            lightboxImage.src = currentMedia.src;
+            lightboxImage.alt = currentMedia.alt || project.alt;
+
+            createLightbox(lightboxImage);
         }
     );
 
@@ -567,18 +567,18 @@ function renderIntervalleGallery() {
     const viewButton = createMediaButton(
         window.portfolioI18n ? window.portfolioI18n.getText("enlarge") : "voir plus grand",
         () => {
-        const currentImage = projet.gallery[activeIndex];
+            const currentImage = projet.gallery[activeIndex];
 
-        if (!currentImage) {
-            return;
-        }
+            if (!currentImage) {
+                return;
+            }
 
-        const enlargedImage = document.createElement("img");
-        enlargedImage.className = "projet-detail__media-item";
-        enlargedImage.src = `./assets/images/${currentImage}.png`;
-        enlargedImage.alt = currentImage.replace(/-/g, " ");
+            const enlargedImage = document.createElement("img");
+            enlargedImage.className = "projet-detail__media-item";
+            enlargedImage.src = `./assets/images/${currentImage}.png`;
+            enlargedImage.alt = currentImage.replace(/-/g, " ");
 
-        createLightbox(enlargedImage);
+            createLightbox(enlargedImage);
         }
     );
 
@@ -708,7 +708,7 @@ function renderPrice(project) {
     if (idProjet === "imparfaite") {
         message.textContent = window.portfolioI18n
             ? window.portfolioI18n.getText("prizeImparfaite")
-            : "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant une bourse en argent !";
+            : "Dans le cadre du Concours d’essais audiovisuels 2025, mon équipe et moi avons eu la chance de présenter notre projet, une expérience qui nous a permis de vivre une belle reconnaissance en remportant la première place de la catégorie vidéo.";
 
         // MESSAGE **PRIX** POUR LE PROJET INTERVALLE
     } else {
