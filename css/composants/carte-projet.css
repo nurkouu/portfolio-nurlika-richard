@@ -220,7 +220,7 @@
    ========================================================= */
 
 /* MOBILE — ADAPTATION — PIXEL — BLUR */
-@media (max-width: 640px) {
+@media (max-width: 500px) {
     .project-card {
         min-height: 480px;
     }
@@ -440,7 +440,7 @@
    RESPONSIVE — MOBILE — SECTION PROJETS
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
 
     .accueil-projets {
         min-height: auto;
@@ -1241,7 +1241,7 @@
    RESPONSIVE — MOBILE — PAGE PROJET
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
 
     /* PAGE — DÉBORDEMENT HORIZONTAL */
     .page-projet {

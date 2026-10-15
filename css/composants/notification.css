@@ -130,7 +130,7 @@
 
 
 /* RESPONSIVE — MOBILE */
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .notification-visite {
         right: 1rem;
         bottom: 1rem;

@@ -99,7 +99,7 @@ label[for] {
 
 
 /* RESPONSIVE — MOBILE */
-@media (max-width: 700px) {
+@media (max-width: 500px) {
 
     /* CONTENEURS — DISPOSITION VERTICALE */
     .containers {
